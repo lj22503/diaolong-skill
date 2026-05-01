@@ -1,249 +1,162 @@
-# DragonCraft (雕龙)
+# DragonCraft 雕龙
 
-**雕龙 Skill 套件** — 26 scenario skills for turning personal experience into structured, compelling stories.
+**让每个人都能讲好自己的故事。**
 
-> "雕龙点睛，让每个人说好故事。" — 燃冰
-> 
-> "Craft your story, reveal your dragon."
+> *Many people can do great work. Few can tell great stories.*  
+> *Those who can do both are almost unstoppable.*
 
-**Author**: 燃冰 (Product Manager, INTJ)  
-**Collaboration**: ant (AI Assistant)  
-**License**: MIT  
-**Version**: v1.1.0
+雕龙是一套完整的叙事方法论操作系统，包含一本书、26个场景 Skill、工具矩阵和案例库。它的使命是**叙事平权**——让叙事能力不再只是少数人的天赋，而成为每个人都可以习得的技能。
 
 ---
 
-## 📖 Why This Project
+## 核心主张
 
-In 2023, I delivered a major project — and got sidelined by my boss.
+**叙事不是修辞技巧，叙事是认知基础设施。**
 
-The reason was simple: I could do the work, but I couldn't tell the story.
+人类大脑默认用故事处理信息，不是用数据。这不是比喻，这是神经科学的发现。
 
-Boss: "What did you do recently?"  
-Me: "Shipped three features."  
-Boss: "Why those three?"  
-Me: "…Because users needed them."
-
-Six months later, I built an AI-powered investment advisor system as a solo operator. While doing that, I started studying "narrative" — how stories shape perception, trust, and action.
-
-I realized: **Many people can do great work. Few can tell great stories. Those who can do both are almost unstoppable.**
-
-So I built this toolkit with my AI assistant, ant. 26 scenario skills, 3 architectural layers, one underlying principle: **narrative isn't a template — it's an operating system.**
-
-This isn't a "writing guide." It's a system that helps you turn scattered experiences, opinions, and brand stories into logical, conflict-driven, valuable narratives.
+叙事平权，就是让更多人掌握这个底层能力——用结构化的故事传递真实的价值。
 
 ---
 
-## 🎯 Core Architecture
+## 内容体系
+
+### 📖 书籍
+
+*《叙事引擎：AI时代的内容操作系统》*
+
+从"故事本能"到"叙事领导力"，22章完整呈现叙事方法论。含公众号版（短文，适合传播）和书籍完整版（深度内容）。
+
+### 🎯 26个场景 Skill
+
+| 个人 | 商业 | 公益 |
+|------|------|------|
+| 个人IP | 品牌叙事 | 公益筹款 |
+| 品牌故事 | 产品发布 | 教育市场 |
+| 个人复盘 | 创业融资 | 危机公关 |
+| | 销售说服 | 法律沟通 |
+| | 组织变革 | 医疗沟通 |
+| | 社交媒体 | |
+
+每个 Skill 包含：场景诊断 → 叙事框架 → Prompt 模板 → 打磨后的案例
+
+### 🛠️ 工具箱
+
+- **八刀评估表**：叙事质量八维评估
+- **叙事人格测试**：发现你的叙事风格类型
+- **模板库**：15+ 场景叙事模板
+
+### 📚 案例库
+
+真实叙事案例 + 打磨前后对比，可作为学习素材和基准参考。
+
+---
+
+## 快速开始
+
+### 方法一：直接用 Skill
+
+告诉你的 AI 助手：
+
+> "我需要写一个个人IP故事，场景：转型创业者，核心冲突：从大厂离职后收入降为零但找到了真正的自由，需要触达同样想转型的职场人。"
+
+AI 会自动调用雕龙叙事系统完成。
+
+### 方法二：自己读 Skill 文件
+
+每个 Skill 都是独立的 `SKILL.md` 文件，直接阅读即可使用：
 
 ```
-narrative-suite (suite manager)
-  ↓
-narrative-workflow (orchestration engine)
-  ↓
-narrative-meta (underlying OS)
-  ├── Eight-dimension assessment
-  ├── Anti-AI detection
-  ├── Ethics review
-  ├── Personality mapping
-  └── Memory management
-  ↓
-20 scenario skills (call narrative-meta modules)
+skills/
+  narrative-personal-ip/SKILL.md   # 个人IP叙事
+  narrative-brand/SKILL.md         # 品牌故事
+  narrative-product/SKILL.md       # 产品发布
+  ...
 ```
 
-**Three layers:**
-- **Foundation**: `narrative-meta` — assessment, ethics, personality, memory
-- **Orchestration**: `narrative-workflow` — 4-stage pipeline coordination
-- **Scenarios**: 20 scenario skills — personal IP, brand, product, fundraising, sales, etc.
+### 方法三：从书开始
+
+从第一章"叙事本能"读起，建立对叙事底层逻辑的系统理解，再选择需要的 Skill。
 
 ---
 
-## 📋 Scenario Skills
+## 质量保证
 
-| # | Skill | Scenario | Output |
-|---|-------|----------|--------|
-| 1 | narrative-personal-ip | Personal IP | Full / Short video / Bio |
-| 2 | narrative-brand | Brand | Manifesto / Founder story |
-| 3 | narrative-product | Product | Launch copy / User story |
-| 4 | narrative-funding | Fundraising | BP storyline / Pitch |
-| 5 | narrative-sales | Sales | Customer case / Script |
-| 6 | narrative-organization | Organizational change | Internal memo / Roadmap |
-| 7 | narrative-charity | Charity | Charity story / Fundraising copy |
-| 8 | narrative-legal | Legal | Legal opinion / Statement |
-| 9 | narrative-medical | Medical | Communication script / Patient story |
-| 10 | narrative-social | Social media | Viral copy / Hashtags |
-| 11 | narrative-creative | Creative product | Creative brief / User story |
-| 12 | narrative-lifestyle | Lifestyle | Manifesto / Content plan |
-| 13 | narrative-tech | Tech | Tech story / Pitch |
-| 14 | narrative-controversy | Controversy | Position statement / Debate |
-| 15 | narrative-art | Art | Artist statement / Exhibition |
-| 16 | narrative-psychology | Psychology | Healing story / Support guide |
-| 17 | narrative-sustainable | Sustainability | Sustainability report |
-| 18 | narrative-education | Education | Script / Video copy |
-| 19 | narrative-retrospective | Retrospective | Oral story / Written story |
-| 20 | narrative-crisis | Crisis PR | Public statement / Internal memo |
+所有书籍章节均通过严格的内容合规检查，确保：
+- 无 AI 生成痕迹模式
+- 叙事要素完整（冲突 / 锚点 / 结尾钩子）
+- 案例可验证、有授权
+
+**禁用词清单（17词）**：赋能、抓手、闭环、对齐、底层逻辑、在当今时代、值得注意的是、总而言之、换句话说说、也就是说、简而言之、这意味着、因此、所以、从而、于是、进而、因为
 
 ---
 
-## 🚀 Quick Start
+## 社区与贡献
 
-### Install
+### 贡献者许可协议 (CLA)
 
-```bash
-# Copy skills to your workspace
-cp -r skills/* ~/.openclaw/workspace/skills/
-```
+你的内容永远是你的。详见 [.github/CLA.md](.github/CLA.md)。
 
-### Use
+简述：你保留版权，但授予项目有限使用许可；商业使用前我们会联系你。
 
-```bash
-# Via workflow engine
-cd skills/narrative-workflow
-python3 scripts/workflow.py --user-id "your-id" --scene "brand" --mode "B"
+### 贡献类型
 
-# Or tell your AI assistant: "Help me write a personal IP story"
-# It will auto-route to the right skill
-```
+- 📖 **提交案例**：分享你的真实叙事故事
+- 🎯 **新增 Skill**：扩展场景覆盖
+- 🔧 **优化 Prompt**：让现有 Skill 更好用
+- 🌐 **翻译**：将 Skill 翻译为其他语言
 
-### Example
+### GitHub 工作流
 
-```
-Help me write a personal IP story, Mode B (deep polish).
-My material:
-- What I did: Left a big tech company, took a gap year, became a career coach
-- What I value: Freedom > stability, reflection > success
-- What I faced: 6 months no income, startup failed, client ghosted
-- What I learned: Failure doesn't加分, reflection does; freedom isn't doing nothing, it's choosing what to do
-```
+1. Fork 本仓库
+2. 创建功能分支
+3. 提交案例或 Skill
+4. 提 PR（自动触发合规扫描）
+5. 等待审核（7天内）
 
-**Output:**
-- Full version (~1200 words)
-- Short video version (~300 words)
-- Bio version (~150 words)
-- Eight-dimension assessment report
-- Anti-AI detection report
-- Ethics review report
+详见 [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
-## 📊 Quality Assessment
+## 知识产权保护
 
-Every story is evaluated using the **Eight-Dimension Framework**:
+本项目的代码和方法论采用 MIT License 开放。
 
-| Dimension | What it checks |
-|-----------|----------------|
-| 历史 (History) | Causal chain coherence |
-| 辩证 (Dialectic) | Balance of narrative and facts |
-| 现象 (Phenomenon) | Concrete scene anchors |
-| 语言 (Language) | Natural, conversational, no AI patterns |
-| 形式 (Form) | Labov minimal story structure |
-| 存在 (Existence) | Serves clear purpose/identity |
-| 美感 (Aesthetics) | Golden sentence density, imagery |
-| 元反思 (Meta-reflection) | Self-awareness, no self-glorification |
+书籍内容（chapters/ 目录下的 .org 文件）采用 MIT License 授权阅读和分享，但严禁用于商业出版。
 
-**Anti-AI Detection**: 7 rules to detect and remove AI-generated patterns.  
-**Ethics Review**: 3 principles — no fabrication, audience-oriented, scenario-appropriate.
+"雕龙"、**DragonCraft** 为注册商标，未经授权不得用于商业活动。
+
+详见 [LICENSE](LICENSE) 和 [.github/NOTICE.md](.github/NOTICE.md)。
 
 ---
 
-## 🎭 Narrative Personality Types
+## 书籍章节
 
-| Type | Style | Best For |
-|------|-------|----------|
-| INTJ | Strategic, logical | Tech, finance, analysis |
-| ENFJ | Inspiring, warm | Brand mission, education, charity |
-| ENFP | Spontaneous, creative | Social media, lifestyle, creative |
-| INFJ | Metaphorical, healing | Brand philosophy, psychology, art |
+| 章节 | 标题 | 公众号版 | 书籍版 |
+|------|------|---------|--------|
+| 引子 | 叙事平权 | ✅ | ✅ |
+| C01 | 叙事本能 | ✅ | ✅ |
+| C02-C14 | 方法论 + 场景 Skill | ✅ | ✅ |
+| C15-C22 | AI时代叙事 | ✅ | ✅ |
 
----
-
-## 🤝 How to Contribute
-
-### Contribution Types
-
-- **New Skill**: Add a scenario skill (e.g., narrative-education, narrative-crisis)
-- **Improve Prompt**: Optimize existing skill prompts
-- **Add Examples**: Real-world case studies for scenario skills
-- **Fix Bug**: Fix workflow engine bugs
-- **Translate**: Translate skills to other languages
-
-### Workflow
-
-1. Fork this repo
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'feat: add narrative-education skill'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a PR
-
-### Standards
-
-Each skill must include:
-- `SKILL.md` — skill description (required)
-- `changes.md` — changelog (required)
-- `examples/` — example files (recommended)
-- `tests/` — test files (recommended)
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+完整章节列表见 [chapters/](chapters/)
 
 ---
 
-## 📖 Book Chapters
+## License
 
-This repo also contains the full book *《叙事引擎：AI时代的内容操作系统》* (Narrative Engine: Content Operating System in the AI Era) by 燃冰.
-
-### Part 3 — AI Era Narrative Skills (最新章节)
-
-**公众号版** (short, CTA at end):
-
-| Chapter | Title | Words | Status |
-|---------|-------|-------|--------|
-| C15 | 元Skill | 5,898 | ✅ |
-| C16 | 叙事记忆库 | 3,593 | ✅ |
-| C17 | 去AI化 | 3,404 | ✅ |
-| C18 | 人机协作工作流 | 3,361 | ✅ |
-| C19 | 个人IP | 3,452 | ✅ |
-| C20 | 开源项目叙事 | 3,061 | ✅ |
-| C21 | 叙事技能的持续进化 | 3,420 | ✅ |
-| C22 | 叙事领导力 | 3,108 | ✅ |
-
-**书籍版** (≥10,000字, full content):
-
-| Chapter | Title | Words | Status |
-|---------|-------|-------|--------|
-| C15 | 元Skill | 10,119 | ✅ |
-| C16 | 叙事记忆库 | 11,583 | ✅ |
-| C17 | 去AI化 | 11,606 | ✅ |
-| C18 | 人机协作工作流 | 10,109 | ✅ |
-| C19 | 个人IP | 10,152 | ✅ |
-| C20 | 开源项目叙事 | 10,377 | ✅ |
-| C21 | 叙事技能的持续进化 | 10,202 | ✅ |
-| C22 | 叙事领导力 | 10,230 | ✅ |
-
-所有章节均通过禁用词合规检查（17词清单：赋能/抓手/闭环/对齐/底层逻辑/在当今时代/值得注意的是/总而言之/换句话说说/也就是说/简而言之/这意味着/因此/所以/从而/于是/进而/因为）
+MIT License — 详见 [LICENSE](LICENSE)
 
 ---
 
-## 📚 Related Resources
+## 关于作者
 
-- **Book**: *Narrative Engine: Content Operating System in the AI Era* (燃冰)
-- **Tutorial**: [Investment Framework Tutorial](https://github.com/lj22503/investment-framework-skill)
-- **Article**: [20 Skills in One Day: How I Turned Narrative into an Operating System](https://github.com/lj22503/narrative-skills)
+**燃冰** — 产品经理，INTJ。2023年意识到"做好工作但讲不好故事"是职业发展的核心瓶颈，开始系统研究叙事方法论，2026年完成雕龙叙事系统。
 
----
-
-## 📄 License
-
-MIT License
+*"雕龙点睛，让每个人说好故事。"*
 
 ---
 
-## 💬 Community
-
-- **Issue**: Found a bug or have an idea? Open an Issue
-- **Discussion**: Share use cases, ask questions, discuss best practices
-- **PR**: Contribute skills, examples, translations
-
----
-
-*DragonCraft v1.1.0 | 2026-05-01*  
-*One-person CEO isn't doing everything alone. It's using tools and AI to amplify personal capability.*
+*本项目由 [ant](https://github.com) AI 助手协同构建。*
+*维护者：[@lj22503](https://github.com/lj22503)*
+*沟通语言：中文欢迎，English also fine.*

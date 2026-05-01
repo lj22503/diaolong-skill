@@ -1,0 +1,91 @@
+name: Narrative Quality CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compliance scan
+        run: |
+          python3 - << 'PYEOF'
+          import os, glob, re
+
+          BANNED = ['赋能','抓手','闭环','对齐','底层逻辑','在当今时代',
+                    '值得注意的是','总而言之','换句话说说','也就是说','简而言之',
+                    '这意味着','因此','所以','从而','于是','进而','因为']
+
+          issues = []
+          for f in glob.glob("chapters/**/*.org", recursive=True):
+              c = open(f).read()
+              for w in BANNED:
+                  count = c.count(w)
+                  if count > 0:
+                      issues.append(f"{f}: {w} x{count}")
+
+          if issues:
+              print("COMPLIANCE ISSUES FOUND:")
+              for i in issues:
+                  print(f"  - {i}")
+              exit(1)
+          else:
+              print("All chapter files passed compliance check.")
+
+      - name: Skill structure check
+        run: |
+          python3 - << 'PYEOF'
+          import os, glob
+
+          required_files = {'SKILL.md', 'changes.md'}
+          issues = []
+
+          for skill_dir in glob.glob("skills/narrative-*"):
+              if not os.path.isdir(skill_dir):
+                  continue
+              files = set(os.listdir(skill_dir))
+              missing = required_files - files
+              if missing:
+                  issues.append(f"{skill_dir}: missing {missing}")
+
+          if issues:
+              print("SKILL STRUCTURE ISSUES:")
+              for i in issues:
+                  print(f"  - {i}")
+              exit(1)
+          else:
+              print(f"All {len(glob.glob('skills/narrative-*'))} skills have required files.")
+
+      - name: Case study metadata check
+        run: |
+          python3 - << 'PYEOF'
+          import os, glob
+
+          required_keys = ['conflict', 'anchor', 'hook']
+          issues = []
+
+          for f in glob.glob("examples/*.md"):
+              content = open(f).read()
+              for key in required_keys:
+                  if key.lower() not in content.lower():
+                      issues.append(f"{os.path.basename(f)}: missing '{key}'")
+                      break
+
+          if issues:
+              print("CASE STUDY ISSUES:")
+              for i in issues:
+                  print(f"  - {i}")
+              exit(1)
+          else:
+              print("All case studies have required narrative elements.")
+          PYEOF

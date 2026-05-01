@@ -1,0 +1,73 @@
+name: 📖 Case Study Submission
+description: Submit a real-world narrative case study
+labels: [case-study]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 提交案例故事
+
+        感谢你贡献案例！请先阅读 [贡献指南](../CONTRIBUTING.md) 和 [CLA协议](../.github/CLA.md)。
+
+        **提交须知：**
+        - 案例必须真实，或已获得当事人授权的虚构案例
+        - 需包含完整的叙事要素：冲突、锚点、结尾钩子
+        - 不接受没有实际叙事价值的"流水账"案例
+
+  - type: input
+    id: scenario
+    attributes:
+      label: 场景类型
+      placeholder: e.g. 个人IP、品牌故事、危机公关
+      description: 这个案例属于哪个叙事场景？
+    validations:
+      required: true
+
+  - type: dropdown
+    id: auth
+    attributes:
+      label: 授权类型
+      options:
+        - 真实案例（我本人的经历）
+        - 真实案例（已获当事人书面授权）
+        - 虚构教学案例
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 案例摘要（100字以内）
+      placeholder: 一句话描述这个案例的核心叙事结构
+    validations:
+      required: true
+
+  - type: textarea
+    id: conflict
+    attributes:
+      label: 核心冲突
+      placeholder: 故事的核心张力是什么？主角面临的最大困境是什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: anchor
+    attributes:
+      label: 锚点细节
+      placeholder: 最有力的具体细节是什么？（数字、动作、对话）
+    validations:
+      required: true
+
+  - type: textarea
+    id: hook
+    attributes:
+      label: 结尾钩子
+      placeholder: 故事结尾给读者留下了什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 叙事效果
+      placeholder: 这个叙事最终达到了什么效果？（数据或感受）

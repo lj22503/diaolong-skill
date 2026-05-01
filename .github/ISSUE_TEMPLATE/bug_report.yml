@@ -1,0 +1,75 @@
+name: 🐛 Bug Report
+description: Report something that isn't working
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 感谢你报告 Bug！
+
+        请描述问题，我们会尽快处理。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug 描述
+      placeholder: |
+        描述你遇到的问题...
+        - 预期行为是什么？
+        - 实际行为是什么？
+        - 在什么场景下发生？
+    validations:
+      required: true
+
+  - type: dropdown
+    id: skill
+    attributes:
+      label: 涉及哪个 Skill？（如适用）
+      options:
+        - 不知道 / Not sure
+        - narrative-suite
+        - narrative-workflow
+        - narrative-meta
+        - narrative-personal-ip
+        - narrative-brand
+        - narrative-product
+        - narrative-funding
+        - narrative-sales
+        - narrative-organization
+        - narrative-charity
+        - narrative-legal
+        - narrative-medical
+        - narrative-social
+        - narrative-creative
+        - narrative-lifestyle
+        - narrative-tech
+        - narrative-controversy
+        - narrative-art
+        - narrative-psychology
+        - narrative-sustainable
+        - narrative-education
+        - narrative-retrospective
+        - narrative-crisis
+
+  - type: input
+    id: version
+    attributes:
+      label: Skill 版本（如适用）
+      placeholder: e.g. v1.1.0
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 错误日志（可选）
+      placeholder: 粘贴相关错误信息...
