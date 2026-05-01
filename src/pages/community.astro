@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="社区 — 雕龙 DragonCraft" locale="zh">
+  <div class="page-header">
+    <h1>社区协作</h1>
+    <p>叙事平权运动是共同的实践，不是单向输出</p>
+  </div>
+
+  <div class="page-content">
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-tag">GitHub</span>
+        <h3>开源协作</h3>
+        <p>Fork仓库，提交案例，贡献Skill，参与国际社区讨论。</p>
+        <a href="https://github.com/lj22503/diaolong-skill" target="_blank">访问 GitHub →</a>
+      </div>
+      <div class="card">
+        <span class="card-tag">案例</span>
+        <h3>提交案例</h3>
+        <p>分享你的真实叙事故事。案例将经过审核后在案例库展示。</p>
+        <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=case-study&template=case_study.yml" target="_blank">提交案例 →</a>
+      </div>
+      <div class="card">
+        <span class="card-tag">Bug</span>
+        <h3>报告问题</h3>
+        <p>发现Skill或书籍内容的问题？提交Bug，我们会尽快修复。</p>
+        <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=bug&template=bug_report.yml" target="_blank">报告 Bug →</a>
+      </div>
+      <div class="card">
+        <span class="card-tag">功能</span>
+        <h3>建议新功能</h3>
+        <p>有新的场景Skill想法？想扩展某个现有Skill的功能？</p>
+        <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=enhancement&template=feature_request.yml" target="_blank">提出建议 →</a>
+      </div>
+      <div class="card">
+        <span class="card-tag">翻译</span>
+        <h3>参与翻译</h3>
+        <p>将Skill翻译为其他语言，让叙事方法论触达更多人。</p>
+        <a href="https://github.com/lj22503/diaolong-skill/discussions" target="_blank">参与翻译 →</a>
+      </div>
+      <div class="card">
+        <span class="card-tag">CI</span>
+        <h3>自动合规扫描</h3>
+        <p>每次PR自动触发禁用词检查，确保内容质量。</p>
+        <a href="https://github.com/lj22503/diaolong-skill/actions" target="_blank">查看 CI →</a>
+      </div>
+    </div>
+
+    <section class="section" style="margin-top: 48px;">
+      <h2 class="section-title">贡献规范</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>✅ 欢迎</h3>
+          <p>真实案例故事、新增场景Skill、优化现有Skill Prompt、翻译、文档修正</p>
+        </div>
+        <div class="card">
+          <h3>❌ 不接受</h3>
+          <p>没有叙事要素的流水账、不真实的案例、不符合方法论框架的内容</p>
+        </div>
+        <div class="card">
+          <h3>⚖️ 版权</h3>
+          <p>案例版权归属贡献者，详见 CLA 协议。商业使用前会联系你。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .card a { font-size: 0.82rem; color: var(--accent); margin-top: 10px; display: inline-block; }
+</style>

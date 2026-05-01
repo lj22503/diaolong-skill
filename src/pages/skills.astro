@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+
+const skills = [
+  { id: 'personal-ip', name: '个人IP', desc: '从经历到个人IP叙事', category: '个人' },
+  { id: 'brand', name: '品牌叙事', desc: '品牌故事与文化构建', category: '商业' },
+  { id: 'product', name: '产品发布', desc: '产品上市的叙事节奏', category: '商业' },
+  { id: 'funding', name: '创业融资', desc: 'BP故事线与Pitch', category: '商业' },
+  { id: 'sales', name: '销售说服', desc: '客户案例与说服脚本', category: '商业' },
+  { id: 'organization', name: '组织变革', desc: '内部沟通与变革叙事', category: '商业' },
+  { id: 'charity', name: '公益筹款', desc: '公益项目与筹款叙事', category: '公益' },
+  { id: 'education', name: '教育市场', desc: '课程推广与教育叙事', category: '公益' },
+  { id: 'crisis', name: '危机公关', desc: '危机声明与舆情应对', category: '公益' },
+  { id: 'legal', name: '法律沟通', desc: '法律意见书与声明', category: '公益' },
+  { id: 'medical', name: '医疗沟通', desc: '患者沟通与医疗叙事', category: '公益' },
+  { id: 'social', name: '社交媒体', desc: '社交内容与传播叙事', category: '个人' },
+  { id: 'creative', name: '创意产品', desc: '创意叙事与用户故事', category: '个人' },
+  { id: 'lifestyle', name: '生活方式', desc: '生活理念与内容计划', category: '个人' },
+  { id: 'tech', name: '科技叙事', desc: '技术故事与产品叙事', category: '商业' },
+  { id: 'controversy', name: '争议叙事', desc: '立场声明与论战叙事', category: '商业' },
+  { id: 'art', name: '艺术叙事', desc: '艺术家声明与展览叙事', category: '个人' },
+  { id: 'psychology', name: '心理叙事', desc: '疗愈故事与心理支持', category: '个人' },
+  { id: 'sustainable', name: '可持续发展', desc: '可持续叙事与报告', category: '商业' },
+  { id: 'retrospective', name: '个人复盘', desc: '经历复盘与成长叙事', category: '个人' },
+];
+---
+
+<Base title="Skill工具箱 — 雕龙 DragonCraft" locale="zh">
+  <div class="page-header">
+    <h1>Skill工具箱</h1>
+    <p>26个场景覆盖 · 个人IP、品牌、危机、销售、公益全场景</p>
+  </div>
+
+  <div class="page-content">
+    <section class="section">
+      <div class="card-grid">
+        {skills.map(skill => (
+          <div class="card">
+            <span class="card-tag">{skill.category}</span>
+            <h3>{skill.name}</h3>
+            <p>{skill.desc}</p>
+            <a href={`https://github.com/lj22503/diaolong-skill/tree/main/skills/narrative-${skill.id}`} target="_blank">
+              查看Skill →
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="section note">
+      <p>
+        💡 每个Skill包含完整的SKILL.md文件，可直接被AI助手调用。<br/>
+        在AI对话中描述你的场景，即可自动路由到对应Skill。
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .note {
+    background: rgba(192,57,43,0.05);
+    border: 1px solid rgba(192,57,43,0.15);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .card a { font-size: 0.82rem; color: var(--accent); margin-top: 10px; display: inline-block; }
+</style>

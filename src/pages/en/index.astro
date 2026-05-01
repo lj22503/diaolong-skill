@@ -1,0 +1,106 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="DragonCraft — Narrative Equality" locale="en">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Narrative Equality Movement</div>
+      <h1 class="hero-title">
+        Everyone deserves<br/>to tell their story well
+      </h1>
+      <p class="hero-sub">
+        DragonCraft is a complete narrative methodology operating system.<br/>
+        One book · 26 scenario Skills · Tool matrix · Case library
+      </p>
+      <div class="hero-actions">
+        <a href="/en/book" class="cta">Read the Book</a>
+        <a href="/en/skills" class="cta-outline">Explore Skills</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="claim">
+    <div class="claim-inner">
+      <blockquote>
+        "Many people can do great work.<br/>Few can tell great stories.<br/>Those who can do both are almost unstoppable."
+      </blockquote>
+      <p class="claim-zh">
+        Narrative isn't a rhetorical trick — it's cognitive infrastructure.<br/>
+        DragonCraft's mission is to give more people access to this foundational skill.
+      </p>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="pillars-inner">
+      <div class="pillar-card">
+        <div class="pillar-icon">📖</div>
+        <h3>The Book</h3>
+        <p><em>Narrative Engine: Content OS in the AI Era</em><br/>22 chapters, WeChat + full book versions</p>
+        <a href="/en/book">Read now →</a>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🎯</div>
+        <h3>26 Scenario Skills</h3>
+        <p>Personal IP, brand storytelling, crisis PR, sales persuasion…<br/>Each with an actionable narrative framework</p>
+        <a href="/en/skills">Explore Skills →</a>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">🛠️</div>
+        <h3>Toolbox</h3>
+        <p>Eight-Dimension Assessment · Personality Test · 15+ templates<br/>Make narrative skill measurable and learnable</p>
+        <a href="/en/tools">Use tools →</a>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">📚</div>
+        <h3>Case Library</h3>
+        <p>Real narrative cases + before/after comparison<br/>Learn from real stories</p>
+        <a href="/en/examples">View cases →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="github-cta">
+    <div class="github-cta-inner">
+      <h2>Open Source · Grow Together</h2>
+      <p>
+        Your cases, your Skills, your translations — all helping more people.<br/>
+        Be part of the narrative equality movement.
+      </p>
+      <a href="https://github.com/lj22503/diaolong-skill" target="_blank" class="cta">
+        Visit GitHub →
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { background: linear-gradient(160deg, #fafaf8 0%, #f0ece8 100%); border-bottom: 1px solid var(--border); }
+  .hero-inner { max-width: var(--max-width); margin: 0 auto; padding: 100px 24px 80px; }
+  .hero-eyebrow { font-size: 0.8rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+  .hero-title { font-family: var(--font-serif); font-size: 3.2rem; font-weight: 700; line-height: 1.15; margin-bottom: 20px; }
+  .hero-sub { font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 36px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .claim { border-bottom: 1px solid var(--border); }
+  .claim-inner { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px; text-align: center; }
+  .claim blockquote { font-family: var(--font-serif); font-size: 1.5rem; font-style: italic; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; }
+  .claim-zh { font-size: 1rem; color: var(--text); line-height: 1.8; }
+
+  .pillars { border-bottom: 1px solid var(--border); }
+  .pillars-inner { max-width: var(--max-width); margin: 0 auto; padding: 64px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+  .pillar-card { padding: 28px; border: 1px solid var(--border); border-radius: var(--radius); background: white; }
+  .pillar-icon { font-size: 2rem; margin-bottom: 16px; }
+  .pillar-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; }
+  .pillar-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 16px; }
+  .pillar-card a { font-size: 0.88rem; color: var(--accent); font-weight: 500; }
+  .pillar-card a:hover { color: var(--accent-hover); }
+
+  .github-cta { background: var(--text); color: white; }
+  .github-cta-inner { max-width: var(--max-width); margin: 0 auto; padding: 80px 24px; text-align: center; }
+  .github-cta h2 { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+  .github-cta p { color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.8; margin-bottom: 32px; }
+  .github-cta .cta { background: white; color: var(--text); }
+  .github-cta .cta:hover { background: #f0f0f0; }
+</style>

@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+
+const examples = [
+  { title: '燃冰-个人IP故事（完整版）', type: '真实案例', desc: '燃冰的个人IP叙事，完整打磨版，含多种长度输出。' },
+  { title: '燃冰-个人IP故事（短视频版）', type: '真实案例', desc: '面向短视频平台的1分钟版本个人IP叙事。' },
+  { title: '燃冰-个人IP故事（简介版）', type: '真实案例', desc: '150字简介版，适用于社交媒体简介栏。' },
+  { title: '全职妈妈到绘本博主（打磨前）', type: '教学案例', desc: '虚拟教学案例，未经打磨的初版，展示常见问题。' },
+  { title: '全职妈妈到绘本博主（打磨后）', type: '教学案例', desc: '同一故事的精修版，展示叙事打磨前后的差异。' },
+];
+---
+
+<Base title="案例库 — 雕龙 DragonCraft" locale="zh">
+  <div class="page-header">
+    <h1>案例库</h1>
+    <p>真实叙事 · 打磨前后对比 · 可学习的叙事样本</p>
+  </div>
+
+  <div class="page-content">
+    <div class="chapter-list">
+      {examples.map(ex => (
+        <div class="chapter-item">
+          <span class="chapter-num">{ex.type}</span>
+          <div class="chapter-title-group">
+            <span class="chapter-title">{ex.title}</span>
+            <span class="chapter-desc">{ex.desc}</span>
+          </div>
+          <div class="chapter-versions">
+            <a href={`https://github.com/lj22503/diaolong-skill/blob/main/examples/${encodeURIComponent(ex.title)}.md`} target="_blank" class="chapter-link">查看</a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <section class="section" style="margin-top: 40px;">
+      <div class="contribute-box">
+        <h3>📖 提交你的案例</h3>
+        <p>你的真实叙事故事，可以帮助更多人学会叙事。提交到 GitHub 案例库。</p>
+        <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=case-study&template=case_study.yml" target="_blank" class="cta" style="margin-top: 16px; display: inline-block;">提交案例</a>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .chapter-title-group { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+  .chapter-desc { font-size: 0.82rem; color: var(--text-muted); }
+  .contribute-box {
+    background: rgba(192,57,43,0.05);
+    border: 1px solid rgba(192,57,43,0.15);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .contribute-box h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .contribute-box p { color: var(--text-muted); font-size: 0.9rem; }
+</style>
