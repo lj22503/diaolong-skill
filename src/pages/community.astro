@@ -9,7 +9,20 @@ import Base from '../layouts/Base.astro';
   </div>
 
   <div class="page-content">
-    <div class="card-grid">
+
+    <!-- 知识星球入口 -->
+    <div class="zsxq-banner">
+      <div class="zsxq-banner-inner">
+        <div class="zsxq-banner-text">
+          <div class="zsxq-eyebrow">知识星球</div>
+          <h2>雕龙叙事实验室</h2>
+          <p>正在和朋友们讨论有趣的话题，一起来吧？</p>
+        </div>
+        <a href="https://t.zsxq.com/CLU1d" target="_blank" class="zsxq-cta">加入星球 →</a>
+      </div>
+    </div>
+
+    <div class="card-grid" style="margin-top: 40px;">
       <div class="card">
         <span class="card-tag">GitHub</span>
         <h3>开源协作</h3>
@@ -70,4 +83,57 @@ import Base from '../layouts/Base.astro';
 
 <style>
   .card a { font-size: 0.82rem; color: var(--accent); margin-top: 10px; display: inline-block; }
+
+  /* 知识星球 Banner */
+  .zsxq-banner {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 12px;
+    padding: 32px 36px;
+    margin-bottom: 8px;
+  }
+  .zsxq-banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .zsxq-banner-text {
+    flex: 1;
+    min-width: 200px;
+  }
+  .zsxq-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 8px;
+  }
+  .zsxq-banner-text h2 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 6px;
+  }
+  .zsxq-banner-text p {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .zsxq-cta {
+    display: inline-block;
+    background: #c9a96e;
+    color: #1a1a1a;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .zsxq-cta:hover {
+    background: #e0c07a;
+    color: #1a1a1a;
+  }
 </style>
