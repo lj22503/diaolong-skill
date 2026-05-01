@@ -1,16 +1,15 @@
 ---
-name: narrative-psychology
+name: dragoncraft-heal
 description: "[When to use] When you need to turn psychological struggles/healing processes/growth into logical, conflict-driven, insightful, and valuable psychological narratives; when you need healing stories, psychology education, mutual support guides, or counseling scripts"
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, psychology, healing, mental-health, counseling, support-guide]
+tags: [dragoncraft, dragoncraft-heal, narrative, storytelling]
 ---
 
-# narrative-psychology
-
+# DragonCraft Heal
 **Description**: Psychological narrative coach. Embeds the narrative meta-system to help users turn psychological struggles/healing processes/growth into logical, conflict-driven, insightful, and valuable psychological narratives.
 
 ## 🎯 Features

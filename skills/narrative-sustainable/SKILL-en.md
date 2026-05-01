@@ -1,16 +1,15 @@
 ---
-name: narrative-sustainable
+name: dragoncraft-green
 description: "[When to use] When you need to turn environmental concepts/actions/impact into logical, conflict-driven, insightful, and valuable sustainability narratives; when you need sustainability reports, calls to action, brand commitments, or ESG narratives"
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, sustainable, ESG, environmental, sustainability-report, brand-commitment]
+tags: [dragoncraft, dragoncraft-green, narrative, storytelling]
 ---
 
-# narrative-sustainable
-
+# DragonCraft Green
 **Description**: Sustainability narrative coach. Embeds the narrative meta-system to help users turn environmental concepts/actions/impact into logical, conflict-driven, insightful, and valuable sustainability narratives.
 
 ## 🎯 Features

@@ -1,16 +1,15 @@
 ---
-name: narrative-retrospective
-description: ［何时使用］当需要将项目经历/失败教训/成功经验变成有逻辑、有冲突、有认知、有价值的复盘叙事时；当需要复盘会口述稿、书面复盘故事、反事实清单时
+name: dragoncraft-review
+description: 雕龙·复盘 | DragonCraft Review - description: ［何时使用］当需要将项目经历/失败教训/成功经验变成有逻辑、有冲突、有认知、有价值的复盘叙事时；当需要复盘会口述稿、书面复盘故事、反事实清单时
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, retrospective, post-mortem, project-review, learning]
+tags: [dragoncraft, dragoncraft-review, narrative, storytelling]
 ---
 
-# narrative-retrospective
-
+# 雕龙·复盘 (DragonCraft Review)
 **描述**：复盘叙事教练。内嵌叙事元系统，帮助用户把项目经历/失败教训/成功经验变成有逻辑、有冲突、有认知、有价值的复盘叙事。
 
 ## 🎯 功能

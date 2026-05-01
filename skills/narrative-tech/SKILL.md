@@ -1,16 +1,15 @@
 ---
-name: narrative-tech
-description: ［何时使用］当需要将技术壁垒/市场机会/团队背景变成有逻辑、有冲突、有认知、有价值的科技叙事时；当需要技术故事、投资人 pitch、竞品分析、技术白皮书时
+name: dragoncraft-geek
+description: 雕龙·极客 | DragonCraft Geek - description: ［何时使用］当需要将技术壁垒/市场机会/团队背景变成有逻辑、有冲突、有认知、有价值的科技叙事时；当需要技术故事、投资人 pitch、竞品分析、技术白皮书时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, tech, technology, startup, technical-story, investor-pitch]
+tags: [dragoncraft, dragoncraft-geek, narrative, storytelling]
 ---
 
-# narrative-tech
-
+# 雕龙·极客 (DragonCraft Geek)
 **描述**：科技叙事教练。内嵌叙事元系统，帮助用户把技术壁垒/市场机会/团队背景变成有逻辑、有冲突、有认知、有价值的科技叙事。
 
 ## 🎯 功能
@@ -30,11 +29,11 @@ tags: [narrative, tech, technology, startup, technical-story, investor-pitch]
 - **校验失败处理**：字段缺失 → 提示补充；长度不足 → 追问细节；格式错误 → 引导正确格式
 
 ### 结构
-起点（技术痛点） → 冲突（现有方案不足/技术瓶颈） → 转折（技术突破/团队入场） → 结果（市场机会/商业模式） → 认知（技术哲学） → 人物定位（科技人格）
+技术痛点 → 现有方案不足/技术瓶颈 → 技术突破/团队入场 → 市场机会/商业模式 → 技术哲学
 
 ### 输出
 - 技术故事版（800-1200字）
-- 投资人 pitch 版（300-500字）
+- 投资人 pitch版（300-500字）
 - 竞品分析版（对比矩阵）
 
 ## 🔗 依赖关系

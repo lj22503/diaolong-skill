@@ -1,16 +1,15 @@
 ---
-name: narrative-lifestyle
+name: dragoncraft-life
 description: "[When to use] When you need to turn lifestyle/values/aesthetics into a logical, conflict-driven, insightful, and valuable life narrative; when you need lifestyle manifestos, content planning, visual guides, or brand collaboration copy"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, lifestyle, personal-brand, aesthetic, content-planning, brand-collaboration]
+tags: [dragoncraft, dragoncraft-life, narrative, storytelling]
 ---
 
-# narrative-lifestyle
-
+# DragonCraft Life
 **Description**: Lifestyle narrative coach. Embedded with the narrative meta-system, it helps you turn lifestyle/values/aesthetics into a logical, conflict-driven, insightful, and valuable life narrative.
 
 ## 🎯 Features

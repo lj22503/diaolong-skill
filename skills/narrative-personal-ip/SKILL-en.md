@@ -1,16 +1,15 @@
 ---
-name: narrative-personal-ip
+name: dragoncraft-persona
 description: "[When to use] When you need to turn personal experiences into a logical, conflict-driven, insightful, and valuable personal story; when you need to build a personal IP, create self-introductions, write public account articles, or short video scripts"
 author: ant (CEO Assistant)
 created: 2026-04-29
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, personal-ip, storytelling, content-creation]
+tags: [dragoncraft, dragoncraft-persona, narrative, storytelling]
 ---
 
-# narrative-personal-ip
-
+# DragonCraft Persona
 **Description**: Personal IP narrative coach. Embedded with the narrative meta-system, it helps you turn scattered personal experiences into a logical, conflict-driven, insightful, and valuable personal story.
 
 ## 🎯 Features

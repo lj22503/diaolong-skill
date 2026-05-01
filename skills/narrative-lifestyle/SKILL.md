@@ -1,16 +1,15 @@
 ---
-name: narrative-lifestyle
-description: ［何时使用］当需要将生活方式/价值观/美学变成有逻辑、有冲突、有认知、有价值的生活叙事时；当需要生活方式宣言、内容规划、视觉指南、品牌合作文案时
+name: dragoncraft-life
+description: 雕龙·生活 | DragonCraft Life - description: ［何时使用］当需要将生活方式/价值观/美学变成有逻辑、有冲突、有认知、有价值的生活叙事时；当需要生活方式宣言、内容规划、视觉指南、品牌合作文案时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, lifestyle, personal-brand, aesthetic, content-planning, brand-collaboration]
+tags: [dragoncraft, dragoncraft-life, narrative, storytelling]
 ---
 
-# narrative-lifestyle
-
+# 雕龙·生活 (DragonCraft Life)
 **描述**：生活方式叙事教练。内嵌叙事元系统，帮助用户把生活方式/价值观/美学变成有逻辑、有冲突、有认知、有价值的生活叙事。
 
 ## 🎯 功能
@@ -30,7 +29,7 @@ tags: [narrative, lifestyle, personal-brand, aesthetic, content-planning, brand-
 - **校验失败处理**：字段缺失 → 提示补充；长度不足 → 追问细节；格式错误 → 引导正确格式
 
 ### 结构
-起点（日常生活） → 冲突（价值观碰撞/美学选择） → 转折（顿悟/改变） → 结果（生活方式确立） → 认知（生活哲学） → 人物定位（生活方式人格）
+日常生活 → 价值观碰撞/美学选择 → 顿悟/改变 → 生活方式确立 → 生活哲学
 
 ### 输出
 - 生活方式宣言版（500-800字）

@@ -1,16 +1,15 @@
 ---
-name: narrative-education
-description: ［何时使用］当需要将课程主题/学员痛点/认知误区变成有逻辑、有冲突、有认知、有价值的教育叙事时；当需要课程开场故事、培训口播稿、课程详情页文案时
+name: dragoncraft-teach
+description: 雕龙·传道 | DragonCraft Teach - description: ［何时使用］当需要将课程主题/学员痛点/认知误区变成有逻辑、有冲突、有认知、有价值的教育叙事时；当需要课程开场故事、培训口播稿、课程详情页文案时
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, education, training, course-opening, workshop]
+tags: [dragoncraft, dragoncraft-teach, narrative, storytelling]
 ---
 
-# narrative-education
-
+# 雕龙·传道 (DragonCraft Teach)
 **描述**：教育叙事教练。内嵌叙事元系统，帮助用户把课程主题/学员痛点/认知误区变成有逻辑、有冲突、有认知、有价值的教育叙事。
 
 ## 🎯 功能

@@ -1,16 +1,15 @@
 ---
-name: narrative-book
+name: dragoncraft-book
 description: "[When to use] When you need to write the narrative Skill system into a book/public account article; when you need content that matches Ranbing's writing style (dialogue format, de-AI, trust-building, GitHub-guided); when each chapter needs public account formatting and real case supplements"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 2.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, book, writing, public-account, trust-building, style-guide]
+tags: [dragoncraft, dragoncraft-book, narrative, storytelling]
 ---
 
-# narrative-book
-
+# DragonCraft Book
 **Description**: Book writing coach. Embedded with the narrative meta-system, it helps you write the narrative Skill system into a book/public account article, matching Ranbing's writing style.
 
 ## 🎯 Writing Style Instructions (Global)

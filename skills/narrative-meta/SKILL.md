@@ -1,16 +1,15 @@
 ---
-name: narrative-meta
-description: ［何时使用］当需要评估叙事质量、生成叙事骨架、检测AI化程度、推荐叙事人格、进行伦理审查、跨场景一致性检查、记忆检索时
+name: dragoncraft-core
+description: 雕龙·心法 | DragonCraft Core - description: ［何时使用］当需要评估叙事质量、生成叙事骨架、检测AI化程度、推荐叙事人格、进行伦理审查、跨场景一致性检查、记忆检索时
 author: ant (CEO 助理)
 created: 2026-04-29
-version: 3.0.0
+version: 3.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, meta, storytelling, quality-assessment, ethics, memory]
+tags: [dragoncraft, dragoncraft-core, narrative, storytelling]
 ---
 
-# narrative-meta
-
+# 雕龙·心法 (DragonCraft Core)
 **描述**：叙事的底层操作系统。为所有场景Skill提供理论支撑、美学判断、伦理基准和质量检查。不直接输出内容，而是作为"操作系统"被场景Skill调用。
 
 ## 🎯 核心能力
@@ -166,6 +165,17 @@ AI输出：
 - "我们不做新衣服。我们只是帮时间续写句子"
 ```
 
+## 🔧 故障排查
+
+| 问题 | 检查项 | 解决方案 |
+|------|--------|---------|
+| 八刀评分全部偏低 | 初稿质量 | 返回阶段1重新生成 |
+| 去AI化规则4触发 | 缺少细节锚点 | 提示用户补充时间/地点/数字 |
+| 伦理审查原则1不通过 | 事实篡改 | 标注[此处省略了X]，建议补充 |
+| 一致性检查发现冲突 | 历史叙事不一致 | 输出差异报告，建议统一 |
+| 人格推荐不准确 | 素材特征模糊 | 提供2-3个候选人格，由用户选择 |
+| 记忆检索为空 | 首次使用 | 提示"这是系列故事的良好起点" |
+
 ## 📋 质量检查清单
 
 - [ ] 八刀评估所有维度≥7分？
@@ -181,4 +191,4 @@ AI输出：
 
 ---
 
-*版本：3.0.0 | 最后更新：2026-04-29*
+*版本：3.1.0 | 最后更新：2026-04-30*

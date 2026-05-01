@@ -1,16 +1,15 @@
 ---
-name: narrative-crisis
-description: ［何时使用］当需要将负面事件/事实/受影响方/核心承诺变成有逻辑、有冲突、有认知、有价值的危机公关叙事时；当需要公开声明、内部沟通信、危机后直播话术时
+name: dragoncraft-shield
+description: 雕龙·化险 | DragonCraft Shield - description: ［何时使用］当需要将负面事件/事实/受影响方/核心承诺变成有逻辑、有冲突、有认知、有价值的危机公关叙事时；当需要公开声明、内部沟通信、危机后直播话术时
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, crisis, PR, crisis-management, trust-repair]
+tags: [dragoncraft, dragoncraft-shield, narrative, storytelling]
 ---
 
-# narrative-crisis
-
+# 雕龙·化险 (DragonCraft Shield)
 **描述**：危机公关叙事教练。内嵌叙事元系统，帮助用户把负面事件/事实/受影响方/核心承诺变成有逻辑、有冲突、有认知、有价值的危机公关叙事。
 
 ## 🎯 功能

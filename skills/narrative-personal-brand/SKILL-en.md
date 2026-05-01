@@ -1,16 +1,15 @@
 ---
-name: narrative-personal-brand
+name: dragoncraft-brand
 description: "[When to use] When you need to build a continuous, consistent, evolving personal narrative universe; when you need new stories, historical reference annotations, narrative universe maps, or next-topic suggestions"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, personal-brand, continuous-narrative, narrative-universe, memory]
+tags: [dragoncraft, dragoncraft-brand, narrative, storytelling]
 ---
 
-# narrative-personal-brand
-
+# DragonCraft Brand
 **Description**: Personal brand continuous narrative coach. Embedded with the narrative meta-system, it doesn't just generate stories one-time, but helps you build a continuous, consistent, evolving personal narrative universe.
 
 ## 🎯 Features

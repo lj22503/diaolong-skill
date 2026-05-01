@@ -1,16 +1,15 @@
 ---
-name: narrative-brand
+name: dragoncraft-soul
 description: "[When to use] When you need to turn a brand's origin/mission/values into a logical, conflict-driven, insightful, and valuable brand story; when you need to build brand image, create brand manifestos, brand manuals, or founder stories"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, brand, storytelling, brand-story, founder-story]
+tags: [dragoncraft, dragoncraft-soul, narrative, storytelling]
 ---
 
-# narrative-brand
-
+# DragonCraft Soul
 **Description**: Brand narrative coach. Embedded with the narrative meta-system, it helps you turn a brand's origin/mission/values into a logical, conflict-driven, insightful, and valuable brand story.
 
 ## 🎯 Features

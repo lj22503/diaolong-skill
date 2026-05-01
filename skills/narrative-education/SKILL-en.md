@@ -1,16 +1,15 @@
 ---
-name: narrative-education
+name: dragoncraft-teach
 description: "[When to use] When you need to turn course themes/student pain points/cognitive misconceptions into a logical, conflict-driven, insightful, and valuable education narrative; when you need course opening stories, training scripts, or course detail page copy"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, education, training, course-opening, workshop]
+tags: [dragoncraft, dragoncraft-teach, narrative, storytelling]
 ---
 
-# narrative-education
-
+# DragonCraft Teach
 **Description**: Education narrative coach. Embedded with the narrative meta-system, it helps you turn course themes/student pain points/cognitive misconceptions into a logical, conflict-driven, insightful, and valuable education narrative.
 
 ## 🎯 Features

@@ -1,16 +1,15 @@
 ---
-name: narrative-sustainable
-description: ［何时使用］当需要将环保理念/行动/影响变成有逻辑、有冲突、有认知、有价值的可持续叙事时；当需要可持续报告、行动号召、品牌承诺、ESG 叙事时
+name: dragoncraft-green
+description: 雕龙·长青 | DragonCraft Green - description: ［何时使用］当需要将环保理念/行动/影响变成有逻辑、有冲突、有认知、有价值的可持续叙事时；当需要可持续报告、行动号召、品牌承诺、ESG 叙事时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, sustainable, ESG, environmental, sustainability-report, brand-commitment]
+tags: [dragoncraft, dragoncraft-green, narrative, storytelling]
 ---
 
-# narrative-sustainable
-
+# 雕龙·长青 (DragonCraft Green)
 **描述**：可持续叙事教练。内嵌叙事元系统，帮助用户把环保理念/行动/影响变成有逻辑、有冲突、有认知、有价值的可持续叙事。
 
 ## 🎯 功能
@@ -31,7 +30,7 @@ tags: [narrative, sustainable, ESG, environmental, sustainability-report, brand-
 - **⚠️ 强制合规**：可持续叙事不得"漂绿"（greenwashing），必须有具体数据和行动支撑
 
 ### 结构
-起点（环境问题） → 冲突（现状痛点/现有方案不足） → 转折（行动入场/关键突破） → 结果（改变/数据/影响） → 认知（可持续哲学） → 人物定位（可持续人格）
+环境问题 → 现状痛点/现有方案不足 → 行动入场/关键突破 → 改变/数据/影响 → 可持续哲学
 
 ### 输出
 - 可持续报告版（800-1200字）

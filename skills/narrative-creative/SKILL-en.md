@@ -1,16 +1,15 @@
 ---
-name: narrative-creative
+name: dragoncraft-dream
 description: "[When to use] When you need to turn creative concepts/target users/differentiation into a logical, conflict-driven, insightful, and valuable creative product narrative; when you need creative briefs, user stories, visual scripts, or creative proposals"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, creative, product-design, user-story, visual-script, creative-brief]
+tags: [dragoncraft, dragoncraft-dream, narrative, storytelling]
 ---
 
-# narrative-creative
-
+# DragonCraft Dream
 **Description**: Creative product narrative coach. Embedded with the narrative meta-system, it helps you turn creative concepts/target users/differentiation into a logical, conflict-driven, insightful, and valuable creative product narrative.
 
 ## 🎯 Features

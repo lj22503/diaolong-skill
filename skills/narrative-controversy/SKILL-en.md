@@ -1,16 +1,15 @@
 ---
-name: narrative-controversy
+name: dragoncraft-debate
 description: "[When to use] When you need to turn controversy focus/stance/evidence into a logical, conflict-driven, insightful, and valuable controversy narrative; when you need position statements, debate scripts, response strategies, or controversy management"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, controversy, debate, position-statement, crisis-management, response-strategy]
+tags: [dragoncraft, dragoncraft-debate, narrative, storytelling]
 ---
 
-# narrative-controversy
-
+# DragonCraft Debate
 **Description**: Controversy narrative coach. Embedded with the narrative meta-system, it helps you turn controversy focus/stance/evidence into a logical, conflict-driven, insightful, and valuable controversy narrative.
 
 ## 🎯 Features

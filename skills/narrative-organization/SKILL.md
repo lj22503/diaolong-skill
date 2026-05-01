@@ -1,16 +1,15 @@
 ---
-name: narrative-organization
-description: ［何时使用］当需要将变革动因/阻力点/目标状态变成有逻辑、有冲突、有认知、有价值的组织变革叙事时；当需要内部信、全员讲话、变革 FAQ、变革路线图时
+name: dragoncraft-shift
+description: 雕龙·变革 | DragonCraft Shift - description: ［何时使用］当需要将变革动因/阻力点/目标状态变成有逻辑、有冲突、有认知、有价值的组织变革叙事时；当需要内部信、全员讲话、变革 FAQ、变革路线图时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, organization, change-management, internal-communication, transformation]
+tags: [dragoncraft, dragoncraft-shift, narrative, storytelling]
 ---
 
-# narrative-organization
-
+# 雕龙·变革 (DragonCraft Shift)
 **描述**：组织变革叙事教练。内嵌叙事元系统，帮助用户把变革动因/阻力点/目标状态变成有逻辑、有冲突、有认知、有价值的组织变革叙事。
 
 ## 🎯 功能
@@ -30,12 +29,12 @@ tags: [narrative, organization, change-management, internal-communication, trans
 - **校验失败处理**：字段缺失 → 提示补充；长度不足 → 追问细节；格式错误 → 引导正确格式
 
 ### 结构
-起点（变革动因） → 冲突（现状痛点/阻力点） → 转折（变革决策/关键行动） → 结果（目标状态/里程碑） → 认知（变革哲学） → 人物定位（组织人格）
+一线员工英雄时刻 → 省时/省力对比 → 试错复盘 → 共同未来
 
 ### 输出
-- 内部信/全员讲话版（800-1200字）
-- 变革路线图版（500-800字）
-- 变革 FAQ 版（Q&A 模板）
+- 全员大会口播稿（5分钟）
+- 内部邮件故事版
+- 部门讨论引导故事
 
 ## 🔗 依赖关系
 

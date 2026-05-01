@@ -1,16 +1,15 @@
 ---
-name: narrative-medical
-description: ［何时使用］当需要将病情/治疗方案/风险收益变成有逻辑、有冲突、有认知、有价值的医疗叙事时；当需要知情同意书、医患沟通脚本、医疗科普、患者故事时
+name: dragoncraft-care
+description: 雕龙·仁心 | DragonCraft Care - description: ［何时使用］当需要将病情/治疗方案/风险收益变成有逻辑、有冲突、有认知、有价值的医疗叙事时；当需要知情同意书、医患沟通脚本、医疗科普、患者故事时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, medical, healthcare, informed-consent, patient-story, medical-communication]
+tags: [dragoncraft, dragoncraft-care, narrative, storytelling]
 ---
 
-# narrative-medical
-
+# 雕龙·仁心 (DragonCraft Care)
 **描述**：医疗叙事教练。内嵌叙事元系统，帮助用户把病情/治疗方案/风险收益变成有逻辑、有冲突、有认知、有价值的医疗叙事。
 
 ## 🎯 功能
@@ -31,12 +30,12 @@ tags: [narrative, medical, healthcare, informed-consent, patient-story, medical-
 - **⚠️ 强制合规**：医疗知情场景强制全面披露，不得省略与核心决策有直接因果关系的风险信息
 
 ### 结构
-起点（病情/症状） → 冲突（治疗选择/风险收益权衡） → 转折（医患沟通/决策） → 结果（疗效/生活质量） → 认知（医疗哲学） → 人物定位（患者/医生人格）
+病情呈现 → 治疗选择困境 → 医患沟通 → 决策 → 疗效与生活质量
 
 ### 输出
-- 医患沟通脚本版（500-800字）
-- 患者故事版（800-1200字）
-- 知情同意书版（结构化模板）
+- 医患沟通脚本（500字）
+- 患者故事版（800字）
+- 知情同意书（结构化模板）
 
 ## 🔗 依赖关系
 

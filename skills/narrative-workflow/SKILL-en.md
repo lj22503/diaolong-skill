@@ -1,16 +1,15 @@
 ---
-name: narrative-workflow
+name: dragoncraft-studio
 description: "[When to use] When you need to automate the full narrative generation pipeline; when you need to coordinate the workflow between meta-Skills, scenario Skills, interactive design Skills, and persona distillation Skills"
 author: ant (CEO 助理)
 created: 2026-04-29
 version: 1.4.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, workflow, automation, pipeline, persona-distillation]
+tags: [dragoncraft, dragoncraft-studio, narrative, storytelling]
 ---
 
-# narrative-workflow
-
+# DragonCraft Studio
 **Description**: Narrative automation workflow engine. Coordinates the pipeline between meta-Skills, scenario Skills, interactive design Skills, and persona distillation Skills.
 
 ## 🎯 Workflow Modes

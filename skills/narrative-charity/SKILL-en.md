@@ -1,16 +1,15 @@
 ---
-name: narrative-charity
+name: dragoncraft-love
 description: "[When to use] When you need to turn beneficiary groups/change stories/calls to action into a logical, conflict-driven, insightful, and valuable charity narrative; when you need charity stories, fundraising copy, volunteer recruitment, or charity reports"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, charity, storytelling, fundraising, volunteer, social-impact]
+tags: [dragoncraft, dragoncraft-love, narrative, storytelling]
 ---
 
-# narrative-charity
-
+# DragonCraft Love
 **Description**: Charity narrative coach. Embedded with the narrative meta-system, it helps you turn beneficiary groups/change stories/calls to action into a logical, conflict-driven, insightful, and valuable charity narrative.
 
 ## 🎯 Features

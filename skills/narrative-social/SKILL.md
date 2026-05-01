@@ -1,16 +1,15 @@
 ---
-name: narrative-social
-description: ［何时使用］当需要将平台特性/受众画像/热点趋势/人设定位变成有逻辑、有冲突、有认知、有价值的社交媒体叙事时；当需要爆款文案、话题标签、互动设计、内容规划时
+name: dragoncraft-voice
+description: 雕龙·发声 | DragonCraft Voice - description: ［何时使用］当需要将平台特性/受众画像/热点趋势/人设定位变成有逻辑、有冲突、有认知、有价值的社交媒体叙事时；当需要爆款文案、话题标签、互动设计、内容规划时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, social-media, viral, content-strategy, personal-brand]
+tags: [dragoncraft, dragoncraft-voice, narrative, storytelling]
 ---
 
-# narrative-social
-
+# 雕龙·发声 (DragonCraft Voice)
 **描述**：社交媒体叙事教练。内嵌叙事元系统，帮助用户把平台特性/受众画像/热点趋势/人设定位变成有逻辑、有冲突、有认知、有价值的社交媒体叙事。
 
 ## 🎯 功能
@@ -30,10 +29,10 @@ tags: [narrative, social-media, viral, content-strategy, personal-brand]
 - **校验失败处理**：字段缺失 → 提示补充；长度不足 → 追问细节；格式错误 → 引导正确格式
 
 ### 结构
-起点（热点/趋势） → 冲突（受众痛点/现有内容不足） → 转折（人设入场/独特视角） → 结果（互动/传播/转化） → 认知（内容哲学） → 人物定位（社交媒体人格）
+前3秒钩子（反常识/悬念/共鸣） → 45秒展开（情绪曲线：好奇→共鸣→反转→感动） → 尾声金句 + 互动引导
 
 ### 输出
-- 爆款文案版（300-500字）
+- 爆款文案（300-500字）
 - 话题标签版（10-20个标签+使用指南）
 - 互动设计版（评论/转发/私信策略）
 

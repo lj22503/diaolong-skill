@@ -1,16 +1,15 @@
 ---
-name: narrative-charity
-description: ［何时使用］当需要将受助群体/改变故事/行动号召变成有逻辑、有冲突、有认知、有价值的公益叙事时；当需要公益故事、募捐文案、志愿者招募、公益报告时
+name: dragoncraft-love
+description: 雕龙·传爱 | DragonCraft Love - description: ［何时使用］当需要将受助群体/改变故事/行动号召变成有逻辑、有冲突、有认知、有价值的公益叙事时；当需要公益故事、募捐文案、志愿者招募、公益报告时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, charity, storytelling, fundraising, volunteer, social-impact]
+tags: [dragoncraft, dragoncraft-love, narrative, storytelling]
 ---
 
-# narrative-charity
-
+# 雕龙·传爱 (DragonCraft Love)
 **描述**：公益叙事教练。内嵌叙事元系统，帮助用户把受助群体/改变故事/行动号召变成有逻辑、有冲突、有认知、有价值的公益叙事。
 
 ## 🎯 功能
@@ -30,12 +29,12 @@ tags: [narrative, charity, storytelling, fundraising, volunteer, social-impact]
 - **校验失败处理**：字段缺失 → 提示补充；长度不足 → 追问细节；格式错误 → 引导正确格式
 
 ### 结构
-起点（受助群体困境） → 冲突（问题严重性/现有方案不足） → 转折（公益行动入场） → 结果（改变/数据/见证） → 认知（公益哲学） → 人物定位（行动号召）
+一个人的困境 → 一个小行动的介入 → 涟漪效应 → 你的角色 → 行动召唤
 
 ### 输出
-- 公益故事版（800-1200字）
-- 募捐文案版（300-500字）
-- 志愿者招募版（150-300字）
+- 筹款页面长文案（800字）
+- 社交媒体短故事（300字）
+- 捐赠后感谢卡片文案
 
 ## 🔗 依赖关系
 

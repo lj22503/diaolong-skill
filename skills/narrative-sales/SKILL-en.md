@@ -1,16 +1,15 @@
 ---
-name: narrative-sales
+name: dragoncraft-persuade
 description: "[When to use] When you need to turn customer pain points/purchase barriers/success cases into logical, conflict-driven, insightful, and valuable sales stories; when you need customer cases, sales scripts, objection handling, or sales training"
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, sales, storytelling, customer-case, sales-script]
+tags: [dragoncraft, dragoncraft-persuade, narrative, storytelling]
 ---
 
-# narrative-sales
-
+# DragonCraft Persuade
 **Description**: Sales narrative coach. Embeds the narrative meta-system to help users turn customer pain points/purchase barriers/success cases into logical, conflict-driven, insightful, and valuable sales stories.
 
 ## 🎯 Features

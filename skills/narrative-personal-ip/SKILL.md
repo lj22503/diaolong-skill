@@ -1,16 +1,15 @@
 ---
-name: narrative-personal-ip
-description: ［何时使用］当需要将个人经历变成有逻辑、有冲突、有认知、有价值的个人故事时；当需要打造个人IP、进行自我介绍、创作公众号文章、短视频口播时
+name: dragoncraft-persona
+description: 雕龙·立人 | DragonCraft Persona - description: ［何时使用］当需要将个人经历变成有逻辑、有冲突、有认知、有价值的个人故事时；当需要打造个人IP、进行自我介绍、创作公众号文章、短视频口播时
 author: ant (CEO 助理)
 created: 2026-04-29
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, personal-ip, storytelling, content-creation]
+tags: [dragoncraft, dragoncraft-persona, narrative, storytelling]
 ---
 
-# narrative-personal-ip
-
+# 雕龙·立人 (DragonCraft Persona)
 **描述**：个人IP叙事教练。内嵌叙事元系统，帮助用户把零散的个人经历变成有逻辑、有冲突、有认知、有价值的个人故事。
 
 ## 🎯 功能
@@ -30,7 +29,7 @@ tags: [narrative, personal-ip, storytelling, content-creation]
 - **校验失败处理**：字段缺失 → 提示补充；长度不足 → 追问细节；格式错误 → 引导正确格式
 
 ### 结构
-起点 → 冲突 → 转折 → 结果 → 认知 → 人物定位
+起点（个人背景/现状） → 冲突（困境/低谷/失败） → 转折（关键决策/顿悟） → 结果（改变/成长） → 认知（核心哲学） → 人物定位（IP人设）
 
 ### 输出
 - 完整版（800-1500字）

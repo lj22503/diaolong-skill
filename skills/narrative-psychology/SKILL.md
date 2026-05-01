@@ -1,16 +1,15 @@
 ---
-name: narrative-psychology
-description: ［何时使用］当需要将心理困境/疗愈过程/成长变成有逻辑、有冲突、有认知、有价值的心理叙事时；当需要疗愈故事、心理科普、互助指南、心理咨询脚本时
+name: dragoncraft-heal
+description: 雕龙·疗愈 | DragonCraft Heal - description: ［何时使用］当需要将心理困境/疗愈过程/成长变成有逻辑、有冲突、有认知、有价值的心理叙事时；当需要疗愈故事、心理科普、互助指南、心理咨询脚本时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, psychology, healing, mental-health, counseling, support-guide]
+tags: [dragoncraft, dragoncraft-heal, narrative, storytelling]
 ---
 
-# narrative-psychology
-
+# 雕龙·疗愈 (DragonCraft Heal)
 **描述**：心理叙事教练。内嵌叙事元系统，帮助用户把心理困境/疗愈过程/成长变成有逻辑、有冲突、有认知、有价值的心理叙事。
 
 ## 🎯 功能
@@ -31,7 +30,7 @@ tags: [narrative, psychology, healing, mental-health, counseling, support-guide]
 - **⚠️ 强制合规**：心理叙事不得替代专业医疗建议，必须标注"如需专业帮助请咨询心理咨询师"
 
 ### 结构
-起点（心理困境） → 冲突（症状/触发点/影响） → 转折（疗愈方法/转折点） → 结果（成长/改变） → 认知（心理哲学） → 人物定位（疗愈人格）
+心理困境 → 症状/触发点/影响 → 疗愈方法/转折点 → 成长/改变 → 心理哲学
 
 ### 输出
 - 疗愈故事版（800-1200字）

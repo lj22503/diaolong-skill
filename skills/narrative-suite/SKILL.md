@@ -1,17 +1,16 @@
 ---
-name: narrative-suite
-description: ［何时使用］当需要管理/导航/查询 17 个叙事场景 skill 时；当需要统一入口、场景对比、依赖关系图时
+name: dragoncraft-hub
+description: 雕龙·总览 | DragonCraft Hub - description: ［何时使用］当需要管理/导航/查询 22 个叙事场景 skill 时；当需要统一入口、场景对比、依赖关系图时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 核心🔴
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, suite, management, navigation, skill-map]
+tags: [dragoncraft, dragoncraft-hub, narrative, storytelling]
 ---
 
-# narrative-suite
-
-**描述**：叙事 Skill 套件管理器。统一管理 17 个场景 skill，提供导航、对比、依赖关系图。
+# 雕龙·总览 (DragonCraft Hub)
+**描述**：叙事 Skill 套件管理器。统一管理 23 个场景 skill，提供导航、对比、依赖关系图。
 
 ## 🎯 功能
 
@@ -36,6 +35,12 @@ tags: [narrative, suite, management, navigation, skill-map]
 | 15 | narrative-art | 艺术 | 作品/创作理念/观众体验/作品影响 | 艺术家陈述/展览前言/作品解读 | 无 |
 | 16 | narrative-psychology | 心理 | 心理困境/疗愈过程/成长改变/帮助对象 | 疗愈故事/心理科普/互助指南 | **不得替代专业医疗建议** |
 | 17 | narrative-sustainable | 可持续 | 环境问题/行动/改变/下一步 | 可持续报告/行动号召/品牌承诺 | **不得"漂绿"** |
+| 18 | narrative-education | 教育 | 课程主题/目标学员/认知误区/学员困境 | 口播稿/视频文案/课程详情页 | 无 |
+| 19 | narrative-retrospective | 复盘 | 项目名称/实际结果/关键转折/决策情绪 | 口述稿/书面故事/反事实清单 | 无 |
+| 20 | narrative-crisis | 危机公关 | 事件简述/已确认事实/受影响方/核心承诺 | 公开声明/内部信/直播话术 | **强制全面披露** |
+| 21 | narrative-personal-brand | 个人品牌 | 主题/认知/是否延续前作 | 新故事/引用标注/宇宙地图/下期建议 | 无 |
+| 22 | narrative-product-launch | 产品发布 | 产品名称/发布节奏/目标用户/用户认知 | 碎片地图/顿悟脚本/指引/奖励/排期 | 无 |
+| 23 | narrative-book | 书籍写作 | 章节主题/目标读者/燃冰案例/GitHub Skill | 公众号文章版/小红书卡片版/GitHub README 版 | 无 |
 
 ### 依赖关系图
 
@@ -51,7 +56,7 @@ narrative-meta（底层操作系统）
   ├── 人格映射
   └── 记忆管理
   ↓
-17 个场景 skill（调用 narrative-meta 模块）
+22 个场景 skill（调用 narrative-meta 模块）
 ```
 
 ### 使用方式
@@ -68,7 +73,7 @@ narrative-meta（底层操作系统）
 | 依赖模块 | 来源 Skill | 用途 |
 |---------|-----------|------|
 | 八刀评估 | narrative-meta | 质量打分 |
-| 去 AI 化检测 | narrative-meta | 7 条规则检测 |
+| 去 AI化检测 | narrative-meta | 7 条规则检测 |
 | 伦理审查 | narrative-meta | 三条原则检查 |
 | 人格映射 | narrative-meta | MBTI 叙事人格推荐 |
 | 记忆管理 | narrative-meta | 存储/检索用户历史叙事 |
@@ -77,4 +82,4 @@ narrative-meta（底层操作系统）
 
 ---
 
-*版本：1.0.0 | 最后更新：2026-04-30*
+*版本：1.1.0 | 最后更新：2026-04-30*

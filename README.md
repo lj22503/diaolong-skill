@@ -1,8 +1,10 @@
-# Narrative Skill Suite
+# DragonCraft (雕龙)
 
-**叙事 Skill 套件** — 20+ scenario skills for turning personal experience into structured, compelling stories.
+**雕龙 Skill 套件** — 26 scenario skills for turning personal experience into structured, compelling stories.
 
-> "框架是我的语言。" — 燃冰
+> "雕龙点睛，让每个人说好故事。" — 燃冰
+> 
+> "Craft your story, reveal your dragon."
 
 ---
 

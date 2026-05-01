@@ -1,16 +1,15 @@
 ---
-name: narrative-crisis
+name: dragoncraft-shield
 description: "[When to use] When you need to turn negative events/facts/affected parties/core commitments into a logical, conflict-driven, insightful, and valuable crisis PR narrative; when you need public statements, internal communication letters, or post-crisis live stream scripts"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, crisis, PR, crisis-management, trust-repair]
+tags: [dragoncraft, dragoncraft-shield, narrative, storytelling]
 ---
 
-# narrative-crisis
-
+# DragonCraft Shield
 **Description**: Crisis PR narrative coach. Embedded with the narrative meta-system, it helps you turn negative events/facts/affected parties/core commitments into a logical, conflict-driven, insightful, and valuable crisis PR narrative.
 
 ## 🎯 Features

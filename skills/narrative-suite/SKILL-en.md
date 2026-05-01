@@ -1,16 +1,15 @@
 ---
-name: narrative-suite
+name: dragoncraft-hub
 description: "[When to use] When you need to manage/navigate/query 17 narrative scenario skills; when you need a unified entry point, scenario comparison, or dependency graph"
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 核心🔴
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, suite, management, navigation, skill-map]
+tags: [dragoncraft, dragoncraft-hub, narrative, storytelling]
 ---
 
-# narrative-suite
-
+# DragonCraft Hub
 **Description**: Narrative Skill suite manager. Centrally manages 17 scenario skills, providing navigation, comparison, and dependency graphs.
 
 ## 🎯 Features

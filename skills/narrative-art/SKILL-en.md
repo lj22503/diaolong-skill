@@ -1,16 +1,15 @@
 ---
-name: narrative-art
+name: dragoncraft-art
 description: "[When to use] When you need to turn a work/creative vision/audience into a logical, conflict-driven, insightful, and valuable art narrative; when you need artist statements, exhibition prefaces, artwork interpretations, or art criticism"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, art, artist-statement, exhibition, artwork-interpretation, art-criticism]
+tags: [dragoncraft, dragoncraft-art, narrative, storytelling]
 ---
 
-# narrative-art
-
+# DragonCraft Art
 **Description**: Art narrative coach. Embedded with the narrative meta-system, it helps you turn a work/creative vision/audience into a logical, conflict-driven, insightful, and valuable art narrative.
 
 ## 🎯 Features

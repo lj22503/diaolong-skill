@@ -1,16 +1,15 @@
 ---
-name: narrative-funding
+name: dragoncraft-quest
 description: "[When to use] When you need to turn business models/market opportunities/team backgrounds into a logical, conflict-driven, insightful, and valuable funding story; when you need BP storylines, investor pitches, due diligence Q&A, or funding roadshows"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, funding, storytelling, pitch, business-plan]
+tags: [dragoncraft, dragoncraft-quest, narrative, storytelling]
 ---
 
-# narrative-funding
-
+# DragonCraft Quest
 **Description**: Funding narrative coach. Embedded with the narrative meta-system, it helps you turn business models/market opportunities/team backgrounds into a logical, conflict-driven, insightful, and valuable funding story.
 
 ## 🎯 Features

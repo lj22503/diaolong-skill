@@ -1,16 +1,15 @@
 ---
-name: narrative-controversy
-description: ［何时使用］当需要将争议焦点/立场/证据变成有逻辑、有冲突、有认知、有价值的争议叙事时；当需要立场声明、辩论稿、回应策略、争议管理时
+name: dragoncraft-debate
+description: 雕龙·辩道 | DragonCraft Debate - description: ［何时使用］当需要将争议焦点/立场/证据变成有逻辑、有冲突、有认知、有价值的争议叙事时；当需要立场声明、辩论稿、回应策略、争议管理时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, controversy, debate,立场声明, crisis-management, response-strategy]
+tags: [dragoncraft, dragoncraft-debate, narrative, storytelling]
 ---
 
-# narrative-controversy
-
+# 雕龙·辩道 (DragonCraft Debate)
 **描述**：争议话题叙事教练。内嵌叙事元系统，帮助用户把争议焦点/立场/证据变成有逻辑、有冲突、有认知、有价值的争议叙事。
 
 ## 🎯 功能
@@ -31,7 +30,7 @@ tags: [narrative, controversy, debate,立场声明, crisis-management, response-
 - **⚠️ 强制合规**：争议场景必须承认对立观点的合理性，不得恶意攻击或人身攻击
 
 ### 结构
-起点（争议焦点） → 冲突（双方主张/公众情绪） → 转折（证据入场/立场明确） → 结果（我们的主张） → 认知（争议哲学） → 人物定位（争议人格）
+争议焦点 → 双方主张/公众情绪 → 证据入场/立场明确 → 我们的主张 → 争议哲学
 
 ### 输出
 - 立场声明版（500-800字）

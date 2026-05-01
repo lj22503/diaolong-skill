@@ -1,16 +1,15 @@
 ---
-name: narrative-art
-description: ［何时使用］当需要将作品/创作理念/观众变成有逻辑、有冲突、有认知、有价值的艺术叙事时；当需要艺术家陈述、展览前言、作品解读、艺术评论时
+name: dragoncraft-art
+description: 雕龙·美言 | DragonCraft Art - description: ［何时使用］当需要将作品/创作理念/观众变成有逻辑、有冲突、有认知、有价值的艺术叙事时；当需要艺术家陈述、展览前言、作品解读、艺术评论时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, art, artist-statement, exhibition, artwork-interpretation, art-criticism]
+tags: [dragoncraft, dragoncraft-art, narrative, storytelling]
 ---
 
-# narrative-art
-
+# 雕龙·美言 (DragonCraft Art)
 **描述**：艺术叙事教练。内嵌叙事元系统，帮助用户把作品/创作理念/观众变成有逻辑、有冲突、有认知、有价值的艺术叙事。
 
 ## 🎯 功能
@@ -30,7 +29,7 @@ tags: [narrative, art, artist-statement, exhibition, artwork-interpretation, art
 - **校验失败处理**：字段缺失 → 提示补充；长度不足 → 追问细节；格式错误 → 引导正确格式
 
 ### 结构
-起点（作品呈现） → 冲突（创作动机/理念碰撞） → 转折（观众体验/解读） → 结果（作品影响） → 认知（艺术哲学） → 人物定位（艺术家人格）
+作品呈现 → 创作动机/理念碰撞 → 观众体验/解读 → 作品影响 → 艺术哲学
 
 ### 输出
 - 艺术家陈述版（500-800字）

@@ -1,16 +1,15 @@
 ---
-name: narrative-retrospective
+name: dragoncraft-review
 description: "[When to use] When you need to turn project experiences/failure lessons/success stories into logical, conflict-driven, insightful, and valuable retrospective narratives; when you need retrospective meeting scripts, written retrospective stories, or counterfactual checklists"
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, retrospective, post-mortem, project-review, learning]
+tags: [dragoncraft, dragoncraft-review, narrative, storytelling]
 ---
 
-# narrative-retrospective
-
+# DragonCraft Review
 **Description**: Retrospective narrative coach. Embeds the narrative meta-system to help users turn project experiences/failure lessons/success stories into logical, conflict-driven, insightful, and valuable retrospective narratives.
 
 ## 🎯 Features

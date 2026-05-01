@@ -1,16 +1,15 @@
 ---
-name: narrative-book
-description: ［何时使用］当需要将叙事 Skill 体系写成书籍/公众号文章时；当需要符合燃冰写作特色的内容（对谈体、去AI化、强化信任、引导 GitHub）时；当需要每章输出公众号格式并补充真实案例时
+name: dragoncraft-book
+description: 雕龙·著书 | DragonCraft Book - description: ［何时使用］当需要将叙事 Skill 体系写成书籍/公众号文章时；当需要符合燃冰写作特色的内容（对谈体、去AI化、强化信任、引导 GitHub）时；当需要每章输出公众号格式并补充真实案例时
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 2.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, book, writing, public-account, trust-building, style-guide]
+tags: [dragoncraft, dragoncraft-book, narrative, storytelling]
 ---
 
-# narrative-book
-
+# 雕龙·著书 (DragonCraft Book)
 **描述**：书籍写作教练。内嵌叙事元系统，帮助你将叙事 Skill 体系写成书籍/公众号文章，符合燃冰的写作特色。
 
 ## 🎯 写作风格指令（全局）

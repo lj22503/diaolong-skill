@@ -1,16 +1,15 @@
 ---
-name: narrative-medical
+name: dragoncraft-care
 description: "[When to use] When you need to turn medical conditions/treatment plans/risks and benefits into a logical, conflict-driven, insightful, and valuable medical narrative; when you need informed consent forms, doctor-patient communication scripts, medical education, or patient stories"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, medical, healthcare, informed-consent, patient-story, medical-communication]
+tags: [dragoncraft, dragoncraft-care, narrative, storytelling]
 ---
 
-# narrative-medical
-
+# DragonCraft Care
 **Description**: Medical narrative coach. Embedded with the narrative meta-system, it helps you turn medical conditions/treatment plans/risks and benefits into a logical, conflict-driven, insightful, and valuable medical narrative.
 
 ## 🎯 Features

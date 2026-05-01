@@ -1,16 +1,15 @@
 ---
-name: narrative-meta
+name: dragoncraft-core
 description: "[When to use] When you need to evaluate narrative quality, generate narrative skeletons, detect AI-ness, recommend narrative personas, conduct ethics reviews, perform cross-scenario consistency checks, or retrieve memories"
 author: ant (CEO Assistant)
 created: 2026-04-29
 version: 3.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, meta, storytelling, quality-assessment, ethics, memory]
+tags: [dragoncraft, dragoncraft-core, narrative, storytelling]
 ---
 
-# narrative-meta
-
+# DragonCraft Core
 **Description**: The underlying operating system of narrative. Provides theoretical support, aesthetic judgment, ethical benchmarks, and quality checks for all scene Skills. Does not directly output content, but is called by scene Skills as an "operating system."
 
 ## 🎯 Core Capabilities

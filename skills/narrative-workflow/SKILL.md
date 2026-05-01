@@ -1,16 +1,15 @@
 ---
-name: narrative-workflow
-description: ［何时使用］当需要自动化执行叙事生成全流程时；当需要协调元Skill、场景Skill和互动设计Skill的流水线作业时
+name: dragoncraft-studio
+description: 雕龙·工坊 | DragonCraft Studio - description: ［何时使用］当需要自动化执行叙事生成全流程时；当需要协调元Skill、场景Skill和互动设计Skill的流水线作业时
 author: ant (CEO 助理)
 created: 2026-04-29
-version: 1.3.0
+version: 1.4.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, workflow, automation, pipeline]
+tags: [dragoncraft, dragoncraft-studio, narrative, storytelling]
 ---
 
-# narrative-workflow
-
+# 雕龙·工坊 (DragonCraft Studio)
 **描述**：叙事自动化工作流引擎。负责协调元Skill、场景Skill和互动设计Skill的流水线作业。
 
 ## 🎯 工作流模式
@@ -53,7 +52,7 @@ tags: [narrative, workflow, automation, pipeline]
 
 ## 📋 输入校验规则
 
-- **场景（scene）**：必填，枚举值：个人IP/品牌/产品/融资/销售/组织变革/公益/法律/医疗/社交媒体/创意产品/生活方式/科技/争议话题/艺术/心理/可持续
+- **场景（scene）**：必填，枚举值：个人IP/品牌/产品/融资/销售/组织变革/公益/法律/医疗/社交媒体/创意产品/生活方式/科技/争议话题/艺术/心理/可持续/教育/复盘/危机公关/个人品牌/产品发布/书籍写作
 - **模式（mode）**：必填，枚举值：A/B/C/D，默认A
 - **人格（persona）**：可选，枚举值：ENFJ/ENFP/INFJ/INFP/不填则自动推荐
 - **素材（material）**：必填，JSON对象，至少包含2个字段
@@ -206,6 +205,19 @@ AI输出：
 - 状态: 成功
 ```
 
+## 🔧 故障排查
+
+| 问题 | 检查项 | 解决方案 |
+|------|--------|---------|
+| 场景不合法 | 枚举值 | 提示可选值：个人IP/品牌/产品/融资/销售/组织变革/公益/法律/医疗/社交媒体/创意产品/生活方式/科技/争议话题/艺术/心理/可持续 |
+| 模式不合法 | 枚举值 | 提示可选值：A/B/C/D |
+| 素材为空 | 必填字段 | 拒绝执行，引导用户补充 |
+| 素材字段不足 | 长度限制 | 每个字段 20-500 字，超出范围截断并警告 |
+| stage1 执行失败 | skill 路径 | 检查 skill 是否存在，路径是否正确 |
+| stage2 评分偏低 | 初稿质量 | 标记迭代，最多3轮，仍低于7分则建议人工介入 |
+| stage3 碎片为空 | 叙事文本 | 检查叙事文本长度，至少需要500字 |
+| 记忆写入失败 | 权限问题 | 检查 memory 目录权限，确保可写 |
+
 ## 📋 质量检查清单
 
 - [ ] 阶段0记忆检索完成？
@@ -221,4 +233,4 @@ AI输出：
 
 ---
 
-*版本：1.1.0 | 最后更新：2026-04-30*
+*版本：1.4.0 | 最后更新：2026-04-30*

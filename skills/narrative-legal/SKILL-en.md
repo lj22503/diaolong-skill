@@ -1,16 +1,15 @@
 ---
-name: narrative-legal
+name: dragoncraft-reason
 description: "[When to use] When you need to turn case facts/dispute focus/legal basis into a logical, conflict-driven, insightful, and valuable legal narrative; when you need representation statements, defense arguments, fact statements, or legal opinions"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, legal, courtroom, litigation, defense, legal-opinion]
+tags: [dragoncraft, dragoncraft-reason, narrative, storytelling]
 ---
 
-# narrative-legal
-
+# DragonCraft Reason
 **Description**: Legal narrative coach. Embedded with the narrative meta-system, it helps you turn case facts/dispute focus/legal basis into a logical, conflict-driven, insightful, and valuable legal narrative.
 
 ## 🎯 Features

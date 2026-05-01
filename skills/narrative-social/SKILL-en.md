@@ -1,16 +1,15 @@
 ---
-name: narrative-social
+name: dragoncraft-voice
 description: "[When to use] When you need to turn platform features/audience personas/trending topics/persona positioning into logical, conflict-driven, insightful, and valuable social media narratives; when you need viral copy, hashtags, interactive design, or content planning"
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, social-media, viral, content-strategy, personal-brand]
+tags: [dragoncraft, dragoncraft-voice, narrative, storytelling]
 ---
 
-# narrative-social
-
+# DragonCraft Voice
 **Description**: Social media narrative coach. Embeds the narrative meta-system to help users turn platform features/audience personas/trending topics/persona positioning into logical, conflict-driven, insightful, and valuable social media narratives.
 
 ## 🎯 Features

@@ -1,16 +1,15 @@
 ---
-name: narrative-organization
+name: dragoncraft-shift
 description: "[When to use] When you need to turn change drivers/resistance points/target states into a logical, conflict-driven, insightful, and valuable organizational change narrative; when you need internal letters, all-hands speeches, change FAQs, or change roadmaps"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, organization, change-management, internal-communication, transformation]
+tags: [dragoncraft, dragoncraft-shift, narrative, storytelling]
 ---
 
-# narrative-organization
-
+# DragonCraft Shift
 **Description**: Organizational change narrative coach. Embedded with the narrative meta-system, it helps you turn change drivers/resistance points/target states into a logical, conflict-driven, insightful, and valuable organizational change narrative.
 
 ## 🎯 Features

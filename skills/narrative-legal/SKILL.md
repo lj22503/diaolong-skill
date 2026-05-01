@@ -1,16 +1,15 @@
 ---
-name: narrative-legal
-description: ［何时使用］当需要将案件事实/争议焦点/法律依据变成有逻辑、有冲突、有认知、有价值的法律叙事时；当需要代理词、辩护词、事实陈述、法律意见书时
+name: dragoncraft-reason
+description: 雕龙·明理 | DragonCraft Reason - description: ［何时使用］当需要将案件事实/争议焦点/法律依据变成有逻辑、有冲突、有认知、有价值的法律叙事时；当需要代理词、辩护词、事实陈述、法律意见书时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, legal, courtroom, litigation, defense, legal-opinion]
+tags: [dragoncraft, dragoncraft-reason, narrative, storytelling]
 ---
 
-# narrative-legal
-
+# 雕龙·明理 (DragonCraft Reason)
 **描述**：法律叙事教练。内嵌叙事元系统，帮助用户把案件事实/争议焦点/法律依据变成有逻辑、有冲突、有认知、有价值的法律叙事。
 
 ## 🎯 功能
@@ -31,12 +30,12 @@ tags: [narrative, legal, courtroom, litigation, defense, legal-opinion]
 - **⚠️ 强制合规**：法律庭审场景强制全面披露，不得省略与核心决策有直接因果关系的信息
 
 ### 结构
-起点（案件事实） → 冲突（争议焦点/双方主张） → 转折（法律依据/关键证据） → 结果（我们的主张） → 认知（法理逻辑） → 人物定位（当事人/代理人人格）
+场景重建（发生了什么） → 动机与机会（为什么是他） → 关键节点（证据对应情节） → 排除合理怀疑（反驳对方故事） → 呼吁正义
 
 ### 输出
-- 代理词/辩护词版（1000-1500字）
-- 事实陈述版（500-800字）
-- 法律意见书版（Q&A 模板）
+- 开庭陈述故事版（5分钟）
+- 结案陈词叙事版
+- 证据链叙事映射表（证据→故事节点）
 
 ## 🔗 依赖关系
 

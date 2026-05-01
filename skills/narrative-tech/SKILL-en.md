@@ -1,16 +1,15 @@
 ---
-name: narrative-tech
+name: dragoncraft-geek
 description: "[When to use] When you need to turn tech barriers/market opportunities/team backgrounds into logical, conflict-driven, insightful, and valuable tech narratives; when you need tech stories, investor pitches, competitor analysis, or technical whitepapers"
 author: ant (CEO 助理)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, tech, technology, startup, technical-story, investor-pitch]
+tags: [dragoncraft, dragoncraft-geek, narrative, storytelling]
 ---
 
-# narrative-tech
-
+# DragonCraft Geek
 **Description**: Tech narrative coach. Embeds the narrative meta-system to help users turn tech barriers/market opportunities/team backgrounds into logical, conflict-driven, insightful, and valuable tech narratives.
 
 ## 🎯 Features

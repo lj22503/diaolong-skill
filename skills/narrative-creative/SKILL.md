@@ -1,16 +1,15 @@
 ---
-name: narrative-creative
-description: ［何时使用］当需要将创意概念/目标用户/差异化变成有逻辑、有冲突、有认知、有价值的创意产品叙事时；当需要创意说明、用户故事、视觉脚本、创意简报时
+name: dragoncraft-dream
+description: 雕龙·奇想 | DragonCraft Dream - description: ［何时使用］当需要将创意概念/目标用户/差异化变成有逻辑、有冲突、有认知、有价值的创意产品叙事时；当需要创意说明、用户故事、视觉脚本、创意简报时
 author: ant (CEO 助理)
 created: 2026-04-30
-version: 1.0.0
+version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, creative, product-design, user-story, visual-script, creative-brief]
+tags: [dragoncraft, dragoncraft-dream, narrative, storytelling]
 ---
 
-# narrative-creative
-
+# 雕龙·奇想 (DragonCraft Dream)
 **描述**：创意产品叙事教练。内嵌叙事元系统，帮助用户把创意概念/目标用户/差异化变成有逻辑、有冲突、有认知、有价值的创意产品叙事。
 
 ## 🎯 功能
@@ -30,7 +29,7 @@ tags: [narrative, creative, product-design, user-story, visual-script, creative-
 - **校验失败处理**：字段缺失 → 提示补充；长度不足 → 追问细节；格式错误 → 引导正确格式
 
 ### 结构
-起点（创意概念） → 冲突（用户需求/市场空白） → 转折（差异化入场） → 结果（用户体验/改变） → 认知（创意哲学） → 人物定位（创意人格）
+创意概念 → 用户需求/市场空白 → 差异化入场 → 用户体验/改变 → 创意哲学
 
 ### 输出
 - 创意说明版（500-800字）

@@ -1,16 +1,15 @@
 ---
-name: narrative-product-launch
+name: dragoncraft-launch
 description: "[When to use] When you need to turn product selling points/launch rhythm/target users into a logical, conflict-driven, insightful, and valuable product launch teaser narrative; when you need fragment maps, epiphany point design, exploration guides, reward mechanisms, or execution schedules"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.1.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, product-launch, teaser, interactive-narrative, puzzle]
+tags: [dragoncraft, dragoncraft-launch, narrative, storytelling]
 ---
 
-# narrative-product-launch
-
+# DragonCraft Launch
 **Description**: Product launch teaser narrative coach. Embedded with the narrative meta-system, it helps you turn product selling points/launch rhythm/target users into a logical, conflict-driven, insightful, and valuable product launch teaser narrative.
 
 ## 🎯 Features

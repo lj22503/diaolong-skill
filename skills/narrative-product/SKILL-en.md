@@ -1,16 +1,15 @@
 ---
-name: narrative-product
+name: dragoncraft-create
 description: "[When to use] When you need to turn product positioning/user pain points/solutions into a logical, conflict-driven, insightful, and valuable product story; when you need product launch copy, user stories, competitive comparisons, or product manuals"
 author: ant (CEO Assistant)
 created: 2026-04-30
 version: 1.0.0
 skill_type: 通用🟡
 allowed-tools: [Bash, Read, Write, Exec]
-tags: [narrative, product, storytelling, product-launch, user-story]
+tags: [dragoncraft, dragoncraft-create, narrative, storytelling]
 ---
 
-# narrative-product
-
+# DragonCraft Create
 **Description**: Product narrative coach. Embedded with the narrative meta-system, it helps you turn product positioning/user pain points/solutions into a logical, conflict-driven, insightful, and valuable product story.
 
 ## 🎯 Features
