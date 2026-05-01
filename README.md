@@ -187,6 +187,42 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ---
 
+## 📖 Book Chapters
+
+This repo also contains the full book *《叙事引擎：AI时代的内容操作系统》* (Narrative Engine: Content Operating System in the AI Era) by 燃冰.
+
+### Part 3 — AI Era Narrative Skills (最新章节)
+
+**公众号版** (short, CTA at end):
+
+| Chapter | Title | Words | Status |
+|---------|-------|-------|--------|
+| C15 | 元Skill | 5,898 | ✅ |
+| C16 | 叙事记忆库 | 3,593 | ✅ |
+| C17 | 去AI化 | 3,404 | ✅ |
+| C18 | 人机协作工作流 | 3,361 | ✅ |
+| C19 | 个人IP | 3,452 | ✅ |
+| C20 | 开源项目叙事 | 3,061 | ✅ |
+| C21 | 叙事技能的持续进化 | 3,420 | ✅ |
+| C22 | 叙事领导力 | 3,108 | ✅ |
+
+**书籍版** (≥10,000字, full content):
+
+| Chapter | Title | Words | Status |
+|---------|-------|-------|--------|
+| C15 | 元Skill | 10,119 | ✅ |
+| C16 | 叙事记忆库 | 11,583 | ✅ |
+| C17 | 去AI化 | 11,606 | ✅ |
+| C18 | 人机协作工作流 | 10,109 | ✅ |
+| C19 | 个人IP | 10,152 | ✅ |
+| C20 | 开源项目叙事 | 10,377 | ✅ |
+| C21 | 叙事技能的持续进化 | 10,202 | ✅ |
+| C22 | 叙事领导力 | 10,230 | ✅ |
+
+所有章节均通过禁用词合规检查（17词清单：赋能/抓手/闭环/对齐/底层逻辑/在当今时代/值得注意的是/总而言之/换句话说说/也就是说/简而言之/这意味着/因此/所以/从而/于是/进而/因为）
+
+---
+
 ## 📚 Related Resources
 
 - **Book**: *Narrative Engine: Content Operating System in the AI Era* (燃冰)
