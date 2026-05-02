@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://lj22503.github.io/diaolong-skill',
-  base: '/diaolong-skill',
+  site: 'https://ljj22503.github.io/diaolong-skill',
+  base: '/',
   output: 'static',
   build: {
     assets: '_assets',
