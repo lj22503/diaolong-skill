@@ -10,57 +10,65 @@ import Base from '../layouts/Base.astro';
 
   <div class="page-content">
 
-    <!-- 知识星球入口 -->
-    <div class="zsxq-banner">
-      <div class="zsxq-banner-inner">
-        <div class="zsxq-banner-text">
-          <div class="zsxq-eyebrow">知识星球</div>
-          <h2>雕龙叙事实验室</h2>
-          <p>正在和朋友们讨论有趣的话题，一起来吧？</p>
+    <!-- GitHub — 放在最上 -->
+    <section class="section">
+      <h2 class="section-title">GitHub 开源协作</h2>
+      <div class="github-hero">
+        <div class="github-hero-inner">
+          <div class="github-stats">
+            <div class="stat-item">
+              <span class="stat-num">26</span>
+              <span class="stat-label">场景Skill</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">22</span>
+              <span class="stat-label">书籍章节</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">MIT</span>
+              <span class="stat-label">开源协议</span>
+            </div>
+          </div>
+          <p class="github-desc">
+            Fork仓库，提交案例，贡献Skill，参与国际社区讨论。<br/>
+            所有内容基于MIT协议，任何人都可以自由使用和改进。
+          </p>
+          <div class="github-actions">
+            <a href="https://github.com/lj22503/diaolong-skill" target="_blank" class="cta">访问 GitHub →</a>
+            <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=case-study" target="_blank" class="cta-outline">提交案例 →</a>
+          </div>
         </div>
-        <a href="https://t.zsxq.com/CLU1d" target="_blank" class="zsxq-cta">加入星球 →</a>
       </div>
-    </div>
 
-    <div class="card-grid" style="margin-top: 40px;">
-      <div class="card">
-        <span class="card-tag">GitHub</span>
-        <h3>开源协作</h3>
-        <p>Fork仓库，提交案例，贡献Skill，参与国际社区讨论。</p>
-        <a href="https://github.com/lj22503/diaolong-skill" target="_blank">访问 GitHub →</a>
+      <div class="card-grid" style="margin-top: 24px;">
+        <div class="card">
+          <span class="card-tag">Bug</span>
+          <h3>报告问题</h3>
+          <p>发现Skill或书籍内容的问题？提交Bug，我们会尽快修复。</p>
+          <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=bug" target="_blank">报告 Bug →</a>
+        </div>
+        <div class="card">
+          <span class="card-tag">功能</span>
+          <h3>建议新功能</h3>
+          <p>有新的场景Skill想法？想扩展某个现有Skill的功能？</p>
+          <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=enhancement" target="_blank">提出建议 →</a>
+        </div>
+        <div class="card">
+          <span class="card-tag">翻译</span>
+          <h3>参与翻译</h3>
+          <p>将Skill翻译为其他语言，让叙事方法论触达更多人。</p>
+          <a href="https://github.com/lj22503/diaolong-skill/discussions" target="_blank">参与翻译 →</a>
+        </div>
+        <div class="card">
+          <span class="card-tag">CI</span>
+          <h3>自动合规扫描</h3>
+          <p>每次PR自动触发禁用词检查，确保内容质量。</p>
+          <a href="https://github.com/lj22503/diaolong-skill/actions" target="_blank">查看 CI →</a>
+        </div>
       </div>
-      <div class="card">
-        <span class="card-tag">案例</span>
-        <h3>提交案例</h3>
-        <p>分享你的真实叙事故事。案例将经过审核后在案例库展示。</p>
-        <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=case-study&template=case_study.yml" target="_blank">提交案例 →</a>
-      </div>
-      <div class="card">
-        <span class="card-tag">Bug</span>
-        <h3>报告问题</h3>
-        <p>发现Skill或书籍内容的问题？提交Bug，我们会尽快修复。</p>
-        <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=bug&template=bug_report.yml" target="_blank">报告 Bug →</a>
-      </div>
-      <div class="card">
-        <span class="card-tag">功能</span>
-        <h3>建议新功能</h3>
-        <p>有新的场景Skill想法？想扩展某个现有Skill的功能？</p>
-        <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=enhancement&template=feature_request.yml" target="_blank">提出建议 →</a>
-      </div>
-      <div class="card">
-        <span class="card-tag">翻译</span>
-        <h3>参与翻译</h3>
-        <p>将Skill翻译为其他语言，让叙事方法论触达更多人。</p>
-        <a href="https://github.com/lj22503/diaolong-skill/discussions" target="_blank">参与翻译 →</a>
-      </div>
-      <div class="card">
-        <span class="card-tag">CI</span>
-        <h3>自动合规扫描</h3>
-        <p>每次PR自动触发禁用词检查，确保内容质量。</p>
-        <a href="https://github.com/lj22503/diaolong-skill/actions" target="_blank">查看 CI →</a>
-      </div>
-    </div>
+    </section>
 
+    <!-- 贡献规范 -->
     <section class="section" style="margin-top: 48px;">
       <h2 class="section-title">贡献规范</h2>
       <div class="card-grid">
@@ -78,18 +86,95 @@ import Base from '../layouts/Base.astro';
         </div>
       </div>
     </section>
+
+    <!-- 知识星球 — 移到底部 -->
+    <section class="section" style="margin-top: 48px;">
+      <h2 class="section-title">知识星球</h2>
+      <div class="zsxq-banner">
+        <div class="zsxq-banner-inner">
+          <div class="zsxq-banner-text">
+            <div class="zsxq-eyebrow">知识星球</div>
+            <h2>雕龙叙事实验室</h2>
+            <p>正在和朋友们讨论有趣的话题，一起来吧？</p>
+          </div>
+          <a href="https://t.zsxq.com/CLU1d" target="_blank" class="zsxq-cta">加入星球 →</a>
+        </div>
+      </div>
+    </section>
+
   </div>
 </Base>
 
 <style>
-  .card a { font-size: 0.82rem; color: var(--accent); margin-top: 10px; display: inline-block; }
+  .github-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 12px;
+    padding: 36px 40px;
+  }
+  .github-hero-inner {}
+  .github-stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .github-desc {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .github-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .github-actions .cta {
+    display: inline-block;
+    background: white;
+    color: #1a1a1a;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .github-actions .cta:hover { background: #f0f0f0; }
+  .github-actions .cta-outline {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: border-color 0.2s;
+  }
+  .github-actions .cta-outline:hover { border-color: rgba(255,255,255,0.7); }
 
-  /* 知识星球 Banner */
   .zsxq-banner {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     border-radius: 12px;
     padding: 32px 36px;
-    margin-bottom: 8px;
   }
   .zsxq-banner-inner {
     display: flex;
@@ -98,10 +183,7 @@ import Base from '../layouts/Base.astro';
     gap: 24px;
     flex-wrap: wrap;
   }
-  .zsxq-banner-text {
-    flex: 1;
-    min-width: 200px;
-  }
+  .zsxq-banner-text { flex: 1; min-width: 200px; }
   .zsxq-eyebrow {
     font-size: 0.75rem;
     letter-spacing: 0.1em;
@@ -132,8 +214,6 @@ import Base from '../layouts/Base.astro';
     white-space: nowrap;
     transition: background 0.2s;
   }
-  .zsxq-cta:hover {
-    background: #e0c07a;
-    color: #1a1a1a;
-  }
+  .zsxq-cta:hover { background: #e0c07a; color: #1a1a1a; }
+  .card a { font-size: 0.82rem; color: var(--accent); margin-top: 10px; display: inline-block; }
 </style>
