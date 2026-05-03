@@ -1,0 +1,101 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Community — DragonCraft" locale="en">
+  <div class="page-header">
+    <h1>Open Source Community</h1>
+    <p>Your cases, your Skills, your translations — helping more people</p>
+  </div>
+
+  <div class="page-content">
+    <div class="community-grid">
+
+      <div class="comm-card comm-github">
+        <div class="comm-icon">⭐</div>
+        <h3>GitHub Collaboration</h3>
+        <p>Contribute your narrative cases, Skills, and translations. All content is MIT licensed — freely usable by anyone.</p>
+        <div class="comm-stats">
+          <span>26 Skills</span>
+          <span>22 Chapters</span>
+          <span>MIT License</span>
+        </div>
+        <a href="https://github.com/lj22503/diaolong-skill" target="_blank" class="cta">Visit GitHub →</a>
+      </div>
+
+      <div class="comm-card">
+        <h3>Submit a Case Study</h3>
+        <p>Your real narrative story can help others learn the skill. Share your experience — before and after refinement.</p>
+        <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=case-study&template=case_study.yml" target="_blank">Submit Case →</a>
+      </div>
+
+      <div class="comm-card">
+        <h3>Contribute a Skill</h3>
+        <p>Have a narrative approach for a specific scenario? Build a Skill with SKILL.md format and submit a PR.</p>
+        <a href="https://github.com/lj22503/diaolong-skill/tree/main/skills" target="_blank">View Skill Format →</a>
+      </div>
+
+      <div class="comm-card">
+        <h3>Translate to English</h3>
+        <p>Help make DragonCraft accessible to more people. Translate chapters or Skills into other languages.</p>
+        <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=translation" target="_blank">Join Translation →</a>
+      </div>
+
+    </div>
+
+    <div class="principle-section">
+      <h3>Core Principle</h3>
+      <p><strong>Content from contributors always belongs to contributors.</strong> The CLA协议 (Contributor License Agreement) protects your rights while allowing the community to benefit from your work.</p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  .comm-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    background: white;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .comm-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+  .comm-github {
+    background: var(--text);
+    border-color: var(--text);
+    color: white;
+  }
+  .comm-github p { color: rgba(255,255,255,0.7); }
+  .comm-github .cta { background: white; color: var(--text); }
+  .comm-github .cta:hover { background: #f0f0f0; }
+  .comm-icon { font-size: 2rem; margin-bottom: 12px; }
+  .comm-github h3 { color: white; }
+  .comm-stats {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .comm-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; }
+  .comm-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px; }
+  .comm-card a { font-size: 0.85rem; color: var(--accent); font-weight: 500; }
+  .comm-card a:hover { color: var(--accent-hover); }
+  .comm-github a { color: var(--text); }
+  .principle-section {
+    background: rgba(192,57,43,0.04);
+    border: 1px solid rgba(192,57,43,0.12);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+  }
+  .principle-section h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--accent); }
+  .principle-section p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+</style>
