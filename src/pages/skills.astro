@@ -2,61 +2,164 @@
 import Base from '../layouts/Base.astro';
 
 const skills = [
-  { id: 'personal-ip', name: '个人IP', desc: '从经历到个人IP叙事', category: '个人' },
-  { id: 'brand', name: '品牌叙事', desc: '品牌故事与文化构建', category: '商业' },
-  { id: 'product', name: '产品发布', desc: '产品上市的叙事节奏', category: '商业' },
-  { id: 'funding', name: '创业融资', desc: 'BP故事线与Pitch', category: '商业' },
-  { id: 'sales', name: '销售说服', desc: '客户案例与说服脚本', category: '商业' },
-  { id: 'organization', name: '组织变革', desc: '内部沟通与变革叙事', category: '商业' },
-  { id: 'charity', name: '公益筹款', desc: '公益项目与筹款叙事', category: '公益' },
-  { id: 'education', name: '教育市场', desc: '课程推广与教育叙事', category: '公益' },
-  { id: 'crisis', name: '危机公关', desc: '危机声明与舆情应对', category: '公益' },
-  { id: 'legal', name: '法律沟通', desc: '法律意见书与声明', category: '公益' },
-  { id: 'medical', name: '医疗沟通', desc: '患者沟通与医疗叙事', category: '公益' },
-  { id: 'social', name: '社交媒体', desc: '社交内容与传播叙事', category: '个人' },
-  { id: 'creative', name: '创意产品', desc: '创意叙事与用户故事', category: '个人' },
-  { id: 'lifestyle', name: '生活方式', desc: '生活理念与内容计划', category: '个人' },
-  { id: 'tech', name: '科技叙事', desc: '技术故事与产品叙事', category: '商业' },
-  { id: 'controversy', name: '争议叙事', desc: '立场声明与论战叙事', category: '商业' },
-  { id: 'art', name: '艺术叙事', desc: '艺术家声明与展览叙事', category: '个人' },
-  { id: 'psychology', name: '心理叙事', desc: '疗愈故事与心理支持', category: '个人' },
-  { id: 'sustainable', name: '可持续发展', desc: '可持续叙事与报告', category: '商业' },
-  { id: 'retrospective', name: '个人复盘', desc: '经历复盘与成长叙事', category: '个人' },
+  // 个人
+  { id: 'personal-ip', name: '个人IP', desc: '把经历变成让人共鸣的故事', scene: '个人品牌、简历、社交媒体自我介绍', prompt: '"我曾经___，那时候我以为___，后来发现___"', category: '个人' },
+  { id: 'social', name: '社交媒体', desc: '3秒钩子+45秒展开+金句收尾', scene: '公众号、小红书、短视频脚本', prompt: '"你有没有这种感觉——"', category: '个人' },
+  { id: 'creative', name: '创意产品', desc: '用用户故事代替产品参数', scene: '新品发布、独立开发者、创意市集', prompt: '"这个产品源于一个___的瞬间"', category: '个人' },
+  { id: 'art', name: '艺术叙事', desc: '艺术家声明与展览叙事', scene: '画展、艺术策展、创作自述', prompt: '"我做这件作品，是因为无法再说服自己___"', category: '个人' },
+  { id: 'psychology', name: '心理叙事', desc: '把痛苦经历变成疗愈故事', scene: '心理咨询、疗愈社群、互助团体', prompt: '"我花了___年才承认___"', category: '个人' },
+  { id: 'retrospective', name: '个人复盘', desc: '用叙事结构复盘经历', scene: '年终总结、项目回顾、成长记录', prompt: '"当时我以为___，现在回头看___"', category: '个人' },
+  { id: 'lifestyle', name: '生活方式', desc: '用故事定义你想要的生活', scene: 'Vlog、播客、 lifestyle 博主', prompt: '"每天早上___，是我最___的时刻"', category: '个人' },
+  // 商业
+  { id: 'brand', name: '品牌叙事', desc: '让用户主动认同"你是谁"', scene: '品牌官网、品牌发布会、品牌手册', prompt: '"我们不是___，我们是___"', category: '商业' },
+  { id: 'product', name: '产品发布', desc: '让观众看完就想下单', scene: '产品发布会、众筹页面、产品介绍视频', prompt: '"用了___之后，你___了"', category: '商业' },
+  { id: 'funding', name: '创业融资', desc: '让投资人相信"非你不可"', scene: 'BP、Roadshow、Pitch Deck', prompt: '"我们发现一个反常识的事实：___"', category: '商业' },
+  { id: 'sales', name: '销售说服', desc: '用故事代替产品参数表', scene: '销售话术、客户拜访、方案呈现', prompt: '"想象你___的那一刻——"', category: '商业' },
+  { id: 'organization', name: '组织变革', desc: '让员工主动拥抱新战略', scene: '全员信、战略宣贯、内部沟通', prompt: '"我们不是要___，而是要一起___"', category: '商业' },
+  { id: 'tech', name: '科技叙事', desc: '让技术故事有情感温度', scene: '技术博客、产品文档、科技发布会', prompt: '"大多数人对___的误解是___，其实___"', category: '商业' },
+  { id: 'controversy', name: '争议叙事', desc: '立场声明与论战叙事', scene: '公开声明、回应质疑、品牌危机', prompt: '"你们说得对，但你们没有看到___"', category: '商业' },
+  { id: 'sustainable', name: '可持续发展', desc: 'ESG报告中的叙事逻辑', scene: 'ESG报告、可持续发展战略、社会责任', prompt: '"我们放弃了一个___的决定，因为___"', category: '商业' },
+  // 公益
+  { id: 'charity', name: '公益筹款', desc: '让捐赠者觉得"这件事跟我有关"', scene: '公益众筹、捐赠页面、NGO传播', prompt: '"你的___，能让___的人___"', category: '公益' },
+  { id: 'education', name: '教育开场', desc: '3分钟拉入学习状态', scene: '课程开场、培训导入、演讲破冰', prompt: '"你知道吗，___其实是一个___"', category: '公益' },
+  { id: 'crisis', name: '危机公关', desc: '4A模型把"事故"变成"故事"', scene: '危机声明、舆情应对、品牌修复', prompt: '"我们承认___，原因是___，接下来我们会___"', category: '公益' },
+  { id: 'legal', name: '法律沟通', desc: '法律意见书的叙事结构', scene: '法律声明、调解沟通、诉讼叙事', prompt: '"事件的完整经过是___，核心争议在于___"', category: '公益' },
+  { id: 'medical', name: '医疗沟通', desc: '让患者理解并信任治疗方案', scene: '患者教育、术前沟通、健康科普', prompt: '"你可以这样理解你的身体：___"', category: '公益' },
+  // 元叙事
+  { id: 'meta-skill', name: '元Skill', desc: '把叙事方法变成AI可执行指令', scene: '训练AI助手、构建叙事工作流、Skill开发', prompt: '"你的角色是___，用户说___时，你___"', category: '元叙事' },
+  { id: 'de-ai', name: '去AI化', desc: '让AI辅助的叙事依然有"人味"', scene: 'AI写作初稿润色、人机协作、人机混合内容', prompt: '"这一段听起来像AI写的，因为___，应该改成___"', category: '元叙事' },
+  { id: 'memory', name: '叙事记忆库', desc: '构建你的叙事资产库', scene: '个人知识管理、内容资产积累、灵感管理', prompt: '"我经历的一个关键转折是___，核心感悟是___"', category: '元叙事' },
+  // 叙事工作流
+  { id: 'workflow', name: '人机协作', desc: 'idea到发布的完整工作流', scene: '内容创作全流程、AI写作流水线、内容团队协作', prompt: '"idea → AI初稿 → 人工提炼 → 发布"：每一步的核心原则是___', category: '叙事工作流' },
+  { id: 'open-source', name: '开源叙事', desc: '让代码讲出自己的故事', scene: 'GitHub README、项目介绍、技术文档', prompt: '"这个项目解决了一个___问题，大多数人不知道的是___"', category: '叙事工作流' },
+  { id: 'evolution', name: '叙事进化', desc: '持续迭代你的叙事能力', scene: '能力提升路径、刻意练习方法论、长期成长', prompt: '"我以前的叙事方式是___，现在我意识到___"', category: '叙事工作流' },
 ];
+
+const categories = ['个人', '商业', '公益', '元叙事', '叙事工作流'];
+const categoryLabels = {
+  '个人': 'Personal',
+  '商业': 'Business',
+  '公益': 'Public Interest',
+  '元叙事': 'Meta-Narrative',
+  '叙事工作流': 'Narrative Workflow',
+};
 ---
 
 <Base title="Skill工具箱 — 雕龙 DragonCraft" locale="zh">
   <div class="page-header">
     <h1>Skill工具箱</h1>
-    <p>26个场景覆盖 · 个人IP、品牌、危机、销售、公益全场景</p>
+    <p>26个场景Skill · 个人 / 商业 / 公益 / 元叙事 / 叙事工作流</p>
   </div>
 
   <div class="page-content">
-    <section class="section">
-      <div class="card-grid">
-        {skills.map(skill => (
-          <div class="card">
-            <span class="card-tag">{skill.category}</span>
-            <h3>{skill.name}</h3>
-            <p>{skill.desc}</p>
-            <a href={`https://github.com/lj22503/diaolong-skill/tree/main/skills/narrative-${skill.id}`} target="_blank">
-              查看Skill →
-            </a>
-          </div>
-        ))}
-      </div>
-    </section>
+    {categories.map(cat => (
+      <section class="section">
+        <h2 class="section-title">
+          {cat}
+          <span class="section-sub">{categoryLabels[cat]}</span>
+        </h2>
+        <div class="card-grid">
+          {skills.filter(s => s.category === cat).map(skill => (
+            <div class="skill-card">
+              <div class="skill-header">
+                <span class="skill-cat-tag">{skill.category}</span>
+                <span class="skill-name">{skill.name}</span>
+              </div>
+              <p class="skill-desc">{skill.desc}</p>
+              <div class="skill-detail">
+                <div class="skill-detail-label">使用场景</div>
+                <div class="skill-detail-value">{skill.scene}</div>
+              </div>
+              <div class="skill-detail">
+                <div class="skill-detail-label">核心 Prompt</div>
+                <div class="skill-detail-value skill-prompt">"{skill.prompt}"</div>
+              </div>
+              <a href={`https://github.com/lj22503/diaolong-skill/tree/main/skills/narrative-${skill.id}`} target="_blank" class="skill-link">
+                查看完整Skill →
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
 
     <section class="section note">
-      <p>
-        💡 每个Skill包含完整的SKILL.md文件，可直接被AI助手调用。<br/>
-        在AI对话中描述你的场景，即可自动路由到对应Skill。
-      </p>
+      <p>💡 每个Skill包含完整的SKILL.md文件，可直接被AI助手调用。<br/>在AI对话中描述你的场景，即可自动路由到对应Skill。</p>
     </section>
   </div>
 </Base>
 
 <style>
+  .section-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 8px;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .skill-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .skill-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .skill-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .skill-cat-tag {
+    font-size: 0.65rem;
+    color: var(--accent);
+    background: rgba(192,57,43,0.08);
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+  .skill-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .skill-desc {
+    color: var(--text);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .skill-detail {
+    display: flex;
+    gap: 10px;
+    font-size: 0.8rem;
+  }
+  .skill-detail-label {
+    color: var(--text-muted);
+    white-space: nowrap;
+    min-width: 60px;
+  }
+  .skill-detail-value {
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .skill-prompt {
+    font-style: italic;
+    color: var(--text-muted);
+  }
+  .skill-link {
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: 4px;
+  }
   .note {
     background: rgba(192,57,43,0.05);
     border: 1px solid rgba(192,57,43,0.15);
@@ -65,5 +168,4 @@ const skills = [
     font-size: 0.9rem;
     color: var(--text-muted);
   }
-  .card a { font-size: 0.82rem; color: var(--accent); margin-top: 10px; display: inline-block; }
 </style>
