@@ -25,7 +25,9 @@ import Base from '../layouts/Base.astro';
   <section class="claim">
     <div class="claim-inner">
       <blockquote>
-        "Many people can do great work.<br/>Few can tell great stories.<br/>Those who can do both are almost unstoppable."
+        "Many people can do great work.<br/>
+        Few can tell great stories.<br/>
+        Those who can do both are almost unstoppable."
       </blockquote>
       <p class="claim-zh">
         叙事不是修辞技巧，叙事是认知基础设施。<br/>
@@ -34,13 +36,13 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- Content pillars -->
+  <!-- Content pillars — 2x2 grid -->
   <section class="pillars">
     <div class="pillars-inner">
       <div class="pillar-card">
         <div class="pillar-icon">📖</div>
         <h3>书籍</h3>
-        <p>《叙事引擎：AI时代的内容操作系统》<br/>22章完整方法论，公众号版+书籍完整版</p>
+        <p>《叙事引擎：AI时代的内容操作系统》<br/>22章完整方法论</p>
         <a href="/book">开始阅读 →</a>
       </div>
       <div class="pillar-card">
@@ -143,7 +145,7 @@ import Base from '../layouts/Base.astro';
     margin: 0 auto;
     padding: 64px 24px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
   .pillar-card {
@@ -182,4 +184,8 @@ import Base from '../layouts/Base.astro';
   }
   .github-cta .cta { background: white; color: var(--text); }
   .github-cta .cta:hover { background: #f0f0f0; }
+
+  @media (max-width: 640px) {
+    .pillars-inner { grid-template-columns: 1fr; }
+  }
 </style>
