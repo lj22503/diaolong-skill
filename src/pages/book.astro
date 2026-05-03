@@ -2,94 +2,94 @@
 import Base from '../layouts/Base.astro';
 
 const chapters = [
-  // Part 1
-  { id: 'intro',  num: '引子', title: '叙事平权', part: 1, group: 'A',
+  // ── Part 1: 方法论基础 ──
+  { id: 'intro',  num: '引子', title: '叙事平权', part: 1,
     desc: '好叙事不是天赋，是每个人都能学会的底层能力。AI时代，这个能力比任何时候都更重要——也更容易被更多人掌握。',
     content: '2015年，我作为一个经济学毕业生，误打误撞进了基金行业做产品经理。\n\n那时候我觉得，只要产品做得好，就够了。\n\n结果发现，基金行业最不缺的就是"产品做得好"的人。而最缺的，是能把产品讲清楚、让客户信任、让渠道愿意推的人。\n\n这就是叙事的价值。\n\n叙事不是修辞技巧。叙事是把事实变成信任、把信息变成行动的底层能力。\n\n过去，这个能力被少数"有天赋的人"垄断。\n\nAI时代，这个垄断正在被打破——任何一个普通人，只要有方法，都能学会讲好自己的故事。\n\n这就是"叙事平权"。' },
 
-  { id: 'c01',  num: 'C01', title: '叙事本能：为什么人类生来就是讲故事的人', part: 1, group: 'A',
+  { id: 'c01',  num: 'C01', title: '叙事本能：为什么人类生来就是讲故事的人', part: 1,
     desc: '刷到一个视频，你划过去了。但听到一个故事，你会停下来，想听完——这就是叙事的原始力量。',
     content: '刷到一个视频，你划过去了。但听到一个故事，你会停下来，想听完。\n\n这不是偶然的。\n\n人类大脑在200万年的进化中，形成了用故事处理信息的本能。逻辑让我们相信，故事让我们记住。\n\n你记不住数据，但你能记住小时候妈妈讲的故事。\n\n你划走了一篇分析文章，但你会转发一个"他花了10年，终于做成了这件事"的故事。\n\n叙事的本能，刻在我们神经回路的最深处。\n\n这意味着：学会讲故事，不是学会一种修辞技巧——而是激活一种与生俱来的能力。' },
 
-  { id: 'c02',  num: 'C02', title: '八刀解剖法：如何精准评估一个叙事', part: 1, group: 'A',
+  { id: 'c02',  num: 'C02', title: '八刀解剖法：如何精准评估一个叙事', part: 1,
     desc: '历史、辩证、现象、语言、形式、存在、美感、元反思——八把刀，把任何叙事剖开看清结构。',
     content: '想学会讲故事，先要学会拆解故事。\n\n八刀解剖法，是一套可以拆解任何叙事的方法：\n\n1. 历史之刀：叙事发生在什么样的历史背景下？\n2. 辩证之刀：叙事中有没有对立力量的冲突？\n3. 现象之刀：叙事描述的是表面现象还是深层结构？\n4. 语言之刀：叙事用了什么语言风格？这种风格是优势还是劣势？\n5. 形式之刀：叙事用什么形式承载？演讲、文章、视频、对话？\n6. 存在之刀：叙事回答的是什么存在性问题？\n7. 美感之刀：叙事有没有审美价值？\n8. 元反思之刀：叙事者对自己讲的故事有没有自觉？\n\n用这八把刀，你可以拆解任何故事——别人的，或者自己的。' },
 
-  { id: 'c03',  num: 'C03', title: '个人IP：把自己的经历变成资产', part: 1, group: 'A',
+  // ── Part 2: 场景Skill ──
+  { id: 'c03',  num: 'C03', title: '个人IP：把自己的经历变成资产', part: 2,
     desc: '你以为个人IP是"讲经历"，实际上它是"设计经历"。同样一段经历，不同的讲法，效果天差地别。',
     content: '你有没有这种感觉——\n\n刷到一个博主，聊自己从大厂被裁到现在做自由职业的经历，看了三分钟，关掉手机，想了半小时。\n\n你被戳中了。不是因为他的粉丝多，而是因为他讲出了你想讲但讲不出的东西。\n\n你可能会放下手机想：我的经历也很丰富，为什么写出来就像流水账？\n\n答案很简单：\n\n你以为个人IP是"讲经历"，实际上它是"设计经历"。\n\n同样一段经历，不同的讲法，效果天差地别。\n\n这不是让你编造——是让你把真实发生过的事，按因果链条重新排列，找到那条最有力、最能让人产生共鸣的路径。\n\n这一章，我们把个人IP叙事拆解到底层方法。' },
 
-  // Part 2
-  { id: 'c04',  num: 'C04', title: '品牌叙事：让用户主动认同"你是谁"', part: 2, group: 'B',
+  { id: 'c04',  num: 'C04', title: '品牌叙事：让用户主动认同"你是谁"', part: 2,
     desc: '产品可以被复制，功能可以被超越，但品牌故事是买不走的资产——前提是你讲对了。',
     content: '苹果讲的不是"我们做了个好电脑"，而是"Think Different"。\n\n耐克讲的不是"我们做了双好鞋"，而是"Just Do It"。\n\n特斯拉讲的不是"我们做了辆电动车"，而是"加速世界向可持续能源转型"。\n\n品牌叙事，是从"产品是什么"到"用户是谁"的跨越。\n\n用户买的不是一个产品，而是一个身份认同。\n\n你的品牌故事，能不能让用户觉得"这就是我"？\n\n这一章，我们来解决这个问题。' },
 
-  { id: 'c05',  num: 'C05', title: '产品发布：让观众看完就想下单', part: 2, group: 'B',
+  { id: 'c05',  num: 'C05', title: '产品发布：让观众看完就想下单', part: 2,
     desc: '另一场发布会看完了，关掉直播，立刻想下单——这背后不是产品，是叙事节奏的精确设计。',
     content: '你有没有看过一场发布会，看完之后特别想下单？\n\n然后你冷静下来想一想：那个产品功能好像也就那样？\n\n这就是叙事的魔法。\n\n产品发布叙事的核心，不是讲产品参数，而是设计一种情绪节奏：\n\n1. 制造落差：用户现在的痛点是什么？\n2. 呈现解决：产品如何填补这个落差？\n3. 创造画面：用户使用产品后的场景是什么？\n4. 引导行动：为什么是现在？\n\n好的产品发布，让用户感觉"这个产品是为我设计的"。\n\n这一章，拆解这个节奏的具体操作方法。' },
 
-  { id: 'c06',  num: 'C06', title: '创业融资：让投资人相信"非你不可"', part: 2, group: 'B',
+  { id: 'c06',  num: 'C06', title: '创业融资：让投资人相信"非你不可"', part: 2,
     desc: 'BP里写的是市场规模和商业模式，投资人真正投的是"这个人讲的故事靠不靠谱"。',
     content: '你有没有见过一个BP，数据很好，但投资人就是不投？\n\n也有没有见过一个BP，数据一般，但投资人抢着投？\n\n区别在哪里？\n\n区别在于：BP里写的是市场规模和商业模式，投资人真正投的是"这个人讲的故事靠不靠谱"。\n\n投资人每天看几百份BP。他们一眼就能看出：这个人是来圈钱的，还是真的想解决一个问题？\n\n你的BP、你的Pitch、你跟投资人讲的每一句话，都在告诉投资人：你值不值得被信任。\n\n这一章，我们来解决融资叙事的问题。' },
 
-  { id: 'c07',  num: 'C07', title: '销售说服：让客户听完就说"我考虑一下"', part: 2, group: 'B',
+  { id: 'c07',  num: 'C07', title: '销售说服：让客户听完就说"我考虑一下"', part: 2,
     desc: '产品功能倒背如流，客户听完却说"我再考虑考虑"——你没有讲故事，你只是在报参数。',
     content: '产品功能倒背如流，客户一进门，你噼里啪啦讲了十分钟。\n\n对方听完，说："嗯，挺好的，我再考虑考虑。"\n\n你不是在讲故事，你只是在报参数。\n\n销售说服的核心，是让客户在听你讲的过程中，自己得出结论。\n\n如果你直接说"我们的产品很好"，客户会抗拒。\n\n如果你让客户自己说出"这个产品好像很适合我"，成交率会大幅上升。\n\n这一章，拆解销售叙事的底层逻辑。' },
 
-  { id: 'c08',  num: 'C08', title: '组织变革：让员工主动拥抱新战略', part: 2, group: 'B',
+  { id: 'c08',  num: 'C08', title: '组织变革：让员工主动拥抱新战略', part: 2,
     desc: '老板在台上讲得热血沸腾，员工坐在下面想的是"又要折腾了"——战略没问题，是讲法出了问题。',
     content: '公司宣布一个新战略，老板在台上讲得热血沸腾，你坐在下面想的是：又要折腾了。\n\n三个月后，那个战略没人提了。又来了一个新战略。\n\n战略没问题。是讲法出了问题。\n\n组织变革叙事的核心，是让员工从"被告知"变成"我理解并认同"。\n\n当你感觉一个战略是你自己认同的，你愿意执行。\n\n当你感觉一个战略是老板强加的，你会敷衍。\n\n这一章，解决组织变革中的叙事难题。' },
 
-  { id: 'c09',  num: 'C09', title: '公益筹款：让捐赠者觉得"这件事跟我有关"', part: 2, group: 'B',
+  { id: 'c09',  num: 'C09', title: '公益筹款：让捐赠者觉得"这件事跟我有关"', part: 2,
     desc: '"每天有XX名儿童饿死"——这种数字让人麻木。好的筹款叙事让人感觉：我的参与真的能改变什么。',
     content: '刷到一个公益筹款视频，标题写着"每天有XX名儿童饿死"。\n\n你看了三秒，划走了。\n\n不是因为你冷漠。是因为那个数字太大了，大到让人麻木。\n\n好的筹款叙事，让人感觉：我的参与真的能改变什么。\n\n不是"救救全世界的儿童"，而是"你的50块钱，能让一个孩子吃一个月有营养的午餐"。\n\n个人行动的价值感，是筹款叙事的核心。\n\n这一章，拆解公益筹款叙事的具体操作。' },
 
-  { id: 'c10',  num: 'C10', title: '社交媒体：3秒钩子+45秒展开+金句收尾', part: 2, group: 'B',
+  { id: 'c10',  num: 'C10', title: '社交媒体：3秒钩子+45秒展开+金句收尾', part: 2,
     desc: '写了一篇干货文章，发出去阅读量300。写了一篇故事，阅读量30000——区别不在内容，在结构。',
     content: '写了一篇自认为很干货的文章，发出去阅读量300。\n\n写了一篇故事，阅读量30000。\n\n区别在哪里？\n\n区别不在内容。在结构。\n\n社交媒体叙事的核心公式：\n\n1. 3秒钩子：让人停下来。\n2. 45秒展开：建立共鸣和信任。\n3. 金句收尾：让人想转发。\n\n好的社交内容，不是"我很有道理"，而是"你感同身受，然后想转发给朋友"。\n\n这一章，拆解每个平台的叙事结构。' },
 
-  { id: 'c11',  num: 'C11', title: '教育开场：3分钟拉入学习状态', part: 2, group: 'B',
+  { id: 'c11',  num: 'C11', title: '教育开场：3分钟拉入学习状态', part: 2,
     desc: '学员脑子里装的是工作、报表、晚饭吃什么。好的开场叙事，能在3分钟内把他们的注意力拽进另一个世界。',
     content: '学员走进教室，脑子里装的是工作、报表、晚饭吃什么。\n\n好的开场叙事，能在3分钟内把他们的注意力拽进另一个世界。\n\n教育开场有几种有效模式：\n\n1. 制造认知落差："你知道吗，大多数人对___的理解是错的——"\n2. 讲一个故事："我曾经遇到一个人，他___，后来他___"\n3. 提出一个悖论："最成功的的销售员，往往不是最会说话的——"\n\n开场的前3分钟，决定了这节课的全程体验。\n\n这一章，给出教育开场的具体操作方法。' },
 
-  { id: 'c12',  num: 'C12', title: '公关危机：4A模型把"事故"变成"故事"', part: 2, group: 'B',
+  { id: 'c12',  num: 'C12', title: '危机公关：4A模型把"事故"变成"故事"', part: 2,
     desc: '舆情在发酵，老板在催，法务在拦，公关在想怎么发声明——4A模型让危机叙事有路可走。',
     content: '舆情在发酵，你的老板在催，你的法务在拦，你的公关在想怎么发声明。\n\n4A模型，让危机叙事有路可走：\n\n1. Acknowledge 承认：承认问题的存在，不否认。\n2. Apologize 道歉：为造成的影响道歉，不找借口。\n3. Action 行动：说明你已经做了什么来解决问题。\n4. Answer 回答：准备好应对后续的追问。\n\n好的危机叙事，不是"说谎掩盖"，而是"坦诚面对，然后讲下一步"。\n\n这一章，拆解4A模型的具体操作。' },
 
-  { id: 'c13',  num: 'C13', title: '探索式叙事：让用户自己发现彩蛋', part: 2, group: 'B',
-    desc: '直接告诉用户"我们产品好"，用户直接划走。自己探索出来的结论，信任度是接收告诉的3倍。',
-    content: '刷到一个广告，明明白白告诉你"我们产品好"，你直接划走。\n\n但有时候，你会遇到一个品牌，它故意把故事藏起来，让你自己去找。\n\n找到的那一刻，你心里那个爽——比它直接告诉你强一百倍。\n\n这种叙事方式，叫"探索式叙事"。\n\n核心逻辑：人对自己发现的东西，信任度是接收告诉的3倍。\n\nGoogle Chrome Dino把断网变成游戏。\n\n密室逃脱作为叙事即体验的商业场景。\n\n《黑神话：悟空》用悬念式预热引爆全球。\n\n三个案例，三种形式，核心规律是一样的：不要告诉用户"这是什么"，让他们自己发现"这是什么"。' },
-
-  { id: 'c14',  num: 'C14', title: '开源项目叙事：让代码讲出自己的故事', part: 2, group: 'B',
+  { id: 'c14',  num: 'C13', title: '开源项目叙事：让代码讲出自己的故事', part: 2,
     desc: '好代码只是门槛，让项目真正被使用的是叙事——README的三行与三百行，差别不在字数。',
     content: '打开GitHub，搜索"Python 教程"。\n\n你会在前100个结果里看到几百个仓库。其中绝大多数，star数低于10——不是因为代码质量差，而是因为没有人知道它们存在。\n\n很多开发者花了几百个小时写一个项目，README只写了三行：\n\n项目名称：一个Python教程。\n功能介绍：包含常见算法的实现。\n使用方法：pip install。\n\n写完这三十个字，他们觉得"README写好了"。\n\n没有人来。\n\n原因很简单：这三行README回答的问题是"这是什么"，但没有回答"我为什么需要它"和"为什么是你"。\n\n叙事，是从"这是什么"到"你为什么需要它"的跨越。' },
 
-  { id: 'c22',  num: 'C15', title: '叙事领导力：让改变从"我"变成"我们"', part: 2, group: 'B',
+  { id: 'c22',  num: 'C14', title: '叙事领导力：让改变从"我"变成"我们"', part: 2,
     desc: '为什么有人能推动改变，有人不能？区别不在权力，在于有没有能力讲出一个让人愿意追随的故事。',
     content: '你有没有见过这种情况：\n\n一个人没有正式的权力，但他能让整个团队愿意跟着他走。\n\n另一个人有职位权力，但团队阳奉阴违。\n\n区别在哪里？\n\n区别在于：前者会讲"我们一起要到哪里去"的故事。\n\n后者只会讲"你们要做什么"的要求。\n\n叙事领导力，是从"我命令你做"到"我们一起相信一个故事"的跨越。\n\n这一章，解决推动改变的核心叙事问题。' },
 
-  // Part 3
-  { id: 'c15',  num: 'C16', title: '元Skill：把叙事方法变成AI可执行指令', part: 3, group: 'C',
+  // ── Part 3: AI时代进阶 ──
+  { id: 'c15',  num: 'C15', title: '元Skill：把叙事方法变成AI可执行指令', part: 3,
     desc: '你脑子里的叙事方法，AI听不懂。把方法转译成Prompt，是AI时代叙事者的核心竞争力。',
     content: '你脑子里的叙事方法，AI听不懂。\n\n把方法转译成Prompt，是AI时代叙事者的核心竞争力。\n\n当你知道"好故事需要制造认知落差"，你可以把这个写成：\n\n"用户以为自己知道___，但实际上___。你的任务是让用户意识到这个落差。"\n\n这就是一个元Skill。\n\n元Skill的构建分三步：\n\n1. 识别你的叙事方法（经验层面的）\n2. 把方法形式化（变成可描述的步骤）\n3. 把步骤转译成Prompt（让AI能理解并执行）\n\n这一章，给你一整套元Skill的构建方法。' },
 
-  { id: 'c16',  num: 'C17', title: '叙事记忆库：构建你的叙事资产', part: 3, group: 'C',
+  { id: 'c16',  num: 'C16', title: '叙事记忆库：构建你的叙事资产', part: 3,
     desc: '灵感不记录就会消失。把散落的思考、案例、金句，变成可检索、可复用的叙事资产。',
     content: '你有没有过这种经历：\n\n脑子里突然有一个特别好的故事idea，或者听到一句话，觉得太精彩了要记下来——然后你想着"回头再记"，然后就忘了。\n\n灵感不记录就会消失。\n\n叙事记忆库，是一套把散落的思考、案例、金句，变成可检索、可复用的叙事资产的系统。\n\n核心组件：\n\n1. 案例库：好的故事，原始素材。\n2. 结构库：经典的叙事结构，可以套用。\n3. 金句库：精彩的表达，关键时刻可以用。\n4. 反思库：对自己叙事的复盘，迭代改进。\n\n这一章，给出记忆库的具体搭建方法。' },
 
-  { id: 'c17',  num: 'C18', title: '去AI化：让AI辅助的叙事依然有"人味"', part: 3, group: 'C',
+  { id: 'c17',  num: 'C17', title: '去AI化：让AI辅助的叙事依然有"人味"', part: 3,
     desc: 'AI写的总是"差不多"——去AI化，是在AI生成的底稿上保留那些只有人才能创造的真实细节。',
     content: 'AI写得快，AI写得多，AI写得——差不多。\n\n你有没有这种感觉，读一段文字，感觉"这应该是AI写的"？\n\n具体感觉是：流畅但没有灵魂，准确但没有温度，面面俱到但没有重点。\n\n去AI化，是让AI辅助的叙事依然有"人味"的关键技术。\n\n核心方法：\n\n1. 保留那些只有你能写的细节（只有你经历过的场景）\n2. 保留那些有个人风格的表达（你的口头禅，你的逻辑习惯）\n3. 加入那些AI无法编造的"不完美"（偶尔的停顿，欲言又止，意味深长的留白）\n\n这一章，给出去AI化的具体操作。' },
 
-  { id: 'c18',  num: 'C19', title: '人机协作工作流：从碎片到发布', part: 3, group: 'C',
+  { id: 'c18',  num: 'C18', title: '人机协作工作流：从碎片到发布', part: 3,
     desc: 'idea→AI初稿→人工提炼→发布迭代——可复用的工作流，让AI成为叙事者的放大器。',
     content: '最常见的人机协作误区：\n\n要么完全自己写，AI在旁边闲着。\n\n要么完全交给AI，出来的东西没有灵魂。\n\n正确的人机协作工作流：\n\n1. Idea阶段：你提供方向、情绪、关键事实。AI帮你发散。\n2. 初稿阶段：AI根据你的框架生成初稿。你提供核心观点和事实。\n3. 提炼阶段：你基于初稿提炼核心观点。AI辅助扩展。\n4. 打磨阶段：你做去AI化处理。加入只有你能写的细节。\n5. 发布阶段：你做最后的人文校验。AI辅助格式化和SEO。\n\n每个阶段，人和AI的角色是清晰的。\n\n这一章，给出完整的工作流程和具体工具推荐。' },
 
-  { id: 'c19',  num: 'C20', title: '个人IP（进阶）：把简历变成故事', part: 3, group: 'C',
+  { id: 'c19',  num: 'C19', title: '个人IP（进阶）：把简历变成故事', part: 3,
     desc: '打开你的LinkedIn，你写的是"XX公司创始人"还是"我为什么做了这件事"？前者是简历，后者是故事。',
     content: '打开你的LinkedIn，或者翻到你的公众号介绍页，或者看看你的微信签名。\n\n你写的是什么？\n\n"XX公司创始人，帮助1000+客户实现增长。"\n\n"资深产品经理，擅长从0到1，热爱挑战。"\n\n"知识博主，分享自律与成长，陪你一起变好。"\n\n这三句话，也许真实，但毫无记忆点。\n\n读完，你只知道这个人的title和做了什么——但你不知道他是谁。你不知道他为什么做这件事，不知道他经历过什么，不知道他值不值得信任。\n\n事实让人"知道"，故事让人"记住"。\n\n这一章，解决LinkedIn/个人品牌页面的叙事升级问题。' },
 
-  { id: 'c20',  num: 'C21', title: '叙事技能的持续进化', part: 3, group: 'C',
+  { id: 'c13b',  num: 'C20', title: '探索式叙事：让用户自己发现彩蛋', part: 3,
+    desc: '直接告诉用户"我们产品好"，用户直接划走。自己探索出来的结论，信任度是接收告诉的3倍。',
+    content: '刷到一个广告，明明白白告诉你"我们产品好"，你直接划走。\n\n但有时候，你会遇到一个品牌，它故意把故事藏起来，让你自己去找。\n\n找到的那一刻，你心里那个爽——比它直接告诉你强一百倍。\n\n这种叙事方式，叫"探索式叙事"。\n\n核心逻辑：人对自己发现的东西，信任度是接收告诉的3倍。\n\nGoogle Chrome Dino把断网变成游戏。\n\n密室逃脱作为叙事即体验的商业场景。\n\n《黑神话：悟空》用悬念式预热引爆全球。\n\n三个案例，三种形式，核心规律是一样的：不要告诉用户"这是什么"，让他们自己发现"这是什么"。' },
+
+  { id: 'c20b',  num: 'C21', title: '叙事技能的持续进化', part: 3,
     desc: '叙事能力不是学一次就够了——是一套持续迭代的系统。从刻意练习到直觉内化，通向叙事自由。',
     content: '叙事技能不是学一次就够了。\n\n它是一套持续迭代的系统。\n\n阶段一：刻意练习。你学了一个框架，然后在每个场景刻意使用它。\n\n阶段二：有意识的使用。你开始能在适当的场景自动调用适当的方法。\n\n阶段三：直觉内化。你不再想"我要用什么框架"，框架已经成为你的本能反应。\n\n阶段四：自由创造。你开始打破框架，创造新的叙事方式。\n\n这不是一条线性的路径，而是循环往复的过程。\n\n每个阶段有每个阶段的重点练习。这一章给出每个阶段的具体操作方法。' },
 ];
@@ -115,7 +115,6 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
             <a href="#" class="sidebar-chap active" data-id="intro" onclick="showChapter('intro'); return false;">引子 叙事平权</a>
             <a href="#" class="sidebar-chap" data-id="c01" onclick="showChapter('c01'); return false;">C01 叙事本能</a>
             <a href="#" class="sidebar-chap" data-id="c02" onclick="showChapter('c02'); return false;">C02 八刀解剖法</a>
-            <a href="#" class="sidebar-chap" data-id="c03" onclick="showChapter('c03'); return false;">C03 个人IP</a>
           </div>
         </div>
 
@@ -125,6 +124,7 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
             <span class="sidebar-toggle">+</span>
           </button>
           <div class="sidebar-chapters" id="part-2-chapters" style="display: none;">
+            <a href="#" class="sidebar-chap" data-id="c03" onclick="showChapter('c03'); return false;">C03 个人IP</a>
             <a href="#" class="sidebar-chap" data-id="c04" onclick="showChapter('c04'); return false;">C04 品牌叙事</a>
             <a href="#" class="sidebar-chap" data-id="c05" onclick="showChapter('c05'); return false;">C05 产品发布</a>
             <a href="#" class="sidebar-chap" data-id="c06" onclick="showChapter('c06'); return false;">C06 创业融资</a>
@@ -134,9 +134,8 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
             <a href="#" class="sidebar-chap" data-id="c10" onclick="showChapter('c10'); return false;">C10 社交媒体</a>
             <a href="#" class="sidebar-chap" data-id="c11" onclick="showChapter('c11'); return false;">C11 教育开场</a>
             <a href="#" class="sidebar-chap" data-id="c12" onclick="showChapter('c12'); return false;">C12 危机公关</a>
-            <a href="#" class="sidebar-chap" data-id="c13" onclick="showChapter('c13'); return false;">C13 探索式叙事</a>
-            <a href="#" class="sidebar-chap" data-id="c14" onclick="showChapter('c14'); return false;">C14 开源叙事</a>
-            <a href="#" class="sidebar-chap" data-id="c22" onclick="showChapter('c22'); return false;">C15 叙事领导力</a>
+            <a href="#" class="sidebar-chap" data-id="c14" onclick="showChapter('c14'); return false;">C13 开源叙事</a>
+            <a href="#" class="sidebar-chap" data-id="c22" onclick="showChapter('c22'); return false;">C14 叙事领导力</a>
           </div>
         </div>
 
@@ -146,12 +145,13 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
             <span class="sidebar-toggle">+</span>
           </button>
           <div class="sidebar-chapters" id="part-3-chapters" style="display: none;">
-            <a href="#" class="sidebar-chap" data-id="c15" onclick="showChapter('c15'); return false;">C16 元Skill</a>
-            <a href="#" class="sidebar-chap" data-id="c16" onclick="showChapter('c16'); return false;">C17 叙事记忆库</a>
-            <a href="#" class="sidebar-chap" data-id="c17" onclick="showChapter('c17'); return false;">C18 去AI化</a>
-            <a href="#" class="sidebar-chap" data-id="c18" onclick="showChapter('c18'); return false;">C19 人机协作</a>
-            <a href="#" class="sidebar-chap" data-id="c19" onclick="showChapter('c19'); return false;">C20 个人IP进阶</a>
-            <a href="#" class="sidebar-chap" data-id="c20" onclick="showChapter('c20'); return false;">C21 叙事进化</a>
+            <a href="#" class="sidebar-chap" data-id="c15" onclick="showChapter('c15'); return false;">C15 元Skill</a>
+            <a href="#" class="sidebar-chap" data-id="c16" onclick="showChapter('c16'); return false;">C16 叙事记忆库</a>
+            <a href="#" class="sidebar-chap" data-id="c17" onclick="showChapter('c17'); return false;">C17 去AI化</a>
+            <a href="#" class="sidebar-chap" data-id="c18" onclick="showChapter('c18'); return false;">C18 人机协作</a>
+            <a href="#" class="sidebar-chap" data-id="c19" onclick="showChapter('c19'); return false;">C19 个人IP进阶</a>
+            <a href="#" class="sidebar-chap" data-id="c13b" onclick="showChapter('c13b'); return false;">C20 探索式叙事</a>
+            <a href="#" class="sidebar-chap" data-id="c20b" onclick="showChapter('c20b'); return false;">C21 叙事进化</a>
           </div>
         </div>
       </div>
@@ -208,7 +208,7 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
       toggle.textContent = '+';
     } else {
       chaptersEl.style.display = 'block';
-      toggle.textContent = '-';
+      toggle.textContent = '−';
     }
   }
 
@@ -230,9 +230,7 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
     height: calc(100vh - 72px);
     overflow-y: auto;
   }
-  .sidebar-inner {
-    padding: 24px 0;
-  }
+  .sidebar-inner { padding: 24px 0; }
   .sidebar-header {
     font-family: var(--font-serif);
     font-size: 0.9rem;
@@ -242,9 +240,7 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
     border-bottom: 1px solid var(--border);
     margin-bottom: 8px;
   }
-  .sidebar-group {
-    margin-bottom: 4px;
-  }
+  .sidebar-group { margin-bottom: 4px; }
   .sidebar-part {
     width: 100%;
     text-align: left;
@@ -262,11 +258,7 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
   }
   .sidebar-part:hover { background: rgba(0,0,0,0.04); }
   .sidebar-part.active { color: var(--accent); }
-  .sidebar-toggle {
-    font-size: 1rem;
-    color: var(--text-muted);
-    font-weight: 400;
-  }
+  .sidebar-toggle { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
   .sidebar-chapters { display: none; }
   .sidebar-chap {
     display: block;
@@ -278,38 +270,21 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
     transition: all 0.15s;
     line-height: 1.4;
   }
-  .sidebar-chap:hover {
-    color: var(--text);
-    background: rgba(0,0,0,0.03);
-  }
+  .sidebar-chap:hover { color: var(--text); background: rgba(0,0,0,0.03); }
   .sidebar-chap.active {
     color: var(--accent);
     border-left-color: var(--accent);
     background: rgba(192,57,43,0.05);
     font-weight: 500;
   }
-  .book-content {
-    flex: 1;
-    padding: 48px 56px;
-    max-width: 720px;
-  }
+  .book-content { flex: 1; padding: 48px 56px; max-width: 720px; }
   .chapter-header {
     margin-bottom: 40px;
     padding-bottom: 32px;
     border-bottom: 1px solid var(--border);
   }
-  .chapter-meta {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  .chapter-part {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
+  .chapter-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+  .chapter-part { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
   .chapter-num {
     font-size: 0.72rem;
     color: var(--accent);
@@ -317,43 +292,14 @@ const chaptersJson = JSON.stringify(chapters.map(c => ({
     padding: 2px 8px;
     border-radius: 3px;
   }
-  .chapter-title {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 16px;
-  }
-  .chapter-desc {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-  }
-  .chapter-body p {
-    font-size: 1rem;
-    line-height: 1.9;
-    color: var(--text);
-    margin-bottom: 1.2em;
-  }
-  .chapter-footer {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-  }
-  .chapter-github-link {
-    font-size: 0.88rem;
-    color: var(--accent);
-    font-weight: 500;
-  }
+  .chapter-title { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; line-height: 1.3; margin-bottom: 16px; }
+  .chapter-desc { font-size: 1rem; color: var(--text-muted); line-height: 1.7; }
+  .chapter-body p { font-size: 1rem; line-height: 1.9; color: var(--text); margin-bottom: 1.2em; }
+  .chapter-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .chapter-github-link { font-size: 0.88rem; color: var(--accent); font-weight: 500; }
   @media (max-width: 768px) {
     .book-layout { flex-direction: column; }
-    .book-sidebar {
-      width: 100%;
-      height: auto;
-      position: static;
-      border-right: none;
-      border-bottom: 1px solid var(--border);
-    }
+    .book-sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
     .book-content { padding: 32px 20px; }
   }
 </style>
