@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Case Library — DragonCraft" locale="en">
+  <div class="page-header">
+    <h1>Case Library</h1>
+    <p>Real narratives · Before/after comparisons · Learn from real stories</p>
+  </div>
+
+  <div class="page-content">
+    <div class="case-list">
+
+      <div class="case-item">
+        <span class="case-tag">Real Case</span>
+        <h3>Ran Bing — Personal IP Story (Full Version)</h3>
+        <p>Complete personal IP narrative with multiple length outputs — full version</p>
+        <a href="https://github.com/lj22503/diaolong-skill/blob/main/examples/%E7%87%83%E5%86%B0-%E4%B8%AA%E4%BA%BAIP%E6%95%85%E4%BA%8B%EF%BC%88%E5%AE%8C%E6%95%B4%E7%89%88%EF%BC%89.md" target="_blank">View →</a>
+      </div>
+
+      <div class="case-item">
+        <span class="case-tag">Real Case</span>
+        <h3>Ran Bing — Personal IP Story (Short Video Version)</h3>
+        <p>One-minute personal IP narrative for short video platforms</p>
+        <a href="https://github.com/lj22503/diaolong-skill/blob/main/examples/%E7%87%83%E5%86%B0-%E4%B8%AA%E4%BA%BAIP%E6%95%85%E4%BA%8B%EF%BC%88%E7%9F%AD%E8%A7%86%E9%A2%91%E7%89%88%EF%BC%89.md" target="_blank">View →</a>
+      </div>
+
+      <div class="case-item">
+        <span class="case-tag">Real Case</span>
+        <h3>Ran Bing — Personal IP Story (Brief Version)</h3>
+        <p>150-word brief version, suitable for social media bios</p>
+        <a href="https://github.com/lj22503/diaolong-skill/blob/main/examples/%E7%87%83%E5%86%B0-%E4%B8%AA%E4%BA%BAIP%E6%95%85%E4%BA%8B%EF%BC%88%E7%AE%80%E4%BB%8B%E7%89%88%EF%BC%89.md" target="_blank">View →</a>
+      </div>
+
+      <div class="case-item case-pair">
+        <div class="case-pair-item">
+          <span class="case-tag">Teaching Case</span>
+          <h3>Full-time Mom → Picture Book Blogger (Before)</h3>
+          <p>A virtual teaching case, unpolished draft showing common problems</p>
+          <a href="https://github.com/lj22503/diaolong-skill/blob/main/examples/%E5%85%A8%E8%81%8C%E5%A6%88%E5%A6%88%E5%88%B0%E7%BB%98%E6%9C%AC%E5%8D%9A%E4%B8%BB%EF%BC%88%E6%89%93%E7%A3%A8%E5%89%8D%EF%BC%89.md" target="_blank">View Before →</a>
+        </div>
+        <div class="case-pair-item">
+          <span class="case-tag case-tag-green">After Refinement</span>
+          <h3>Full-time Mom → Picture Book Blogger (After)</h3>
+          <p>The same story, polished version — see the difference narrative refinement makes</p>
+          <a href="https://github.com/lj22503/diaolong-skill/blob/main/examples/%E5%85%A8%E8%81%8C%E5%A6%88%E5%A6%88%E5%88%B0%E7%BB%98%E6%9C%AC%E5%8D%9A%E4%B8%BB%EF%BC%88%E6%89%93%E7%A3%A8%E5%90%8E%EF%BC%89.md" target="_blank">View After →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="submit-section">
+      <h3>📖 Submit Your Case</h3>
+      <p>Your real narrative story can help others learn. Submit to the GitHub case library.</p>
+      <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=case-study&template=case_study.yml" target="_blank" class="cta">Submit Case →</a>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .case-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+  .case-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    background: white;
+  }
+  .case-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: rgba(192,57,43,0.08);
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+  }
+  .case-tag-green {
+    color: #27ae60;
+    background: rgba(39,174,96,0.08);
+  }
+  .case-item h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+  .case-item p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 12px; }
+  .case-item a { font-size: 0.82rem; color: var(--accent); font-weight: 500; }
+  .case-item a:hover { color: var(--accent-hover); }
+  .case-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .case-pair-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    background: white;
+  }
+  .submit-section {
+    background: var(--bg-secondary);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+  }
+  .submit-section h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .submit-section p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+</style>
