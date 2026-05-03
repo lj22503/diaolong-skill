@@ -1,0 +1,82 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Tools — DragonCraft" locale="en">
+  <div class="page-header">
+    <h1>Toolbox</h1>
+    <p>Make narrative skill measurable and learnable</p>
+  </div>
+
+  <div class="page-content">
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <span class="tool-num">01</span>
+        <span class="tool-cat">Assessment</span>
+        <h3>Narrative Personality Test</h3>
+        <p>Discover your narrative style type: INTJ Strategist / ENFJ Inspirer / ENFP Creative / INFJ Metaphorist</p>
+        <a href="https://github.com/lj22503/diaolong-skill/blob/main/tools/叙事人格测试-图文版.md" target="_blank">View →</a>
+      </div>
+
+      <div class="tool-card">
+        <span class="tool-num">02</span>
+        <span class="tool-cat">Framework</span>
+        <h3>Eight-Dimension Assessment</h3>
+        <p>Evaluate narrative quality across 8 dimensions: Historical · Dialectical · Phenomenological · Linguistic · Formal · Existential · Aesthetic · Meta-reflective</p>
+        <a href="https://github.com/lj22503/diaolong-skill/blob/main/tools/八刀评估提示词.md" target="_blank">View →</a>
+      </div>
+
+      <div class="tool-card">
+        <span class="tool-num">03</span>
+        <span class="tool-cat">Templates</span>
+        <h3>15+ Scenario Templates</h3>
+        <p>Personal IP · Brand story · Product launch · Investor pitch · Sales script … Ready to use.</p>
+        <a href="https://github.com/lj22503/diaolong-skill/tree/main/templates" target="_blank">View on GitHub →</a>
+      </div>
+
+    </div>
+  </div>
+</Base>
+
+<style>
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .tool-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    background: white;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .tool-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+  .tool-num {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--border);
+    position: absolute;
+    top: 20px;
+    right: 24px;
+  }
+  .tool-cat {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: rgba(192,57,43,0.08);
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+  }
+  .tool-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; }
+  .tool-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 16px; }
+  .tool-card a { font-size: 0.85rem; color: var(--accent); font-weight: 500; }
+  .tool-card a:hover { color: var(--accent-hover); }
+</style>
