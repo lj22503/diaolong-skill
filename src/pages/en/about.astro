@@ -1,0 +1,86 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="About — DragonCraft" locale="en">
+  <div class="page-header">
+    <h1>About DragonCraft</h1>
+  </div>
+
+  <div class="page-content">
+    <section class="about-section">
+      <h2>Why This Project</h2>
+      <p>In 2023, I led an important project — and then got sidelined.</p>
+      <p>The reason was simple: I did great work. But I couldn't tell the story.</p>
+      <p>My boss asked: "What have you been working on?" I said: "Launched three features." Boss: "Why these three?" Me: "...Because users needed them."</p>
+      <p>Six months later, as an independent product person building an AI investment advisor system, I began systematically studying "narrative" — how stories shape perception, build trust, and drive action.</p>
+      <p>I realized: <strong>Many people can do great work. Few can tell great stories. Those who can do both are almost unstoppable.</strong></p>
+      <p>So I built this system. 26 scenario Skills. Three-layer architecture. One founding principle:</p>
+      <p class="principle"><strong>Narrative isn't a rhetorical trick — it's an operating system.</strong></p>
+    </section>
+
+    <section class="about-section">
+      <h2>Mission: Narrative Equality</h2>
+      <p>Good narrative skill shouldn't belong only to "professional writers" or "natural storytellers." It should be a learnable skill, like riding a bicycle — accessible to anyone.</p>
+      <p>DragonCraft's mission is to give more people access to this foundational ability — to communicate real value through structured stories.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Core Principles</h2>
+      <ul class="principle-list">
+        <li><strong>Narrative is cognitive infrastructure, not rhetoric</strong><br/><span>— The human brain defaults to processing information through stories</span></li>
+        <li><strong>Narrative is an OS, not a template</strong><br/><span>— Methodology adapts to any scenario</span></li>
+        <li><strong>Authenticity is narrative's bottom line</strong><br/><span>— No fabrication, no exaggeration, no manipulation</span></li>
+        <li><strong>Contributors' content always belongs to contributors</strong><br/><span>— CLA protects your rights</span></li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>About the Author</h2>
+      <p><strong>Ran Bing (燃冰)</strong> — Product Manager, INTJ. In 2023, realized that "doing great work but telling poor stories" was the core bottleneck in his career. Began systematic research into narrative methodology. Completed the DragonCraft system in 2026.</p>
+      <p class="tagline">"雕龙点睛，让每个人说好故事。"</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Connect & Contribute</h2>
+      <p>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/lj22503/diaolong-skill" target="_blank">github.com/lj22503/diaolong-skill</a>
+      </p>
+      <p>Maintenance language: Chinese welcome, English also fine.</p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .about-section { margin-bottom: 52px; }
+  .about-section h2 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+  .about-section p { color: var(--text); line-height: 1.8; margin-bottom: 14px; font-size: 0.97rem; }
+  .principle {
+    background: rgba(192,57,43,0.06);
+    border-left: 3px solid var(--accent);
+    padding: 12px 18px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-weight: 500;
+  }
+  .principle-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+  .principle-list li { padding-left: 0; }
+  .principle-list strong { display: block; margin-bottom: 4px; }
+  .principle-list span { color: var(--text-muted); font-size: 0.9rem; }
+  .tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-top: 8px;
+  }
+  .about-section a { color: var(--accent); }
+  .about-section a:hover { color: var(--accent-hover); }
+</style>
