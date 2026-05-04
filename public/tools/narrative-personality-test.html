@@ -1,568 +1,410 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>测测你的叙事人格</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测测你的叙事人格 — 雕龙</title>
+  <style>
+    :root {
+      --bg: #fafaf8;
+      --bg-secondary: #f4f4f2;
+      --text: #1a1a1a;
+      --text-muted: #666;
+      --accent: #c0392b;
+      --accent-hover: #a93226;
+      --border: #e5e5e3;
+      --radius: 6px;
+      --font: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .logo { font-weight: 700; font-size: 1.1rem; }
+    .logo-en { color: var(--text-muted); font-weight: 400; font-size: 0.85rem; margin-left: 4px; }
+    .back-link { margin-left: auto; font-size: 0.85rem; color: var(--text-muted); }
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            max-width: 500px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
+    /* Main */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 48px 24px;
+    }
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    .container {
+      width: 100%;
+      max-width: 520px;
+    }
 
-        .header h1 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 10px;
-        }
+    .header { text-align: center; margin-bottom: 32px; }
+    .header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+    .header p { font-size: 0.9rem; color: var(--text-muted); }
 
-        .header p {
-            color: #666;
-            font-size: 14px;
-        }
+    /* Progress */
+    .progress-bar {
+      width: 100%;
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
 
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: #eee;
-            border-radius: 3px;
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
+    /* Question */
+    .question-card {
+      display: none;
+    }
+    .question-card.active { display: block; }
 
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 3px;
-            transition: width 0.3s ease;
-        }
+    .question-meta {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .question-text {
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
 
-        .question {
-            display: none;
-        }
+    /* Options */
+    .option {
+      display: block;
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--bg-secondary);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      margin-bottom: 10px;
+    }
+    .option:hover {
+      border-color: var(--accent);
+      background: white;
+    }
+    .option.selected {
+      border-color: var(--accent);
+      background: white;
+      color: var(--accent);
+      font-weight: 500;
+    }
 
-        .question.active {
-            display: block;
-        }
+    /* Result */
+    .result-card {
+      display: none;
+      text-align: center;
+    }
+    .result-card.active { display: block; }
 
-        .question h2 {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
+    .result-type {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .result-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .result-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      text-align: left;
+      background: var(--bg-secondary);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .result-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .result-tag {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--text-muted);
+    }
+    .result-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 10px 24px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .result-cta:hover { background: var(--accent-hover); color: white; }
 
-        .question-number {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 28px;
-            font-size: 14px;
-            margin-right: 10px;
-        }
-
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .option {
-            padding: 16px 20px;
-            border: 2px solid #eee;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 15px;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        .option:hover {
-            border-color: #667eea;
-            background: #f8f9ff;
-        }
-
-        .option.selected {
-            border-color: #667eea;
-            background: linear-gradient(135deg, #667eea10, #764ba210);
-            color: #333;
-            font-weight: 500;
-        }
-
-        .result {
-            display: none;
-            text-align: center;
-        }
-
-        .result.active {
-            display: block;
-        }
-
-        .result-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-
-        .result h2 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .result .persona-name {
-            font-size: 32px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .result .persona-desc {
-            color: #666;
-            font-size: 15px;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .result .traits {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-
-        .trait {
-            padding: 6px 14px;
-            background: #f0f0ff;
-            color: #667eea;
-            border-radius: 20px;
-            font-size: 13px;
-        }
-
-        .result .scenario {
-            background: #f8f9ff;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .result .scenario h3 {
-            font-size: 15px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .result .scenario p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .result .story-preview {
-            background: #fafafa;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #667eea;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .result .story-preview p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.8;
-            font-style: italic;
-        }
-
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .btn {
-            padding: 14px 24px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover {
-            background: #f8f9ff;
-        }
-
-        .share-section {
-            margin-top: 25px;
-            padding-top: 25px;
-            border-top: 1px solid #eee;
-        }
-
-        .share-section p {
-            color: #999;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
-
-        .share-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .share-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .share-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .share-btn.wechat {
-            background: #07c160;
-            color: white;
-        }
-
-        .share-btn.weibo {
-            background: #e6162d;
-            color: white;
-        }
-
-        .share-btn.copy {
-            background: #667eea;
-            color: white;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            .header h1 {
-                font-size: 24px;
-            }
-
-            .question h2 {
-                font-size: 16px;
-            }
-
-            .option {
-                padding: 14px 16px;
-                font-size: 14px;
-            }
-        }
-    </style>
+    .restart-btn {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .restart-btn:hover { color: var(--accent); }
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <a href="/tools" class="logo">雕龙 <span class="logo-en">DragonCraft</span></a>
+    <a href="/tools" class="back-link">← 返回工具箱</a>
+  </header>
+
+  <main>
     <div class="container">
-        <!-- 首页 -->
-        <div id="start-page">
-            <div class="header">
-                <h1>🎭 测测你的叙事人格</h1>
-                <p>5道题，发现你最适合的叙事风格</p>
-            </div>
-            <div style="text-align: center; margin: 30px 0;">
-                <div style="font-size: 80px; margin-bottom: 20px;">📖</div>
-                <p style="color: #666; font-size: 15px; line-height: 1.8; margin-bottom: 30px;">
-                    每个人都有自己的叙事风格<br>
-                    就像MBTI一样，但聚焦在"讲故事"上<br>
-                    测测你最适合用什么风格讲故事？
-                </p>
-                <button class="btn btn-primary" onclick="startQuiz()" style="width: 100%;">
-                    开始测试
-                </button>
-            </div>
-        </div>
+      <div class="header">
+        <h1>测测你的叙事人格</h1>
+        <p>8道题，发现你的叙事风格类型</p>
+      </div>
 
-        <!-- 题目页 -->
-        <div id="quiz-page" style="display: none;">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress" style="width: 20%"></div>
-            </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+      </div>
 
-            <!-- 题目1 -->
-            <div class="question active" id="q1">
-                <h2><span class="question-number">1</span>你经历了一件重要的事，你第一件事想做什么？</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(1, 'A')">A. 写下来，反复修改，直到完美</div>
-                    <div class="option" onclick="selectOption(1, 'B')">B. 找朋友聊，边说边理清思路</div>
-                    <div class="option" onclick="selectOption(1, 'C')">C. 拍张照/录个视频，用画面记录</div>
-                    <div class="option" onclick="selectOption(1, 'D')">D. 自己待着，想清楚再说</div>
-                </div>
-            </div>
+      <div id="questionContainer"></div>
 
-            <!-- 题目2 -->
-            <div class="question" id="q2">
-                <h2><span class="question-number">2</span>你讲故事的风格更接近哪种？</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(2, 'A')">A. 冷静分析，逻辑清晰</div>
-                    <div class="option" onclick="selectOption(2, 'B')">B. 情感丰富，感染力强</div>
-                    <div class="option" onclick="selectOption(2, 'C')">C. 跳跃生动，不按套路出牌</div>
-                    <div class="option" onclick="selectOption(2, 'D')">D. 温柔细腻，让人有安全感</div>
-                </div>
-            </div>
-
-            <!-- 题目3 -->
-            <div class="question" id="q3">
-                <h2><span class="question-number">3</span>你希望读者听完你的故事后，有什么感受？</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(3, 'A')">A. "原来这件事可以这样看"（认知刷新）</div>
-                    <div class="option" onclick="selectOption(3, 'B')">B. "我也要这样做"（行动召唤）</div>
-                    <div class="option" onclick="selectOption(3, 'C')">C. "原来我不孤单"（情感共鸣）</div>
-                    <div class="option" onclick="selectOption(3, 'D')">D. "我想了解更多"（深度探索）</div>
-                </div>
-            </div>
-
-            <!-- 题目4 -->
-            <div class="question" id="q4">
-                <h2><span class="question-number">4</span>你写故事时，最在意什么？</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(4, 'A')">A. 结构是否完整，逻辑是否自洽</div>
-                    <div class="option" onclick="selectOption(4, 'B')">B. 是否有感染力，能否打动人</div>
-                    <div class="option" onclick="selectOption(4, 'C')">C. 是否有趣，是否出乎意料</div>
-                    <div class="option" onclick="selectOption(4, 'D')">D. 是否真诚，是否让人信任</div>
-                </div>
-            </div>
-
-            <!-- 题目5 -->
-            <div class="question" id="q5">
-                <h2><span class="question-number">5</span>如果要用一种动物比喻你的叙事风格，你选？</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(5, 'A')">A. 🦉 猫头鹰（冷静、智慧、洞察）</div>
-                    <div class="option" onclick="selectOption(5, 'B')">B. 🐕 狗（热情、忠诚、感染力）</div>
-                    <div class="option" onclick="selectOption(5, 'C')">C. 🦊 狐狸（灵活、机智、不按套路）</div>
-                    <div class="option" onclick="selectOption(5, 'D')">D. 🐬 海豚（温柔、治愈、有安全感）</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 结果页 -->
-        <div id="result-page" style="display: none;">
-            <div class="result active">
-                <div class="result-icon" id="result-icon">🎭</div>
-                <h2>你的叙事人格是</h2>
-                <div class="persona-name" id="persona-name">INFP</div>
-                <div class="persona-desc" id="persona-desc">自传型叙事者</div>
-
-                <div class="traits" id="traits">
-                    <span class="trait">真诚</span>
-                    <span class="trait">柔软</span>
-                    <span class="trait">细腻</span>
-                </div>
-
-                <div class="scenario">
-                    <h3>📍 适合你的场景</h3>
-                    <p id="scenarios">个人IP故事、治愈系博客、创作者自白、品牌幕后故事</p>
-                </div>
-
-                <div class="story-preview">
-                    <h3 style="font-size: 15px; color: #333; margin-bottom: 10px;">📝 你的专属叙事示例</h3>
-                    <p id="story-preview">"我做了8年UI设计师。辞职那天，我删了电脑里所有设计稿。不是赌气。是怕自己回头……"</p>
-                </div>
-
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary" id="cta-primary">
-                        输入你的素材，生成完整故事
-                    </a>
-                    <a href="#" class="btn btn-secondary" id="cta-secondary">
-                        浏览叙事Skill库
-                    </a>
-                </div>
-
-                <div class="share-section">
-                    <p>分享给朋友，看看他们的叙事人格</p>
-                    <div class="share-buttons">
-                        <div class="share-btn wechat" onclick="shareWechat()">微信</div>
-                        <div class="share-btn weibo" onclick="shareWeibo()">微博</div>
-                        <div class="share-btn copy" onclick="copyLink()">链接</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="result-card" id="resultCard">
+        <div class="result-type" id="resultType"></div>
+        <div class="result-name" id="resultName"></div>
+        <div class="result-tags" id="resultTags"></div>
+        <div class="result-desc" id="resultDesc"></div>
+        <a href="https://github.com/lj22503/diaolong-skill" target="_blank" class="result-cta">深入学习叙事方法论 →</a>
+        <br>
+        <span class="restart-btn" onclick="restart()">重新测试</span>
+      </div>
     </div>
+  </main>
 
-    <script>
-        // 答题数据
-        const answers = {};
-        let currentQuestion = 1;
+  <script>
+    const questions = [
+      {
+        text: "你准备一场重要演讲，开场你会怎么做？",
+        options: [
+          { text: "讲一个真实的小故事，让人代入", key: "E" },
+          { text: "先抛出一个反直觉的数据或观点", key: "I" },
+          { text: "直接说今天要解决的三个问题", key: "S" },
+          { text: "用一个有力的金句镇场", key: "N" },
+        ]
+      },
+      {
+        text: "你的朋友向你倾诉最近的工作烦恼，你通常会？",
+        options: [
+          { text: "给他建议：第一步做什么，第二步做什么", key: "S" },
+          { text: "给他信心：这种事我也经历过，后来怎么走出来的", key: "E" },
+          { text: "帮他分析：这个问题背后是结构性问题，要换个角度", key: "I" },
+          { text: "静静听着，让他自己说出来就好了", key: "N" },
+        ]
+      },
+      {
+        text: "写一段自我介绍，你会怎么写？",
+        options: [
+          { text: "讲一个自己经历的关键转折点故事", key: "E" },
+          { text: "用几个标签 + 一个成就数字", key: "S" },
+          { text: "写一段有深度的价值观宣言", key: "I" },
+          { text: "写一句让别人记住的话", key: "N" },
+        ]
+      },
+      {
+        text: "看到一个品牌的广告，你最容易被什么打动？",
+        options: [
+          { text: "普通人的真实故事，感觉说的就是自己", key: "E" },
+          { text: "清晰的卖点，一眼就知道产品解决什么问题", key: "S" },
+          { text: "有深度的洞察，让人想多看几遍", key: "I" },
+          { text: "有意境、有美感，让人过目不忘", key: "N" },
+        ]
+      },
+      {
+        text: "团队开会讨论方案，你更倾向于？",
+        options: [
+          { text: "先让大家各自分享经历，从故事里找灵感", key: "E" },
+          { text: "直接讨论：目标是什么，资源有哪些，路径怎么走", key: "S" },
+          { text: "先梳理问题结构：我们要解决的核心问题是什么", key: "I" },
+          { text: "先定义我们要讲一个什么故事，再看方案是否符合", key: "N" },
+        ]
+      },
+      {
+        text: "如果你要向投资人介绍自己的创业项目，你会？",
+        options: [
+          { text: "讲一个自己亲身经历的问题发现故事", key: "E" },
+          { text: "讲清楚市场规模、用户数据、产品进展", key: "S" },
+          { text: "从行业结构性变化切入，讲一个大趋势里的机会", key: "I" },
+          { text: "抛出一个反共识的核心观点，再论证", key: "N" },
+        ]
+      },
+      {
+        text: "你写朋友圈，最在意的是什么？",
+        options: [
+          { text: "有没有让人想评论的真实故事", key: "E" },
+          { text: "信息有没有传递清楚，有没有行动号召", key: "S" },
+          { text: "观点够不够独到，有没有思考深度", key: "I" },
+          { text: "有没有让人眼前一亮或会心一笑的表达", key: "N" },
+        ]
+      },
+      {
+        text: "你看到一篇阅读量很高的文章，通常是因为？",
+        options: [
+          { text: "故事写得好，让人沉浸进去停不下来", key: "E" },
+          { text: "干货足，方法可操作，收藏了就是自己的", key: "S" },
+          { text: "分析有深度，读完感觉认知提升了", key: "I" },
+          { text: "观点独特，读完想转发并附上自己的评论", key: "N" },
+        ]
+      },
+    ];
 
-        function startQuiz() {
-            document.getElementById('start-page').style.display = 'none';
-            document.getElementById('quiz-page').style.display = 'block';
-        }
+    const types = {
+      ENFJ: {
+        name: "激励型叙事者",
+        tags: ["高能量", "共情力强", "擅长激励他人", "情感丰富"],
+        desc: "你是天生的激励者。你的叙事充满能量，能够触达人心，让听众产生强烈的情感共鸣。你善于讲故事来激励行动，擅长把愿景讲得动人，让人们愿意跟随。你的弱点是有时候过于追求共鸣感，可能在逻辑严谨性上有所欠缺。在应用场景上，你最适合品牌故事、团队动员、公益筹款这类需要激发情感行动力的场景。"
+      },
+      ENFP: {
+        name: "创意型叙事者",
+        tags: ["灵感丰富", "表达生动", "善于隐喻", "富有感染力"],
+        desc: "你是故事的魔术师。你的叙事充满灵气，总能找到意想不到的角度，让人眼前一亮。你不走寻常路，善于用隐喻和类比把复杂的事情讲得简单有趣。你是天生的内容创作者，社交媒体是你最舒适的舞台。但要注意的是，你的创意有时候会让听众跟不上，需要在表达结构上再下功夫。在应用场景上，你最适合个人IP打造、产品种草、探索式叙事这类需要创意和惊喜的场景。"
+      },
+      INFJ: {
+        name: "隐喻型叙事者",
+        tags: ["洞察深刻", "结构清晰", "善于升华", "有使命感"],
+        desc: "你是思想型的叙事者。你不喜欢空话套话，每一段叙事背后都有深思熟虑的结构和真实的洞察。你擅长从现象提炼本质，用隐喻让听众自己顿悟。你的叙事有重量，能够推动真正的认知改变。但要注意的是，你的表达有时候太内敛，听众需要时间才能进入你的语境。在应用场景上，你最适合教育开场、危机公关、深度内容创作这类需要影响认知的场景。"
+      },
+      INTJ: {
+        name: "战略型叙事者",
+        tags: ["逻辑严密", "结构清晰", "简洁有力", "说服力强"],
+        desc: "你是精准的叙事者。你不喜欢废话，每一段叙事都经过精心设计，逻辑严密、重点突出。你能够在最短的时间内传递最精准的信息，让听众快速建立认知并采取行动。你是天生的商业叙事者，融资Pitch、销售说服是你的天然领域。但要注意的是，你的简洁有时候显得冷硬，在需要温度的场景需要适当调整。在应用场景上，你最适合融资路演、产品发布、商业提案这类高说服要求的场景。"
+      },
+    };
 
-        function selectOption(question, option) {
-            answers[question] = option;
+    let current = 0;
+    let answers = [];
 
-            // 高亮选中
-            const questionEl = document.getElementById('q' + question);
-            const options = questionEl.querySelectorAll('.option');
-            options.forEach(opt => opt.classList.remove('selected'));
-            event.target.classList.add('selected');
+    function render() {
+      const container = document.getElementById('questionContainer');
+      const progressFill = document.getElementById('progressFill');
 
-            // 延迟后跳转下一题
-            setTimeout(() => {
-                if (question < 5) {
-                    document.getElementById('q' + question).classList.remove('active');
-                    document.getElementById('q' + (question + 1)).classList.add('active');
-                    document.getElementById('progress').style.width = ((question + 1) * 20) + '%';
-                } else {
-                    showResult();
-                }
-            }, 300);
-        }
+      if (current < questions.length) {
+        const q = questions[current];
+        progressFill.style.width = ((current) / questions.length * 100) + '%';
 
-        function showResult() {
-            document.getElementById('quiz-page').style.display = 'none';
-            document.getElementById('result-page').style.display = 'block';
+        let html = `<div class="question-card active">
+          <div class="question-meta">问题 ${current + 1} / ${questions.length}</div>
+          <div class="question-text">${q.text}</div>`;
 
-            // 计算人格
-            const counts = { A: 0, B: 0, C: 0, D: 0 };
-            Object.values(answers).forEach(v => counts[v]++);
+        q.options.forEach((opt, i) => {
+          html += `<button class="option" onclick="select(${i})">${opt.text}</button>`;
+        });
 
-            const max = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
+        html += `</div>`;
+        container.innerHTML = html;
+      } else {
+        showResult();
+      }
+    }
 
-            // 人格映射
-            const personas = {
-                'A': {
-                    name: 'INTJ',
-                    title: '战略型叙事者',
-                    icon: '🦉',
-                    traits: ['冷静', '逻辑', '洞察', '远见'],
-                    desc: '你擅长用逻辑和洞察来讲故事。你的故事有清晰的结构和深刻的认知，能让读者说："原来这件事可以这样看。"',
-                    scenarios: '科技融资、行业分析、硬核知识、个人IP、复盘分析',
-                    story: '"我从大厂辞职后，做了一件事：把人生拆成四个方向。每个方向读了十几本书。后来我发现，人生不是标准答案，是每个人都有自己的路。"'
-                },
-                'B': {
-                    name: 'ENFJ',
-                    title: '鼓舞型叙事者',
-                    icon: '🐕',
-                    traits: ['热情', '感染', '号召', '温暖'],
-                    desc: '你擅长用情感和号召力来讲故事。你的故事有温度和力量，能让读者说："我也要这样做。"',
-                    scenarios: '品牌使命、团队动员、公益筹款、教育开场、组织变革',
-                    story: '"我们医院设立了一个安宁疗护科。不是治疗疾病，是治疗痛苦。让每一个走的人，都能吃一口想吃的东西。说一句想说的话。见一个想见的人。"'
-                },
-                'C': {
-                    name: 'ENFP',
-                    title: '即兴型叙事者',
-                    icon: '🦊',
-                    traits: ['跳跃', '生动', '创意', '有趣'],
-                    desc: '你擅长用跳跃和创意来讲故事。你的故事不按套路出牌，能让读者说："原来我不孤单。"',
-                    scenarios: '社交媒体、创意产品、生活方式IP、互动预热、短视频',
-                    story: '"我点外卖，在备注里写了一首诗。外卖员收到了，拍照发朋友圈："今天有人把我写成风。"不是因为我写得好。是因为，原来几行字，也可以让一个人开心。"'
-                },
-                'D': {
-                    name: 'INFJ',
-                    title: '疗愈型叙事者',
-                    icon: '🐬',
-                    traits: ['温柔', '细腻', '隐喻', '治愈'],
-                    desc: '你擅长用温柔和隐喻来讲故事。你的故事有安全感和深度，能让读者说："我想了解更多。"',
-                    scenarios: '品牌哲学、心理疗愈、艺术创作、生命故事、持续叙事',
-                    story: '"奶奶的辣酱，是吃不出来的。不是尝出来的。是吃出来的——吃了一口，就知道"对了"。她做了一辈子。不卖，就送。后来路过的人越来越多。"'
-                }
-            };
+    function select(i) {
+      answers.push(questions[current].options[i].key);
+      current++;
+      render();
+    }
 
-            const persona = personas[max];
+    function showResult() {
+      document.getElementById('questionContainer').innerHTML = '';
+      progressFill.style.width = '100%';
 
-            // 填充结果
-            document.getElementById('result-icon').textContent = persona.icon;
-            document.getElementById('persona-name').textContent = persona.name;
-            document.getElementById('persona-desc').textContent = persona.title + ' —— ' + persona.desc;
-            document.getElementById('scenarios').textContent = persona.scenarios;
-            document.getElementById('story-preview').textContent = persona.story;
+      // MBTI scoring
+      let e = answers.filter(a => a === 'E').length;
+      let n = answers.filter(a => a === 'N').length;
+      let f = answers.filter(a => a === 'E' || a === 'N').length;
 
-            // 填充标签
-            const traitsEl = document.getElementById('traits');
-            traitsEl.innerHTML = '';
-            persona.traits.forEach(trait => {
-                const span = document.createElement('span');
-                span.className = 'trait';
-                span.textContent = trait;
-                traitsEl.appendChild(span);
-            });
+      let type;
+      if (e >= 4) {
+        type = e >= 4 && n >= 4 ? 'ENFP' : e >= 4 ? 'ENFJ' : 'ENF';
+      } else {
+        type = n >= 4 ? 'INTJ' : 'INFJ';
+      }
 
-            // CTA链接（替换为你的实际链接）
-            document.getElementById('cta-primary').href = '#'; // 替换为 skill 使用链接
-            document.getElementById('cta-secondary').href = '#'; // 替换为 skill 库链接
-        }
+      // fallback: majority of first letter
+      const eCount = answers.filter((a, i) => questions[i].options[a === 'E' ? 0 : 1]?.key === 'E').length;
+      const nCount = answers.filter((a, i) => ['N', 'I'].includes(answers[i])).length;
+      const eScore = answers.filter(a => a === 'E').length;
+      const nScore = answers.filter(a => a === 'N').length;
+      const iScore = answers.filter(a => a === 'I').length;
+      const sScore = answers.filter(a => a === 'S').length;
 
-        function shareWechat() {
-            alert('请截图分享到微信');
-        }
+      // Determine type
+      let primary = eScore >= nScore ? (eScore >= iScore ? 'E' : 'I') : (nScore >= iScore ? 'N' : 'I');
+      let secondary = eScore >= nScore ? (sScore >= 2 ? 'S' : 'F') : (sScore >= 2 ? 'S' : 'T');
+      let finalType = primary + (secondary === 'F' ? 'E' : secondary === 'T' ? 'I' : secondary) + (nScore >= sScore ? 'F' : 'T') + 'J';
 
-        function shareWeibo() {
-            const text = `我测出了我的叙事人格是${document.getElementById('persona-name').textContent}！你也来测测？`;
-            window.open(`https://weibo.com/ajax/statuses/update?content=${encodeURIComponent(text)}`);
-        }
+      const validTypes = ['ENFJ', 'ENFP', 'INFJ', 'INTJ'];
+      if (!validTypes.includes(finalType)) {
+        finalType = eScore > nScore ? (eScore > iScore ? 'ENFJ' : 'INTJ') : (nScore > sScore ? 'ENFP' : 'INFJ');
+      }
+      if (!validTypes.includes(finalType)) finalType = 'INFJ';
 
-        function copyLink() {
-            const url = window.location.href;
-            navigator.clipboard.writeText(url).then(() => {
-                alert('链接已复制，快去分享吧！');
-            });
-        }
-    </script>
+      const result = types[finalType];
+
+      document.getElementById('resultType').textContent = finalType;
+      document.getElementById('resultName').textContent = result.name;
+      document.getElementById('resultDesc').textContent = result.desc;
+
+      let tagsHtml = '';
+      result.tags.forEach(t => { tagsHtml += `<span class="result-tag">${t}</span>`; });
+      document.getElementById('resultTags').innerHTML = tagsHtml;
+
+      document.getElementById('resultCard').classList.add('active');
+    }
+
+    function restart() {
+      current = 0;
+      answers = [];
+      document.getElementById('resultCard').classList.remove('active');
+      render();
+    }
+
+    render();
+  </script>
 </body>
 </html>

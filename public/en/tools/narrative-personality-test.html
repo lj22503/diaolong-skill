@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narrative Personality Test — DragonCraft</title>
+  <style>
+    :root {
+      --bg: #fafaf8;
+      --bg-secondary: #f4f4f2;
+      --text: #1a1a1a;
+      --text-muted: #666;
+      --accent: #c0392b;
+      --accent-hover: #a93226;
+      --border: #e5e5e3;
+      --radius: 6px;
+      --font: 'Inter', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .logo { font-weight: 700; font-size: 1.1rem; }
+    .logo-en { color: var(--text-muted); font-weight: 400; font-size: 0.85rem; margin-left: 4px; }
+    .back-link { margin-left: auto; font-size: 0.85rem; color: var(--text-muted); }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 48px 24px;
+    }
+    .container { width: 100%; max-width: 520px; }
+    .header { text-align: center; margin-bottom: 32px; }
+    .header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+    .header p { font-size: 0.9rem; color: var(--text-muted); }
+
+    .progress-bar {
+      width: 100%; height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+    .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
+
+    .question-card { display: none; }
+    .question-card.active { display: block; }
+    .question-meta { font-size: 0.75rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .question-text { font-size: 1.05rem; font-weight: 500; line-height: 1.6; margin-bottom: 20px; }
+
+    .option {
+      display: block; width: 100%;
+      padding: 14px 18px;
+      background: var(--bg-secondary);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      text-align: left; font-size: 0.9rem;
+      color: var(--text); cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      margin-bottom: 10px;
+    }
+    .option:hover { border-color: var(--accent); background: white; }
+    .option.selected { border-color: var(--accent); background: white; color: var(--accent); font-weight: 500; }
+
+    .result-card { display: none; text-align: center; }
+    .result-card.active { display: block; }
+    .result-type { font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+    .result-name { font-size: 1.1rem; font-weight: 600; margin-bottom: 16px; }
+    .result-desc {
+      font-size: 0.9rem; color: var(--text-muted); line-height: 1.8;
+      text-align: left; background: var(--bg-secondary);
+      border-radius: var(--radius); padding: 20px; margin-bottom: 20px;
+    }
+    .result-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 24px; }
+    .result-tag { font-size: 0.75rem; padding: 4px 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 20px; color: var(--text-muted); }
+    .result-cta {
+      display: inline-block; background: var(--accent); color: white;
+      padding: 10px 24px; border-radius: var(--radius);
+      font-size: 0.9rem; font-weight: 500; transition: background 0.15s;
+    }
+    .result-cta:hover { background: var(--accent-hover); color: white; }
+    .restart-btn { display: inline-block; margin-top: 12px; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; }
+    .restart-btn:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="/en/tools" class="logo">DragonCraft</a>
+    <a href="/en/tools" class="back-link">← Back to Tools</a>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="header">
+        <h1>Narrative Personality Test</h1>
+        <p>8 questions to discover your narrative style</p>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div id="questionContainer"></div>
+      <div class="result-card" id="resultCard">
+        <div class="result-type" id="resultType"></div>
+        <div class="result-name" id="resultName"></div>
+        <div class="result-tags" id="resultTags"></div>
+        <div class="result-desc" id="resultDesc"></div>
+        <a href="https://github.com/lj22503/diaolong-skill" target="_blank" class="result-cta">Learn Narrative Methodology →</a>
+        <br><span class="restart-btn" onclick="restart()">Take Again</span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const questions = [
+      { text: "You're preparing an important speech. How do you open it?",
+        options: [
+          { text: "Start with a real personal story that draws people in", key: "E" },
+          { text: "Lead with a counter-intuitive data point or insight", key: "I" },
+          { text: "State the three key problems you'll solve today", key: "S" },
+          { text: "Hit them with a powerful quote or phrase", key: "N" },
+        ]},
+      { text: "A friend comes to you feeling frustrated about work. You typically...",
+        options: [
+          { text: "Give advice: here's what to do first, then second", key: "S" },
+          { text: "Share your own experience and how you bounced back", key: "E" },
+          { text: "Help them analyze: this is structural, reframe it", key: "I" },
+          { text: "Just listen — sometimes they just need to talk it out", key: "N" },
+        ]},
+      { text: "When writing a self-introduction, you tend to...",
+        options: [
+          { text: "Tell a pivotal story from your own experience", key: "E" },
+          { text: "Use a few tags plus one impressive metric", key: "S" },
+          { text: "Write a values-forward statement with depth", key: "I" },
+          { text: "Craft one memorable line they'll never forget", key: "N" },
+        ]},
+      { text: "When you see a brand ad, what catches you most?",
+        options: [
+          { text: "Real stories from real people — it feels like they're talking to me", key: "E" },
+          { text: "Clear value prop — I immediately know what problem it solves", key: "S" },
+          { text: "A deep insight that makes me want to re-read it", key: "I" },
+          { text: "Beautiful aesthetics — unforgettable at first glance", key: "N" },
+        ]},
+      { text: "In a team meeting discussing a proposal, you're more likely to...",
+        options: [
+          { text: "Have everyone share their experiences — find inspiration in stories", key: "E" },
+          { text: "Focus on: what's the goal, what resources do we have, what's the path", key: "S" },
+          { text: "Map the problem structure first: what's the real problem we're solving", key: "I" },
+          { text: "Define the story we're trying to tell, then check if the proposal fits", key: "N" },
+        ]},
+      { text: "To pitch your startup to an investor, you'd most likely...",
+        options: [
+          { text: "Tell the personal story of how you discovered the problem", key: "E" },
+          { text: "Lay out market size, user data, and product milestones", key: "S" },
+          { text: "Start with structural shifts in the industry, then the opportunity within it", key: "I" },
+          { text: "Lead with a contrarian thesis, then build the case", key: "N" },
+        ]},
+      { text: "When posting on social media, what matters most to you?",
+        options: [
+          { text: "Does it have a real story that makes people want to comment", key: "E" },
+          { text: "Is the message clear, with a clear call to action", key: "S" },
+          { text: "Is the insight original and thought-provoking", key: "I" },
+          { text: "Does it have a surprising or delightfully witty hook", key: "N" },
+        ]},
+      { text: "A viral article you see usually succeeds because...",
+        options: [
+          { text: "The story is so engaging you can't stop reading", key: "E" },
+          { text: "It's packed with actionable frameworks you can use immediately", key: "S" },
+          { text: "The analysis is so deep your worldview shifts after reading it", key: "I" },
+          { text: "The take is so original you screenshot it and send it to friends", key: "N" },
+        ]},
+    ];
+
+    const types = {
+      ENFJ: {
+        name: "The Inspiring Narrator",
+        tags: ["High energy", "Empathetic", "Motivating", "Emotionally rich"],
+        desc: "You're a natural motivator. Your narratives are full of energy, reaching people's hearts and inspiring them to act. You excel at telling stories that move people to action. Best for: brand storytelling, team alignment, fundraising."
+      },
+      ENFP: {
+        name: "The Creative Storyteller",
+        tags: ["Imaginative", "Vivid expression", "Metaphor-rich", "Infectious enthusiasm"],
+        desc: "You're a narrative magician. Your stories come from unexpected angles that make people stop and pay attention. You take complex ideas and make them accessible through creative analogies. Best for: personal branding, product launches, exploratory narratives."
+      },
+      INFJ: {
+        name: "The Metaphorical Thinker",
+        tags: ["Deeply insightful", "Structured", "Purpose-driven", "Transformative"],
+        desc: "You're a thought leader who despises empty talk. Every narrative you create is built on carefully structured thinking and genuine insight. You draw profound meaning from phenomena, using metaphor to help audiences have their own epiphanies. Best for: educational content, crisis communication, long-form content."
+      },
+      INTJ: {
+        name: "The Strategic Narrator",
+        tags: ["Logically rigorous", "Clear structure", "Concise", "Highly persuasive"],
+        desc: "You're a precision narrator. You don't tolerate filler — every sentence is purposeful and logically watertight. You can deliver the most precise message in the shortest time, helping audiences quickly understand and act. Best for: investor pitches, product launches, business proposals."
+      },
+    };
+
+    let current = 0, answers = [];
+
+    function render() {
+      const container = document.getElementById('questionContainer');
+      const progressFill = document.getElementById('progressFill');
+      if (current < questions.length) {
+        const q = questions[current];
+        progressFill.style.width = (current / questions.length * 100) + '%';
+        let html = `<div class="question-card active"><div class="question-meta">Question ${current + 1} / ${questions.length}</div><div class="question-text">${q.text}</div>`;
+        q.options.forEach((opt, i) => { html += `<button class="option" onclick="select(${i})">${opt.text}</button>`; });
+        html += `</div>`;
+        container.innerHTML = html;
+      } else {
+        showResult();
+      }
+    }
+
+    function select(i) { answers.push(questions[current].options[i].key); current++; render(); }
+
+    function showResult() {
+      document.getElementById('questionContainer').innerHTML = '';
+      document.getElementById('progressFill').style.width = '100%';
+      const eScore = answers.filter(a => a === 'E').length;
+      const nScore = answers.filter(a => a === 'N').length;
+      const iScore = answers.filter(a => a === 'I').length;
+      const sScore = answers.filter(a => a === 'S').length;
+      let finalType = eScore > nScore ? (eScore > iScore ? 'ENFJ' : 'INTJ') : (nScore > sScore ? 'ENFP' : 'INFJ');
+      const result = types[finalType];
+      document.getElementById('resultType').textContent = finalType;
+      document.getElementById('resultName').textContent = result.name;
+      document.getElementById('resultDesc').textContent = result.desc;
+      document.getElementById('resultTags').innerHTML = result.tags.map(t => `<span class="result-tag">${t}</span>`).join('');
+      document.getElementById('resultCard').classList.add('active');
+    }
+
+    function restart() { current = 0; answers = []; document.getElementById('resultCard').classList.remove('active'); render(); }
+    render();
+  </script>
+</body>
+</html>
