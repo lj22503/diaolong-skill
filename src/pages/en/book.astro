@@ -236,39 +236,66 @@ import Base from '../../layouts/Base.astro';
     padding-bottom: 8px; border-bottom: 1px solid var(--border);
   }
   .chapter-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
+
   .chapter-card {
-    display: flex; gap: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
     background: var(--bg-secondary);
     border: 1.5px solid var(--border);
     border-radius: var(--radius);
-    padding: 16px 18px;
-    transition: border-color 0.15s, box-shadow 0.15s;
+    padding: 14px 18px;
+    transition: border-color 0.15s;
   }
+
   .chapter-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 2px 10px rgba(192,57,43,0.06);
   }
+
   .chapter-num {
-    font-size: 0.72rem; font-weight: 700;
-    color: var(--accent); letter-spacing: 0.04em;
-    min-width: 32px; padding-top: 2px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    min-width: 36px;
+    padding-top: 3px;
+    flex-shrink: 0;
   }
-  .chapter-body h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 4px; color: var(--text); }
-  .chapter-body p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+
+  .chapter-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .chapter-body h3 {
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  .chapter-body p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
   .github-cta {
     background: rgba(192,57,43,0.04);
     border: 1px solid rgba(192,57,43,0.12);
     border-radius: var(--radius);
-    padding: 16px 20px; font-size: 0.85rem;
-    color: var(--text-muted); line-height: 1.8; text-align: center;
+    padding: 16px 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    text-align: center;
   }
+
   .github-cta a { color: var(--accent); font-weight: 500; }
-  @media (max-width: 768px) { .chapter-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 500px) { .chapter-grid { grid-template-columns: 1fr; } }
 
   .book-cover-banner {
     max-width: var(--max-width);
@@ -277,5 +304,6 @@ import Base from '../../layouts/Base.astro';
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   }
+
   .book-cover-banner img { width: 100%; height: auto; display: block; }
 </style>
