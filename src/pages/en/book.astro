@@ -8,6 +8,10 @@ import Base from '../../layouts/Base.astro';
     <p>Content Operating System for the AI Era · Introduction + 22 Chapters</p>
   </div>
 
+  <div class="book-cover-banner">
+    <img src="/images/book-cover.jpg" alt="The Narrative Engine Cover" />
+  </div>
+
   <div class="page-content">
 
     <section class="section">
@@ -265,4 +269,13 @@ import Base from '../../layouts/Base.astro';
   .github-cta a { color: var(--accent); font-weight: 500; }
   @media (max-width: 768px) { .chapter-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 500px) { .chapter-grid { grid-template-columns: 1fr; } }
+
+  .book-cover-banner {
+    max-width: var(--max-width);
+    margin: 0 auto 32px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+  .book-cover-banner img { width: 100%; height: auto; display: block; }
 </style>

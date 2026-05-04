@@ -8,6 +8,10 @@ import Base from '../layouts/Base.astro';
     <p>AI时代的内容操作系统 · 引子 + 22章完整方法论</p>
   </div>
 
+  <div class="book-cover-banner">
+    <img src="/images/book-cover.jpg" alt="《叙事引擎》封面" />
+  </div>
+
   <div class="page-content">
 
     <section class="section">
@@ -305,5 +309,19 @@ import Base from '../layouts/Base.astro';
 
   @media (max-width: 500px) {
     .chapter-grid { grid-template-columns: 1fr; }
+  }
+
+  .book-cover-banner {
+    max-width: var(--max-width);
+    margin: 0 auto 32px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  .book-cover-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 </style>
