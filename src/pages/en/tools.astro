@@ -9,58 +9,34 @@ import Base from '../../layouts/Base.astro';
   </div>
 
   <div class="page-content">
-    <div class="tool-list">
+    <div class="card-grid">
 
-      <div class="tool-card">
-        <div class="tool-left">
-          <span class="tool-tag">Test</span>
-        </div>
-        <div class="tool-body">
-          <h3>Narrative Personality Test</h3>
-          <p>8 questions to discover your style: INTJ Strategic / ENFJ Inspiring / ENFP Creative / INFJ Metaphorical</p>
-        </div>
-        <div class="tool-action">
-          <a href="/en/tools/narrative-personality-test.html" target="_blank" class="btn-outline">Take Test →</a>
-        </div>
+      <div class="card">
+        <span class="card-tag">Test</span>
+        <h3>Narrative Personality Test</h3>
+        <p>8 questions to discover your style: INTJ Strategic / ENFJ Inspiring / ENFP Creative / INFJ Metaphorical</p>
+        <a href="/en/tools/narrative-personality-test.html" target="_blank">Take Test →</a>
       </div>
 
-      <div class="tool-card">
-        <div class="tool-left">
-          <span class="tool-tag">Eval</span>
-        </div>
-        <div class="tool-body">
-          <h3>Eight-Cut Evaluation</h3>
-          <p>Assess narrative quality across 8 dimensions: history, dialectics, phenomenon, language, form, existence, aesthetics, meta-reflection.</p>
-        </div>
-        <div class="tool-action">
-          <a href="https://github.com/lj22503/diaolong-skill/blob/main/tools/八刀评估提示词.md" target="_blank" class="btn-outline">View →</a>
-        </div>
+      <div class="card">
+        <span class="card-tag">Eval</span>
+        <h3>Eight-Cut Evaluation</h3>
+        <p>Assess narrative quality across 8 dimensions: history, dialectics, phenomenon, language, form, existence, aesthetics, meta-reflection.</p>
+        <a href="https://github.com/lj22503/diaolong-skill/blob/main/tools/八刀评估提示词.md" target="_blank">View →</a>
       </div>
 
-      <div class="tool-card">
-        <div class="tool-left">
-          <span class="tool-tag">Templates</span>
-        </div>
-        <div class="tool-body">
-          <h3>15+ Scenario Templates</h3>
-          <p>Personal IP, brand stories, product launches, pitch decks, sales scripts, crisis PR, social media… ready to use or adapt.</p>
-        </div>
-        <div class="tool-action">
-          <a href="https://github.com/lj22503/diaolong-skill/tree/main/templates" target="_blank" class="btn-outline">GitHub →</a>
-        </div>
+      <div class="card">
+        <span class="card-tag">Templates</span>
+        <h3>15+ Scenario Templates</h3>
+        <p>Personal IP, brand stories, product launches, pitch decks, sales scripts, crisis PR, social media… ready to use or adapt.</p>
+        <a href="https://github.com/lj22503/diaolong-skill/tree/main/templates" target="_blank">GitHub →</a>
       </div>
 
-      <div class="tool-card">
-        <div class="tool-left">
-          <span class="tool-tag">Community</span>
-        </div>
-        <div class="tool-body">
-          <h3>DragonCraft Lab</h3>
-          <p>Discussing interesting topics with friends. Join our knowledge community on知识星球.</p>
-        </div>
-        <div class="tool-action">
-          <a href="https://t.zsxq.com/CLU1d" target="_blank" class="btn-outline">Join →</a>
-        </div>
+      <div class="card">
+        <span class="card-tag">Community</span>
+        <h3>DragonCraft Lab</h3>
+        <p>Discussing interesting topics with friends. Join our knowledge community.</p>
+        <a href="https://t.zsxq.com/CLU1d" target="_blank">Join →</a>
       </div>
 
     </div>
@@ -68,91 +44,53 @@ import Base from '../../layouts/Base.astro';
 </Base>
 
 <style>
-  .tool-list {
-    display: flex;
-    flex-direction: column;
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
-  .tool-card {
-    display: flex;
-    align-items: center;
-    gap: 24px;
+  .card {
     background: var(--bg-secondary);
     border: 1.5px solid var(--border);
     border-radius: var(--radius);
-    padding: 24px 28px;
+    padding: 24px;
     transition: border-color 0.15s, box-shadow 0.15s;
   }
 
-  .tool-card:hover {
+  .card:hover {
     border-color: var(--accent);
     box-shadow: 0 2px 12px rgba(192,57,43,0.06);
   }
 
-  .tool-left {
-    flex-shrink: 0;
-    width: 80px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .tool-tag {
+  .card-tag {
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--accent);
-    border: 1.5px solid var(--accent);
-    border-radius: 20px;
-    padding: 3px 10px;
   }
 
-  .tool-body {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .tool-body h3 {
+  .card h3 {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 4px;
+    margin: 8px 0 6px;
   }
 
-  .tool-body p {
+  .card p {
     font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.6;
+    margin-bottom: 12px;
   }
 
-  .tool-action {
-    flex-shrink: 0;
-  }
-
-  .btn-outline {
-    display: inline-block;
+  .card a {
     font-size: 0.82rem;
-    font-weight: 500;
     color: var(--accent);
-    border: 1.5px solid var(--accent);
-    border-radius: var(--radius);
-    padding: 7px 16px;
-    white-space: nowrap;
-    transition: background 0.15s, color 0.15s;
-  }
-
-  .btn-outline:hover {
-    background: var(--accent);
-    color: white;
+    font-weight: 500;
   }
 
   @media (max-width: 600px) {
-    .tool-card {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .tool-action { width: 100%; }
-    .btn-outline { display: block; text-align: center; }
+    .card-grid { grid-template-columns: 1fr; }
   }
 </style>
