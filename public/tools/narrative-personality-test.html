@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测测你的叙事人格</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .question {
+            display: none;
+        }
+
+        .question.active {
+            display: block;
+        }
+
+        .question h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .question-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            padding: 16px 20px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea10, #764ba210);
+            color: #333;
+            font-weight: 500;
+        }
+
+        .result {
+            display: none;
+            text-align: center;
+        }
+
+        .result.active {
+            display: block;
+        }
+
+        .result-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .result h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .result .persona-name {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .result .persona-desc {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .result .traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .trait {
+            padding: 6px 14px;
+            background: #f0f0ff;
+            color: #667eea;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .result .scenario {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .result .scenario h3 {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .result .scenario p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .result .story-preview {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .result .story-preview p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9ff;
+        }
+
+        .share-section {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+
+        .share-section p {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .share-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .share-btn.wechat {
+            background: #07c160;
+            color: white;
+        }
+
+        .share-btn.weibo {
+            background: #e6162d;
+            color: white;
+        }
+
+        .share-btn.copy {
+            background: #667eea;
+            color: white;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .question h2 {
+                font-size: 16px;
+            }
+
+            .option {
+                padding: 14px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 首页 -->
+        <div id="start-page">
+            <div class="header">
+                <h1>🎭 测测你的叙事人格</h1>
+                <p>5道题，发现你最适合的叙事风格</p>
+            </div>
+            <div style="text-align: center; margin: 30px 0;">
+                <div style="font-size: 80px; margin-bottom: 20px;">📖</div>
+                <p style="color: #666; font-size: 15px; line-height: 1.8; margin-bottom: 30px;">
+                    每个人都有自己的叙事风格<br>
+                    就像MBTI一样，但聚焦在"讲故事"上<br>
+                    测测你最适合用什么风格讲故事？
+                </p>
+                <button class="btn btn-primary" onclick="startQuiz()" style="width: 100%;">
+                    开始测试
+                </button>
+            </div>
+        </div>
+
+        <!-- 题目页 -->
+        <div id="quiz-page" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 20%"></div>
+            </div>
+
+            <!-- 题目1 -->
+            <div class="question active" id="q1">
+                <h2><span class="question-number">1</span>你经历了一件重要的事，你第一件事想做什么？</h2>
+                <div class="options">
+                    <div class="option" onclick="selectOption(1, 'A')">A. 写下来，反复修改，直到完美</div>
+                    <div class="option" onclick="selectOption(1, 'B')">B. 找朋友聊，边说边理清思路</div>
+                    <div class="option" onclick="selectOption(1, 'C')">C. 拍张照/录个视频，用画面记录</div>
+                    <div class="option" onclick="selectOption(1, 'D')">D. 自己待着，想清楚再说</div>
+                </div>
+            </div>
+
+            <!-- 题目2 -->
+            <div class="question" id="q2">
+                <h2><span class="question-number">2</span>你讲故事的风格更接近哪种？</h2>
+                <div class="options">
+                    <div class="option" onclick="selectOption(2, 'A')">A. 冷静分析，逻辑清晰</div>
+                    <div class="option" onclick="selectOption(2, 'B')">B. 情感丰富，感染力强</div>
+                    <div class="option" onclick="selectOption(2, 'C')">C. 跳跃生动，不按套路出牌</div>
+                    <div class="option" onclick="selectOption(2, 'D')">D. 温柔细腻，让人有安全感</div>
+                </div>
+            </div>
+
+            <!-- 题目3 -->
+            <div class="question" id="q3">
+                <h2><span class="question-number">3</span>你希望读者听完你的故事后，有什么感受？</h2>
+                <div class="options">
+                    <div class="option" onclick="selectOption(3, 'A')">A. "原来这件事可以这样看"（认知刷新）</div>
+                    <div class="option" onclick="selectOption(3, 'B')">B. "我也要这样做"（行动召唤）</div>
+                    <div class="option" onclick="selectOption(3, 'C')">C. "原来我不孤单"（情感共鸣）</div>
+                    <div class="option" onclick="selectOption(3, 'D')">D. "我想了解更多"（深度探索）</div>
+                </div>
+            </div>
+
+            <!-- 题目4 -->
+            <div class="question" id="q4">
+                <h2><span class="question-number">4</span>你写故事时，最在意什么？</h2>
+                <div class="options">
+                    <div class="option" onclick="selectOption(4, 'A')">A. 结构是否完整，逻辑是否自洽</div>
+                    <div class="option" onclick="selectOption(4, 'B')">B. 是否有感染力，能否打动人</div>
+                    <div class="option" onclick="selectOption(4, 'C')">C. 是否有趣，是否出乎意料</div>
+                    <div class="option" onclick="selectOption(4, 'D')">D. 是否真诚，是否让人信任</div>
+                </div>
+            </div>
+
+            <!-- 题目5 -->
+            <div class="question" id="q5">
+                <h2><span class="question-number">5</span>如果要用一种动物比喻你的叙事风格，你选？</h2>
+                <div class="options">
+                    <div class="option" onclick="selectOption(5, 'A')">A. 🦉 猫头鹰（冷静、智慧、洞察）</div>
+                    <div class="option" onclick="selectOption(5, 'B')">B. 🐕 狗（热情、忠诚、感染力）</div>
+                    <div class="option" onclick="selectOption(5, 'C')">C. 🦊 狐狸（灵活、机智、不按套路）</div>
+                    <div class="option" onclick="selectOption(5, 'D')">D. 🐬 海豚（温柔、治愈、有安全感）</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 结果页 -->
+        <div id="result-page" style="display: none;">
+            <div class="result active">
+                <div class="result-icon" id="result-icon">🎭</div>
+                <h2>你的叙事人格是</h2>
+                <div class="persona-name" id="persona-name">INFP</div>
+                <div class="persona-desc" id="persona-desc">自传型叙事者</div>
+
+                <div class="traits" id="traits">
+                    <span class="trait">真诚</span>
+                    <span class="trait">柔软</span>
+                    <span class="trait">细腻</span>
+                </div>
+
+                <div class="scenario">
+                    <h3>📍 适合你的场景</h3>
+                    <p id="scenarios">个人IP故事、治愈系博客、创作者自白、品牌幕后故事</p>
+                </div>
+
+                <div class="story-preview">
+                    <h3 style="font-size: 15px; color: #333; margin-bottom: 10px;">📝 你的专属叙事示例</h3>
+                    <p id="story-preview">"我做了8年UI设计师。辞职那天，我删了电脑里所有设计稿。不是赌气。是怕自己回头……"</p>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" id="cta-primary">
+                        输入你的素材，生成完整故事
+                    </a>
+                    <a href="#" class="btn btn-secondary" id="cta-secondary">
+                        浏览叙事Skill库
+                    </a>
+                </div>
+
+                <div class="share-section">
+                    <p>分享给朋友，看看他们的叙事人格</p>
+                    <div class="share-buttons">
+                        <div class="share-btn wechat" onclick="shareWechat()">微信</div>
+                        <div class="share-btn weibo" onclick="shareWeibo()">微博</div>
+                        <div class="share-btn copy" onclick="copyLink()">链接</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 答题数据
+        const answers = {};
+        let currentQuestion = 1;
+
+        function startQuiz() {
+            document.getElementById('start-page').style.display = 'none';
+            document.getElementById('quiz-page').style.display = 'block';
+        }
+
+        function selectOption(question, option) {
+            answers[question] = option;
+
+            // 高亮选中
+            const questionEl = document.getElementById('q' + question);
+            const options = questionEl.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            event.target.classList.add('selected');
+
+            // 延迟后跳转下一题
+            setTimeout(() => {
+                if (question < 5) {
+                    document.getElementById('q' + question).classList.remove('active');
+                    document.getElementById('q' + (question + 1)).classList.add('active');
+                    document.getElementById('progress').style.width = ((question + 1) * 20) + '%';
+                } else {
+                    showResult();
+                }
+            }, 300);
+        }
+
+        function showResult() {
+            document.getElementById('quiz-page').style.display = 'none';
+            document.getElementById('result-page').style.display = 'block';
+
+            // 计算人格
+            const counts = { A: 0, B: 0, C: 0, D: 0 };
+            Object.values(answers).forEach(v => counts[v]++);
+
+            const max = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
+
+            // 人格映射
+            const personas = {
+                'A': {
+                    name: 'INTJ',
+                    title: '战略型叙事者',
+                    icon: '🦉',
+                    traits: ['冷静', '逻辑', '洞察', '远见'],
+                    desc: '你擅长用逻辑和洞察来讲故事。你的故事有清晰的结构和深刻的认知，能让读者说："原来这件事可以这样看。"',
+                    scenarios: '科技融资、行业分析、硬核知识、个人IP、复盘分析',
+                    story: '"我从大厂辞职后，做了一件事：把人生拆成四个方向。每个方向读了十几本书。后来我发现，人生不是标准答案，是每个人都有自己的路。"'
+                },
+                'B': {
+                    name: 'ENFJ',
+                    title: '鼓舞型叙事者',
+                    icon: '🐕',
+                    traits: ['热情', '感染', '号召', '温暖'],
+                    desc: '你擅长用情感和号召力来讲故事。你的故事有温度和力量，能让读者说："我也要这样做。"',
+                    scenarios: '品牌使命、团队动员、公益筹款、教育开场、组织变革',
+                    story: '"我们医院设立了一个安宁疗护科。不是治疗疾病，是治疗痛苦。让每一个走的人，都能吃一口想吃的东西。说一句想说的话。见一个想见的人。"'
+                },
+                'C': {
+                    name: 'ENFP',
+                    title: '即兴型叙事者',
+                    icon: '🦊',
+                    traits: ['跳跃', '生动', '创意', '有趣'],
+                    desc: '你擅长用跳跃和创意来讲故事。你的故事不按套路出牌，能让读者说："原来我不孤单。"',
+                    scenarios: '社交媒体、创意产品、生活方式IP、互动预热、短视频',
+                    story: '"我点外卖，在备注里写了一首诗。外卖员收到了，拍照发朋友圈："今天有人把我写成风。"不是因为我写得好。是因为，原来几行字，也可以让一个人开心。"'
+                },
+                'D': {
+                    name: 'INFJ',
+                    title: '疗愈型叙事者',
+                    icon: '🐬',
+                    traits: ['温柔', '细腻', '隐喻', '治愈'],
+                    desc: '你擅长用温柔和隐喻来讲故事。你的故事有安全感和深度，能让读者说："我想了解更多。"',
+                    scenarios: '品牌哲学、心理疗愈、艺术创作、生命故事、持续叙事',
+                    story: '"奶奶的辣酱，是吃不出来的。不是尝出来的。是吃出来的——吃了一口，就知道"对了"。她做了一辈子。不卖，就送。后来路过的人越来越多。"'
+                }
+            };
+
+            const persona = personas[max];
+
+            // 填充结果
+            document.getElementById('result-icon').textContent = persona.icon;
+            document.getElementById('persona-name').textContent = persona.name;
+            document.getElementById('persona-desc').textContent = persona.title + ' —— ' + persona.desc;
+            document.getElementById('scenarios').textContent = persona.scenarios;
+            document.getElementById('story-preview').textContent = persona.story;
+
+            // 填充标签
+            const traitsEl = document.getElementById('traits');
+            traitsEl.innerHTML = '';
+            persona.traits.forEach(trait => {
+                const span = document.createElement('span');
+                span.className = 'trait';
+                span.textContent = trait;
+                traitsEl.appendChild(span);
+            });
+
+            // CTA链接（替换为你的实际链接）
+            document.getElementById('cta-primary').href = '#'; // 替换为 skill 使用链接
+            document.getElementById('cta-secondary').href = '#'; // 替换为 skill 库链接
+        }
+
+        function shareWechat() {
+            alert('请截图分享到微信');
+        }
+
+        function shareWeibo() {
+            const text = `我测出了我的叙事人格是${document.getElementById('persona-name').textContent}！你也来测测？`;
+            window.open(`https://weibo.com/ajax/statuses/update?content=${encodeURIComponent(text)}`);
+        }
+
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('链接已复制，快去分享吧！');
+            });
+        }
+    </script>
+</body>
+</html>
