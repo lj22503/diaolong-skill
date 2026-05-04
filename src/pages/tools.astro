@@ -1,0 +1,159 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="工具箱 — 雕龙 DragonCraft" locale="zh">
+  <div class="page-header">
+    <h1>工具箱</h1>
+    <p>让叙事能力可衡量、可练习</p>
+  </div>
+
+  <div class="page-content">
+    <div class="tool-list">
+
+      <div class="tool-card">
+        <div class="tool-left">
+          <span class="tool-tag">测试</span>
+        </div>
+        <div class="tool-body">
+          <h3>叙事人格测试</h3>
+          <p>8道题，发现你的叙事风格类型：INTJ战略型 / ENFJ激励型 / ENFP创意型 / INFJ隐喻型</p>
+        </div>
+        <div class="tool-action">
+          <a href="/tools/narrative-personality-test.html" target="_blank" class="btn-outline">开始测试 →</a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-left">
+          <span class="tool-tag">评估</span>
+        </div>
+        <div class="tool-body">
+          <h3>八刀评估表</h3>
+          <p>从历史、辩证、现象、语言、形式、存在、美感、元反思八个维度评估叙事质量。每刀附评分标准。</p>
+        </div>
+        <div class="tool-action">
+          <a href="https://github.com/lj22503/diaolong-skill/blob/main/tools/八刀评估提示词.md" target="_blank" class="btn-outline">查看 →</a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-left">
+          <span class="tool-tag">模板</span>
+        </div>
+        <div class="tool-body">
+          <h3>15+ 场景模板</h3>
+          <p>个人IP、品牌故事、产品发布、融资Pitch、销售脚本、危机公关、社交媒体……可直接使用或改造。</p>
+        </div>
+        <div class="tool-action">
+          <a href="https://github.com/lj22503/diaolong-skill/tree/main/templates" target="_blank" class="btn-outline">GitHub 查看 →</a>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-left">
+          <span class="tool-tag">社群</span>
+        </div>
+        <div class="tool-body">
+          <h3>雕龙叙事实验室</h3>
+          <p>正在和朋友们讨论有趣的话题，一起来吧？知识星球付费社群，19-49元/年。</p>
+        </div>
+        <div class="tool-action">
+          <a href="https://t.zsxq.com/CLU1d" target="_blank" class="btn-outline">加入星球 →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Base>
+
+<style>
+  .tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .tool-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: var(--bg-secondary);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .tool-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 12px rgba(192,57,43,0.06);
+  }
+
+  .tool-left {
+    flex-shrink: 0;
+    width: 64px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tool-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: 20px;
+    padding: 3px 10px;
+  }
+
+  .tool-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tool-body h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .tool-body p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .tool-action {
+    flex-shrink: 0;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 7px 16px;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .btn-outline:hover {
+    background: var(--accent);
+    color: white;
+  }
+
+  @media (max-width: 600px) {
+    .tool-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .tool-left { width: auto; }
+    .tool-action { width: 100%; }
+    .btn-outline { display: block; text-align: center; }
+  }
+</style>
