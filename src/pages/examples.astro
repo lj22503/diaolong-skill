@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 
 const examples = [
   { title: '燃冰-个人IP故事（完整版）', type: '真实案例', desc: '燃冰的个人IP叙事，完整打磨版，含多种长度输出。' },
@@ -44,6 +45,15 @@ const examples = [
       </div>
     </section>
   </div>
+  <RelatedLinks
+    title="继续探索"
+    links={[
+      { href: '/book', tag: '书籍', title: '《叙事引擎》', desc: '理解案例背后的方法论' },
+      { href: '/skills', tag: 'Skill', title: '26个场景Skill', desc: '案例基于的 Skill 模板' },
+      { href: '/tools', tag: '工具', title: '叙事工具箱', desc: '评估案例用到的八刀评估表等工具' },
+    ]}
+  />
+
 </Base>
 
 <style>

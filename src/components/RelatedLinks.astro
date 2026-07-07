@@ -1,0 +1,44 @@
+---
+interface Link {
+  href: string;
+  tag: string;
+  title: string;
+  desc: string;
+}
+
+interface Props {
+  title?: string;
+  links: Link[];
+}
+
+const { title = '继续探索', links } = Astro.props;
+---
+
+<section class="related-section">
+  <h2 class="related-title">{title}</h2>
+  <div class="related-links">
+    {links.map((link) => (
+      <a href={link.href} class="related-link">
+        <div class="related-tag">{link.tag}</div>
+        <div class="related-title-sm">{link.title}</div>
+        <div class="related-desc">{link.desc}</div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .related-section {
+    max-width: var(--max-width);
+    margin: 48px auto;
+    padding: 0 24px;
+  }
+  .related-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+</style>

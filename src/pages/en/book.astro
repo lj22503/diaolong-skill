@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 ---
 
 <Base
@@ -229,6 +230,16 @@ import Base from '../../layouts/Base.astro';
     </section>
 
   </div>
+
+  <RelatedLinks
+    title="Keep Exploring"
+    links={[
+      { href: '/en/skills', tag: 'Skills', title: '26 Scenario Skills', desc: 'Personal IP, brand stories, crisis PR, sales persuasion and more' },
+      { href: '/en/tools', tag: 'Tools', title: 'Narrative Toolbox', desc: 'Eight-Cut Diagnostic, Narrative Personality Test, 15+ templates' },
+      { href: '/en/examples', tag: 'Cases', title: 'Case Library', desc: 'Real cases with before/after polishing comparisons' },
+    ]}
+  />
+
 </Base>
 
 <style>

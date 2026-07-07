@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 ---
 
 <Base
@@ -59,6 +60,15 @@ import Base from '../../layouts/Base.astro';
       <a href="https://github.com/lj22503/diaolong-skill/issues/new?labels=case-study&template=case_study.yml" target="_blank" class="cta">Submit Case →</a>
     </div>
   </div>
+  <RelatedLinks
+    title="Keep Exploring"
+    links={[
+      { href: '/en/book', tag: 'Book', title: 'The Narrative Engine', desc: 'Methodology behind these cases' },
+      { href: '/en/skills', tag: 'Skills', title: '26 Scenario Skills', desc: 'Skill templates behind the cases' },
+      { href: '/en/tools', tag: 'Tools', title: 'Narrative Toolbox', desc: 'Eight-Cut Diagnostic used in case assessment' },
+    ]}
+  />
+
 </Base>
 
 <style>

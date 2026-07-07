@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 ---
 
 <Base
@@ -229,6 +230,16 @@ import Base from '../layouts/Base.astro';
     </section>
 
   </div>
+
+  <RelatedLinks
+    title="继续探索"
+    links={[
+      { href: '/skills', tag: 'Skill', title: '26个场景Skill', desc: '覆盖个人、商业、公益5大类，每个场景都有可操作的叙事框架' },
+      { href: '/tools', tag: '工具', title: '叙事工具箱', desc: '八刀评估表、叙事人格测试、15+场景模板' },
+      { href: '/examples', tag: '案例', title: '叙事案例库', desc: '真实案例与打磨前后对比' },
+    ]}
+  />
+
 </Base>
 
 <style>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 
 const siteUrl = 'https://diaolong.mangofolio.com';
 const articleJsonLd = `
@@ -99,6 +100,15 @@ const categoryLabels = {
       <p>💡 每个Skill包含完整的SKILL.md文件，可直接被AI助手调用。<br/>在AI对话中描述你的场景，即可自动路由到对应Skill。</p>
     </section>
   </div>
+  <RelatedLinks
+    title="继续探索"
+    links={[
+      { href: '/book', tag: '书籍', title: '《叙事引擎》', desc: '22章完整方法论，从认知科学到实操框架' },
+      { href: '/tools', tag: '工具', title: '叙事工具箱', desc: '八刀评估表 + 叙事人格测试，让能力可衡量' },
+      { href: '/examples', tag: '案例', title: '叙事案例库', desc: '26个 Skill 的真实使用案例与打磨前后对比' },
+    ]}
+  />
+
 </Base>
 
 <style>

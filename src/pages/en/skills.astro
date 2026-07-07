@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 
 const siteUrl = 'https://diaolong.mangofolio.com';
 const articleJsonLd = `
@@ -170,6 +171,15 @@ const articleJsonLd = `
       <p class="meta-note">💡 Each Skill contains a complete <code>SKILL.md</code> file, directly callable by AI assistants. Describe your scenario in an AI conversation and it will automatically route to the appropriate Skill.</p>
     </div>
   </div>
+  <RelatedLinks
+    title="Keep Exploring"
+    links={[
+      { href: '/en/book', tag: 'Book', title: 'The Narrative Engine', desc: '22-chapter complete methodology from cognitive science to frameworks' },
+      { href: '/en/tools', tag: 'Tools', title: 'Narrative Toolbox', desc: 'Eight-Cut Diagnostic + Narrative Personality Test' },
+      { href: '/en/examples', tag: 'Cases', title: 'Case Library', desc: 'Real Skill usage cases with polishing comparisons' },
+    ]}
+  />
+
 </Base>
 
 <style>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 ---
 
 <Base
@@ -45,6 +46,15 @@ import Base from '../layouts/Base.astro';
 
     </div>
   </div>
+  <RelatedLinks
+    title="继续探索"
+    links={[
+      { href: '/book', tag: '书籍', title: '《叙事引擎》', desc: '22章完整方法论，理解工具背后的原理' },
+      { href: '/skills', tag: 'Skill', title: '26个场景Skill', desc: '覆盖个人、商业、公益等5大类共26个场景' },
+      { href: '/examples', tag: '案例', title: '案例库', desc: '工具在真实项目中的使用案例' },
+    ]}
+  />
+
 </Base>
 
 <style>

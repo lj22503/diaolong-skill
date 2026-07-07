@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 ---
 
 <Base
@@ -45,6 +46,15 @@ import Base from '../../layouts/Base.astro';
 
     </div>
   </div>
+  <RelatedLinks
+    title="Keep Exploring"
+    links={[
+      { href: '/en/book', tag: 'Book', title: 'The Narrative Engine', desc: '22-chapter complete methodology' },
+      { href: '/en/skills', tag: 'Skills', title: '26 Scenario Skills', desc: '5 categories, 26 scenarios' },
+      { href: '/en/examples', tag: 'Cases', title: 'Case Library', desc: 'Tool usage in real projects' },
+    ]}
+  />
+
 </Base>
 
 <style>
