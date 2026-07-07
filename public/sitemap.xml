@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://diaolong.mangofolio.com/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://diaolong.mangofolio.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://diaolong.mangofolio.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://diaolong.mangofolio.com/" />
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/book</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://diaolong.mangofolio.com/book" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://diaolong.mangofolio.com/en/book" />
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/skills</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://diaolong.mangofolio.com/skills" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://diaolong.mangofolio.com/en/skills" />
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/tools</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://diaolong.mangofolio.com/tools" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://diaolong.mangofolio.com/en/tools" />
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/tools/narrative-personality-test</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/examples</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://diaolong.mangofolio.com/examples" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://diaolong.mangofolio.com/en/examples" />
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/community</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://diaolong.mangofolio.com/community" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://diaolong.mangofolio.com/en/community" />
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/about</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://diaolong.mangofolio.com/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://diaolong.mangofolio.com/en/about" />
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/en/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/en/book</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/en/skills</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/en/tools</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/en/examples</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/en/community</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://diaolong.mangofolio.com/en/about</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# 禁止抓取无需索引的路径
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /_assets/
+Disallow: /*?*
+
+# Sitemap 位置
+Sitemap: https://diaolong.mangofolio.com/sitemap.xml

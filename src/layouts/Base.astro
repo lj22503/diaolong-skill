@@ -1,11 +1,58 @@
 ---
 interface Props {
   title: string;
+  description: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
   locale?: 'zh' | 'en';
+  jsonLd?: string;
 }
 
-const { title, locale = 'zh' } = Astro.props;
+const {
+  title,
+  description,
+  ogImage = '/images/book-cover.jpg',
+  type = 'website',
+  locale = 'zh',
+  jsonLd,
+} = Astro.props;
+
 const currentPath = Astro.url.pathname;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://diaolong.mangofolio.com';
+const canonicalURL = `${siteUrl}${currentPath === '/' ? '/' : currentPath}`;
+const ogImageURL = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+// 面包屑：用于内页（P1-10）
+const isHomePage = currentPath === '/' || currentPath === '/en/' || currentPath === '/en';
+const showBreadcrumb = !isHomePage;
+const pathSegments = currentPath.split('/').filter(Boolean);
+// 去掉可能的 'en' 前缀
+const breadcrumbItems: { name: string; href: string }[] = [{ name: locale === 'en' ? 'Home' : '首页', href: locale === 'en' ? '/en/' : '/' }];
+const sectionNames: Record<string, { zh: string; en: string }> = {
+  book: { zh: '书籍', en: 'Book' },
+  skills: { zh: 'Skill 工具箱', en: 'Skills' },
+  tools: { zh: '叙事工具箱', en: 'Tools' },
+  examples: { zh: '案例库', en: 'Examples' },
+  community: { zh: '社区', en: 'Community' },
+  about: { zh: '关于', en: 'About' },
+};
+if (pathSegments.length > 0) {
+  const section = pathSegments[pathSegments[0] === 'en' ? 1 : 0];
+  if (section && sectionNames[section]) {
+    const sectionHref = locale === 'en' ? `/en/${section}` : `/${section}`;
+    breadcrumbItems.push({ name: sectionNames[section][locale], href: sectionHref });
+  }
+}
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.name,
+    item: `${siteUrl}${item.href}`,
+  })),
+};
 ---
 
 <!DOCTYPE html>
@@ -14,25 +61,52 @@ const currentPath = Astro.url.pathname;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
-  <meta name="description" content="雕龙叙事 — 让每个人都能讲好自己的故事。Narrative equality for everyone." />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="alternate" hreflang="zh" href={currentPath} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={type} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={ogImageURL} />
+  <meta property="og:locale" content={locale === 'zh' ? 'zh_CN' : 'en_US'} />
+  <meta property="og:site_name" content="雕龙 DragonCraft" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageURL} />
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="zh" href={currentPath.startsWith('/en') ? currentPath.replace('/en', '') || '/' : currentPath} />
   <link rel="alternate" hreflang="en" href={currentPath.startsWith('/en') ? currentPath : `/en${currentPath}`} />
+  <link rel="alternate" hreflang="x-default" href={currentPath.startsWith('/en') ? currentPath.replace('/en', '') || '/' : currentPath} />
+
+  <!-- 面包屑 JSON-LD（二级页及以上） -->
+  {showBreadcrumb && (
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+  )}
+
+  <!-- 页面自定义 JSON-LD -->
+  {jsonLd && <Fragment set:html={jsonLd} />}
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="logo">
+      <a href={locale === 'en' ? '/en/' : '/'} class="logo">
         <span class="logo-zh">雕龙</span>
         <span class="logo-en">DragonCraft</span>
       </a>
       <nav class="main-nav">
-        <a href="/book" class:list={[{ active: currentPath.startsWith('/book') }]}>书籍</a>
-        <a href="/skills" class:list={[{ active: currentPath.startsWith('/skills') }]}>Skill</a>
-        <a href="/tools" class:list={[{ active: currentPath.startsWith('/tools') }]}>工具</a>
-        <a href="/examples" class:list={[{ active: currentPath.startsWith('/examples') }]}>案例</a>
-        <a href="/community" class:list={[{ active: currentPath.startsWith('/community') }]}>社区</a>
-        <a href="/about" class:list={[{ active: currentPath.startsWith('/about') }]}>关于</a>
+        <a href={locale === 'en' ? '/en/book' : '/book'} class:list={[{ active: currentPath.startsWith('/book') }]}>书籍</a>
+        <a href={locale === 'en' ? '/en/skills' : '/skills'} class:list={[{ active: currentPath.startsWith('/skills') }]}>Skill</a>
+        <a href={locale === 'en' ? '/en/tools' : '/tools'} class:list={[{ active: currentPath.startsWith('/tools') }]}>工具</a>
+        <a href={locale === 'en' ? '/en/examples' : '/examples'} class:list={[{ active: currentPath.startsWith('/examples') }]}>案例</a>
+        <a href={locale === 'en' ? '/en/community' : '/community'} class:list={[{ active: currentPath.startsWith('/community') }]}>社区</a>
+        <a href={locale === 'en' ? '/en/about' : '/about'} class:list={[{ active: currentPath.startsWith('/about') }]}>关于</a>
       </nav>
       <div class="header-right">
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
@@ -43,21 +117,35 @@ const currentPath = Astro.url.pathname;
           </svg>
         </button>
         <div class="lang-switch">
-          <a href={locale === 'zh' ? `/en${currentPath}` : currentPath.replace('/en', '')}>
+          <a href={locale === 'en' ? (currentPath.startsWith('/en') ? currentPath : `/en${currentPath}`) : currentPath.replace('/en', '') || '/'}>
             {locale === 'zh' ? 'EN' : '中'}
           </a>
         </div>
       </div>
     </div>
     <div class="mobile-nav" id="mobileNav">
-      <a href="/book">书籍</a>
-      <a href="/skills">Skill</a>
-      <a href="/tools">工具</a>
-      <a href="/examples">案例</a>
-      <a href="/community">社区</a>
-      <a href="/about">关于</a>
+      <a href={locale === 'en' ? '/en/book' : '/book'}>书籍</a>
+      <a href={locale === 'en' ? '/en/skills' : '/skills'}>Skill</a>
+      <a href={locale === 'en' ? '/en/tools' : '/tools'}>工具</a>
+      <a href={locale === 'en' ? '/en/examples' : '/examples'}>案例</a>
+      <a href={locale === 'en' ? '/en/community' : '/community'}>社区</a>
+      <a href={locale === 'en' ? '/en/about' : '/about'}>关于</a>
     </div>
   </header>
+
+  <!-- 面包屑导航视觉 -->
+  {showBreadcrumb && (
+    <nav class="breadcrumb" aria-label="面包屑导航">
+      <div class="breadcrumb-inner">
+        {breadcrumbItems.map((item, i) => (
+          <span class="breadcrumb-item">
+            <a href={item.href}>{item.name}</a>
+            {i < breadcrumbItems.length - 1 && <span class="breadcrumb-sep"> / </span>}
+          </span>
+        ))}
+      </div>
+    </nav>
+  )}
 
   <main>
     <slot />
@@ -69,7 +157,7 @@ const currentPath = Astro.url.pathname;
       <p class="footer-links">
         <a href="https://github.com/lj22503/diaolong-skill" target="_blank">GitHub</a>
         ·
-        <a href="/community">参与贡献</a>
+        <a href={locale === 'en' ? '/en/community' : '/community'}>参与贡献</a>
         ·
         <a href="https://github.com/lj22503/diaolong-skill/blob/main/LICENSE" target="_blank">MIT License</a>
       </p>
@@ -203,6 +291,25 @@ const currentPath = Astro.url.pathname;
     color: var(--text);
   }
 
+  /* Breadcrumb */
+  .breadcrumb {
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-secondary);
+    font-size: 0.85rem;
+  }
+  .breadcrumb-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 12px 24px;
+    color: var(--text-muted);
+  }
+  .breadcrumb-item a {
+    color: var(--text-muted);
+    transition: color 0.15s;
+  }
+  .breadcrumb-item a:hover { color: var(--accent); }
+  .breadcrumb-sep { margin: 0 6px; color: var(--border); }
+
   /* Main */
   main { flex: 1; }
 
@@ -271,6 +378,42 @@ const currentPath = Astro.url.pathname;
     padding: 2px 8px;
     border-radius: 3px;
     margin-bottom: 10px;
+  }
+
+  /* Internal links / cross-recommendation block */
+  .related-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .related-link {
+    display: block;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: white;
+    transition: all 0.15s;
+  }
+  .related-link:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .related-link .related-tag {
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .related-link .related-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .related-link .related-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
   }
 
   /* Chapter list */
@@ -346,5 +489,6 @@ const currentPath = Astro.url.pathname;
     .mobile-menu-btn { display: flex; }
     .header-right { gap: 8px; }
     .page-header h1 { font-size: 1.8rem; }
+    .breadcrumb-inner { padding: 10px 16px; font-size: 0.78rem; }
   }
 </style>

@@ -1,8 +1,35 @@
 ---
 import Base from '../../layouts/Base.astro';
+
+const siteUrl = 'https://diaolong.mangofolio.com';
+const jsonLd = `
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"DragonCraft","alternateName":"Diaolong","description":"Narrative methodology operating system — book, 26 scenario Skills, toolbox, case library","url":"${siteUrl}/en/","logo":"${siteUrl}/images/book-cover.jpg","sameAs":["https://github.com/lj22503/diaolong-skill"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"DragonCraft","url":"${siteUrl}/en/","inLanguage":"en"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Book","name":"The Narrative Engine: Content OS for the AI Era","description":"22-chapter complete narrative methodology covering cognition, 26 scenario Skills and AI-era narrative tools","author":{"@type":"Organization","name":"DragonCraft"},"inLanguage":"en","url":"${siteUrl}/en/book"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is narrative methodology?","acceptedAnswer":{"@type":"Answer","text":"A systematic framework for storytelling. DragonCraft includes the Eight-Cut Diagnostic (8-dimension assessment), 26 scenario Skill templates, and the Narrative Personality Test — covering personal IP, brand stories, crisis PR, and sales persuasion."}},
+{"@type":"Question","name":"How can AI writing avoid sounding like AI?","acceptedAnswer":{"@type":"Answer","text":"DragonCraft's De-AI Skill detects templated expressions, replaces them with personal language, and injects concrete experiences. Let AI draft, human refine — preserve authenticity."}},
+{"@type":"Question","name":"How to use DragonCraft Skills?","acceptedAnswer":{"@type":"Answer","text":"Three ways: 1) Use directly at diaolong.mangofolio.com; 2) Clone GitHub repo and invoke SKILL.md in AI chat; 3) Deploy as an AI Agent Skill plugin."}},
+{"@type":"Question","name":"What is the Eight-Cut Diagnostic?","acceptedAnswer":{"@type":"Answer","text":"DragonCraft's signature narrative quality framework: history, dialectic, phenomenon, language, form, existence, aesthetics, meta-reflection — a full-body CT scan for any narrative."}}
+]}
+</script>
+`;
 ---
 
-<Base title="DragonCraft — Narrative Equality" locale="en">
+<Base
+  title="DragonCraft | Narrative Methodology OS — 26 Skills + Book + Toolbox"
+  description="DragonCraft is a complete narrative methodology operating system. 22-chapter book, 26 scenario Skills, Eight-Cut Diagnostic, Narrative Personality Test. Covering personal IP, brand stories, crisis PR, sales persuasion."
+  type="website"
+  locale="en"
+  jsonLd={jsonLd}
+>
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-eyebrow">Narrative Equality Movement</div>

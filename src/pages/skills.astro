@@ -1,6 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 
+const siteUrl = 'https://diaolong.mangofolio.com';
+const articleJsonLd = `
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"26个叙事场景Skill — 个人IP·品牌故事·危机公关·销售说服","description":"覆盖个人、商业、公益、元叙事、叙事工作流5大类的26个场景化叙事Skill","author":{"@type":"Organization","name":"雕龙 DragonCraft","url":"${siteUrl}/"},"publisher":{"@type":"Organization","name":"雕龙 DragonCraft","url":"${siteUrl}/"},"inLanguage":"zh-CN"}
+</script>
+`;
+
 const skills = [
   // 个人
   { id: 'personal-ip', name: '个人IP', desc: '把经历变成让人共鸣的故事', scene: '个人品牌、简历、社交媒体自我介绍', prompt: '"我曾经___，那时候我以为___，后来发现___"', category: '个人' },
@@ -45,7 +52,12 @@ const categoryLabels = {
 };
 ---
 
-<Base title="Skill工具箱 — 雕龙 DragonCraft" locale="zh">
+<Base
+  title="26个叙事场景Skill | 个人IP·品牌故事·危机公关·销售说服 - 雕龙"
+  description="26个场景化叙事Skill模板，覆盖个人、商业、公益、元叙事、叙事工作流5大类。每个Skill含使用场景、核心Prompt和实操框架。"
+  locale="zh"
+  jsonLd={articleJsonLd}
+>
   <div class="page-header">
     <h1>Skill工具箱</h1>
     <p>26个场景Skill · 个人 / 商业 / 公益 / 元叙事 / 叙事工作流</p>

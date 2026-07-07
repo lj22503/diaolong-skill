@@ -1,8 +1,21 @@
 ---
 import Base from '../../layouts/Base.astro';
+
+const siteUrl = 'https://diaolong.mangofolio.com';
+const articleJsonLd = `
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"26 Narrative Scenario Skills — Personal IP · Brand · Crisis PR · Sales","description":"26 scenario-based narrative Skills across personal, business, public-interest, meta-narrative, and workflow categories","author":{"@type":"Organization","name":"DragonCraft","url":"${siteUrl}/en/"},"publisher":{"@type":"Organization","name":"DragonCraft","url":"${siteUrl}/en/"},"inLanguage":"en"}
+</script>
+`;
+
 ---
 
-<Base title="Skills — DragonCraft" locale="en">
+<Base
+  title="26 Narrative Scenario Skills | Personal IP · Brand · Crisis PR · Sales — DragonCraft"
+  description="26 scenario-based narrative Skills covering personal, business, public-interest, meta-narrative, and workflow categories. Each Skill includes scenario brief, core prompt, and framework."
+  locale="en"
+  jsonLd={articleJsonLd}
+>
   <div class="page-header">
     <h1>26 Scenario Skills</h1>
     <p>Personal IP · Brand · Crisis PR · Sales · Education · Public Interest</p>

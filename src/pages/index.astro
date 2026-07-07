@@ -1,8 +1,36 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const siteUrl = 'https://diaolong.mangofolio.com';
+const jsonLd = `
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"雕龙 DragonCraft","alternateName":"Diaolong","description":"叙事方法论操作系统 — 书籍、26个场景Skill、工具箱、案例库","url":"${siteUrl}/","logo":"${siteUrl}/images/book-cover.jpg","sameAs":["https://github.com/lj22503/diaolong-skill"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"雕龙 DragonCraft","url":"${siteUrl}/","inLanguage":"zh-CN"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Book","name":"叙事引擎：AI时代的内容操作系统","description":"22章完整叙事方法论，覆盖认知基础、26个场景Skill和AI时代叙事工具","author":{"@type":"Organization","name":"雕龙 DragonCraft"},"inLanguage":"zh-CN","url":"${siteUrl}/book"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"什么是叙事方法论？","acceptedAnswer":{"@type":"Answer","text":"叙事方法论是一套系统化的讲故事框架。雕龙包含八刀解剖法、26个场景化Skill模板、叙事人格测试，覆盖个人IP、品牌故事、危机公关、销售说服等场景。"}},
+{"@type":"Question","name":"AI时代如何让写作不像AI写的？","acceptedAnswer":{"@type":"Answer","text":"雕龙的去AI化Skill提供检测和修正AI写作痕迹的方法：识别模板化表达，替换为个人化语言，注入具体经历和情感细节。让AI辅助初稿生成，人工负责提炼和注入人味。"}},
+{"@type":"Question","name":"如何用AI写品牌故事？","acceptedAnswer":{"@type":"Answer","text":"使用雕龙的品牌叙事Skill，输入品牌核心信息（定位、用户痛点、差异化价值），AI生成品牌故事初稿。通过八刀评估表从八个维度评估和优化，最后用去AI化Skill过滤模板腔调。"}},
+{"@type":"Question","name":"雕龙的Skill怎么使用？","acceptedAnswer":{"@type":"Answer","text":"三种方式：1）访问diaolong.mangofolio.com网站直接使用；2）克隆GitHub仓库在AI对话中调用；3）作为AI Agent Skill插件部署。"}},
+{"@type":"Question","name":"八刀解剖法是什么？","acceptedAnswer":{"@type":"Answer","text":"雕龙独创的叙事质量评估框架，从历史、辩证、现象、语言、形式、存在、美感、元反思八个维度评估叙事质量。"}}
+]}
+</script>
+`;
 ---
 
-<Base title="雕龙 DragonCraft — 叙事平权" locale="zh">
+<Base
+  title="雕龙 DragonCraft | 叙事方法论操作系统 — 26个场景Skill + 书籍 + 工具箱"
+  description="雕龙是一套完整的叙事方法论操作系统。22章方法论书籍、26个场景化叙事Skill、八刀评估表、叙事人格测试。覆盖个人IP、品牌故事、危机公关、销售说服等场景。"
+  type="website"
+  locale="zh"
+  jsonLd={jsonLd}
+>
   <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">
