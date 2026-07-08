@@ -1,5 +1,37 @@
 # PROGRESS — 雕龙 DragonCraft
 
+## 2026-07-08 | Bugfix — 英文版本切换不生效
+
+### 问题
+
+线上英文切换按钮无效（任何页面点 "EN" 或 "中" 都跳回当前页）。
+
+### 根因
+
+`src/layouts/Base.astro` 第 120 行语言切换 `<a>` 的三元条件在 commit `c5b2c11`（SEO 优化）被从 `locale === 'zh'` 改成 `locale === 'en'`，导致两个分支逻辑反了：
+
+- EN 页：走 TRUE 分支 `currentPath.startsWith('/en') ? currentPath : ...` → startsWith 永远为真 → 当前页
+- ZH 页：走 FALSE 分支 `currentPath.replace('/en', '')` → 无 /en 可替 → 当前页
+
+dist 验证 4 页全部命中：中文首页 `/`, 英文首页 `/en/`, 中文书籍 `/book/`, 英文书籍 `/en/book/`，href 都指向自身。
+
+### 修复
+
+把条件改回 `locale === 'zh'`，保留 `startsWith` + `|| '/'` 兜底。
+
+### 验证
+
+| 文件 | label | href |
+|------|-------|------|
+| `dist/index.html` | EN | `/en/` ✓ |
+| `dist/en/index.html` | 中 | `/` ✓ |
+| `dist/book/index.html` | EN | `/en/book/` ✓ |
+| `dist/en/book/index.html` | 中 | `/book/` ✓ |
+
+`astro build` 14 页通过。**待推送 master 触发 Vercel 部署**。
+
+---
+
 ## 2026-07-07 | SEO 优化 阶段1（P0 + P1 技术修复 + 百度站点验证）
 
 依据 `Diaolong_SEO_Strategy.md` 与 `Diaolong_SEO_技术修复速查表.md` 执行。
