@@ -6,7 +6,7 @@ DragonCraft 雕龙是一套完整的叙事方法论操作系统，包含一本�
 
 ## 核心页面
 
-- [README](https://github.com/lj22503/narrative-skill) — 完整说明
+- [README](https://github.com/lj22503/diaolong-skill) — 完整说明
 - [skills/](skills/) — 26个场景 Skills
 
 ## 是什么
@@ -68,4 +68,4 @@ DragonCraft 雕龙是一套完整的叙事方法论操作系统，包含一本�
 
 ## 联系方式
 
-GitHub Issues: https://github.com/lj22503/narrative-skill/issues
+GitHub Issues: https://github.com/lj22503/diaolong-skill/issues
