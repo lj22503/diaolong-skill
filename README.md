@@ -2,6 +2,19 @@
 
 > **叙事平权** — 让每个人都能讲好自己的故事。
 
+<p align="center">
+  <img src="https://diaolong.mangofolio.com/logo.svg" alt="Diaolong Logo" width="120" onerror="this.style.display='none'"/>
+</p>
+
+<p align="center">
+  <a href="https://diaolong.mangofolio.com"><img src="https://img.shields.io/badge/在线体验-d6a52e?style=for-the-badge" alt="在线体验"/></a>
+  <a href="https://github.com/lj22503/diaolong-skill/blob/main/README_EN.md"><img src="https://img.shields.io/badge/English-README-blue?style=for-the-badge" alt="English README"/></a>
+  <a href="https://github.com/lj22503/diaolong-skill/blob/main/llms.txt"><img src="https://img.shields.io/badge/llms.txt-AI_Ready-green?style=for-the-badge" alt="llms.txt"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License"/></a>
+</p>
+
+<!-- TODO: 添加 ≤10 秒的演示 GIF，提升 50% 转化率（见 GitHub 增长策略报告） -->
+
 ## 解决什么问题？
 
 | 现状 | 用雕龙 |
