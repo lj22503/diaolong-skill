@@ -1,5 +1,7 @@
 # CLAUDE.md — 雕龙 DragonCraft 项目规则（单 Agent 模板 B）
 
+> **命名**：本项目 GitHub 仓库名 `lj22503/diaolong-skill`（项目内部别称「雕龙 DragonCraft」），本地目录 `D:\claudework\narrative-skill` 是历史遗留名。统一以 GitHub 名 **diaolong-skill** 为准。
+
 ## 开工流程
 
 1. 读本文件 + PROGRESS.md
